@@ -44,6 +44,7 @@ export default defineConfig({
     nav: [
       { text: '体系总览', link: '/overview/' },
       { text: 'L1 必修课程', link: '/l1/' },
+      { text: 'L2 选修课程', link: '/l2/' },
       { text: '知识库课程', link: '/courses/' },
       {
         text: '学习资源',
@@ -113,6 +114,57 @@ export default defineConfig({
             { text: 'L1-06 合规风险地图', link: '/l1/06-compliance' },
             { text: 'L1-07 财务与成本认知', link: '/l1/07-finance-cost' },
             { text: 'L1-08 数据驱动入门', link: '/l1/08-data-driven' },
+          ],
+        },
+      ],
+      '/l2/': [
+        {
+          text: 'L2 分路径选修',
+          collapsed: false,
+          items: [
+            { text: 'L2 课程总览', link: '/l2/' },
+          ],
+        },
+        {
+          text: 'L2-A 运营精进（24 课时）',
+          collapsed: false,
+          items: [
+            { text: 'L2A-01 平台算法与流量', link: '/l2/a01-algorithm-traffic' },
+            { text: 'L2A-02 Listing 高阶优化', link: '/l2/a02-listing-cro' },
+            { text: 'L2A-03 广告投放与 ROI', link: '/l2/a03-ads-roi' },
+            { text: 'L2A-04 AI 辅助运营实操', link: '/l2/a04-ai-ops' },
+            { text: 'L2A-05 数据驱动决策', link: '/l2/a05-data-driven' },
+            { text: 'L2A-06 社媒与 KOL 合作', link: '/l2/a06-social-kol' },
+            { text: 'L2A-07 库存与供应链协同', link: '/l2/a07-inventory-scm' },
+            { text: 'L2A-08 运营合规实操', link: '/l2/a08-compliance-ops' },
+            { text: 'L2A-09 物流运营操作', link: '/l2/a09-logistics-ops' },
+          ],
+        },
+        {
+          text: 'L2-B 创业实战（22 课时）',
+          collapsed: false,
+          items: [
+            { text: 'L2B-01 选品与市场调研', link: '/l2/b01-product-research' },
+            { text: 'L2B-02 供应链从 0 搭建', link: '/l2/b02-supply-chain-setup' },
+            { text: 'L2B-03 国内税务合规', link: '/l2/b03-tax-compliance' },
+            { text: 'L2B-04 海外合规快速通道', link: '/l2/b04-overseas-compliance' },
+            { text: 'L2B-05 资金链与外汇风控', link: '/l2/b05-finance-fx' },
+            { text: 'L2B-06 创业团队搭建', link: '/l2/b06-team-building' },
+            { text: 'L2B-07 品牌启动与冷启动', link: '/l2/b07-brand-launch' },
+            { text: 'L2B-08 多平台快速启动', link: '/l2/b08-multi-platform' },
+          ],
+        },
+        {
+          text: 'L2-C 管理升级（19 课时）',
+          collapsed: false,
+          items: [
+            { text: 'L2C-01 战略规划与商业模式', link: '/l2/c01-strategy' },
+            { text: 'L2C-02 团队组织与绩效管理', link: '/l2/c02-organization' },
+            { text: 'L2C-03 财务管控与经营分析', link: '/l2/c03-finance-digital' },
+            { text: 'L2C-04 全链路风控体系', link: '/l2/c04-compliance-strategy' },
+            { text: 'L2C-05 供应链战略与库存', link: '/l2/c05-supply-chain-strategy' },
+            { text: 'L2C-06 品牌战略与全域增长', link: '/l2/c06-brand-strategy' },
+            { text: 'L2C-07 数字化转型与 AI', link: '/l2/c07-digital-ai' },
           ],
         },
       ],
