@@ -1,10 +1,27 @@
 ---
 layout: page
 title: 资源下载中心
-description: 跨境电商课配套资源下载，按模块分类整理
+description: 跨境电商课程配套资源，按模块分类整理
 ---
 
 <HeroBanner title="📁 资源下载中心" subtitle="所有课程配套资料，按模块分类整理" />
+
+## 在线学习资源
+
+以下资源可直接在本站浏览：
+
+- 📖 [**核心术语表**](/resources/glossary) — 8 大领域 60+ 术语中英对照
+- 🗺️ [**学习路线图**](/resources/learning-roadmap) — L1→L2→L3 完整学习路径
+- 📊 [**行业数据看板**](/resources/industry-data) — 50+ 核心数据，来源可追溯
+- 🔧 [**工具模板全景**](/resources/toolkit-preview) — 6 门课程 52 件工具一览
+- 🩺 [**入学诊断**](/resources/diagnosis) — 六维度评估，匹配学习路径
+- 📚 [**先修包自学**](/resources/pre-study) — 密集制学员课前预习材料
+
+---
+
+## 可下载资源
+
+以下文件可直接下载：
 
 <ResourceCategory title="📂 供应链管理模块">
   <ResourceTable :items="[
@@ -44,6 +61,8 @@ description: 跨境电商课配套资源下载，按模块分类整理
   ]" />
 </ResourceCategory>
 
+---
+
 ::: info 内容说明
-以上资源为公开样例。完整教案、讲师手册、全部工具模板与随堂小测**面向报名学员定向分发**，不在本站公开。
+以上下载资源为公开样例。完整教案、讲师手册、全部工具模板与随堂小测**面向报名学员定向分发**，不在本站公开。
 :::

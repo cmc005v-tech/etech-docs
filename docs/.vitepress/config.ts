@@ -48,6 +48,10 @@ export default defineConfig({
         text: '学习资源',
         items: [
           { text: '资源下载中心', link: '/resources/' },
+          { text: '核心术语表', link: '/resources/glossary' },
+          { text: '学习路线图', link: '/resources/learning-roadmap' },
+          { text: '行业数据看板', link: '/resources/industry-data' },
+          { text: '工具模板全景', link: '/resources/toolkit-preview' },
           { text: '入学诊断', link: '/resources/diagnosis' },
           { text: '先修包自学', link: '/resources/pre-study' },
         ],
@@ -66,6 +70,21 @@ export default defineConfig({
             { text: '分层课程体系详解', link: '/overview/layered-system' },
             { text: '案例库精选', link: '/overview/case-library' },
             { text: '核心数据亮点', link: '/overview/data-highlights' },
+          ],
+        },
+      ],
+      '/resources/': [
+        {
+          text: '学习资源',
+          collapsed: false,
+          items: [
+            { text: '资源下载中心', link: '/resources/' },
+            { text: '核心术语表', link: '/resources/glossary' },
+            { text: '学习路线图', link: '/resources/learning-roadmap' },
+            { text: '行业数据看板', link: '/resources/industry-data' },
+            { text: '工具模板全景', link: '/resources/toolkit-preview' },
+            { text: '入学诊断', link: '/resources/diagnosis' },
+            { text: '先修包自学', link: '/resources/pre-study' },
           ],
         },
       ],
