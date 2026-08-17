@@ -45,6 +45,7 @@ export default defineConfig({
       { text: '体系总览', link: '/overview/' },
       { text: 'L1 必修课程', link: '/l1/' },
       { text: 'L2 选修课程', link: '/l2/' },
+      { text: 'L3 毕业项目', link: '/l3/' },
       { text: '知识库课程', link: '/courses/' },
       {
         text: '学习资源',
@@ -165,6 +166,18 @@ export default defineConfig({
             { text: 'L2C-05 供应链战略与库存', link: '/l2/c05-supply-chain-strategy' },
             { text: 'L2C-06 品牌战略与全域增长', link: '/l2/c06-brand-strategy' },
             { text: 'L2C-07 数字化转型与 AI', link: '/l2/c07-digital-ai' },
+          ],
+        },
+      ],
+      '/l3/': [
+        {
+          text: 'L3 高阶毕业项目',
+          collapsed: false,
+          items: [
+            { text: 'L3 项目总览', link: '/l3/' },
+            { text: 'L3-A 运营操盘手毕业项目', link: '/l3/l3a-operations-project' },
+            { text: 'L3-B 创业实战沙盘', link: '/l3/l3b-startup-sandbox' },
+            { text: 'L3-C 战略决策模拟', link: '/l3/l3c-strategy-simulation' },
           ],
         },
       ],

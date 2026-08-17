@@ -21,7 +21,7 @@ hero:
     audience="零基础学员"
     hours="22 课时"
     outcome="全模块扫盲，建立跨境电商全链路认知。先懂商业再懂操作。"
-    link="/courses/"
+    link="/l1/"
     cta="进入课程"
   />
   <CourseCard
@@ -30,7 +30,7 @@ hero:
     audience="1年+运营经验"
     hours="24 课时"
     outcome="深入学习选品策略、Listing 优化、广告投放、数据分析。"
-    link="/courses/platform-operations/"
+    link="/l2/"
     cta="进入课程"
   />
   <CourseCard
@@ -39,7 +39,7 @@ hero:
     audience="准备创业者"
     hours="22 课时"
     outcome="从 0 到 1 搭建店铺、品牌出海、合规注册全流程。"
-    link="/courses/"
+    link="/l2/"
     cta="进入课程"
   />
   <CourseCard
@@ -48,7 +48,7 @@ hero:
     audience="团队管理者"
     hours="19 课时"
     outcome="团队搭建、供应链管控、财务规划、多平台战略。"
-    link="/courses/"
+    link="/l2/"
     cta="进入课程"
   />
   <CourseCard
@@ -57,7 +57,7 @@ hero:
     audience="进阶学员"
     hours="综合实战"
     outcome="完成一份完整的跨境电商商业计划书，通过答辩获结业证书。"
-    link="/courses/"
+    link="/l3/"
     cta="了解详情"
   />
 </CourseGrid>

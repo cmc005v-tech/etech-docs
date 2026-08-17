@@ -40,10 +40,10 @@ const courses = [
 
   // L2-C 管理升级
   { id: 'L2C-01', path: 'C', title: '跨境电商战略认知', hours: 3, desc: 'K 型分化深层逻辑、行业趋势研判、企业战略定位、竞争格局分析', link: '/l2/c01-strategy' },
-  { id: 'L2C-02', path: 'C', title: '跨境团队组织架构与绩效管理', hours: 3, desc: 'T 型人才模型、品类小前台、KPI 价值导向、AI 时代岗位变化', link: '/l2/c02-org-performance' },
-  { id: 'L2C-03', path: 'C', title: '跨境企业财务管控与经营分析', hours: 3, desc: '财务三表解读、经营分析框架、预算管控、资金健康度诊断', link: '/l2/c03-finance-control' },
-  { id: 'L2C-04', path: 'C', title: '全链路风控体系搭建', hours: 3, desc: '六大风险维度识别、预警指标体系、三级响应机制、合规内嵌战略', link: '/l2/c04-risk-control' },
-  { id: 'L2C-05', path: 'C', title: '供应链战略与库存管理', hours: 3, desc: '分层混合履约战略、轴辐式仓网、数字化转型、三年战略规划', link: '/l2/c05-supply-strategy' },
+  { id: 'L2C-02', path: 'C', title: '跨境团队组织架构与绩效管理', hours: 3, desc: 'T 型人才模型、品类小前台、KPI 价值导向、AI 时代岗位变化', link: '/l2/c02-organization' },
+  { id: 'L2C-03', path: 'C', title: '跨境企业财务管控与经营分析', hours: 3, desc: '财务三表解读、经营分析框架、预算管控、资金健康度诊断', link: '/l2/c03-finance-digital' },
+  { id: 'L2C-04', path: 'C', title: '全链路风控体系搭建', hours: 3, desc: '六大风险维度识别、预警指标体系、三级响应机制、合规内嵌战略', link: '/l2/c04-compliance-strategy' },
+  { id: 'L2C-05', path: 'C', title: '供应链战略与库存管理', hours: 3, desc: '分层混合履约战略、轴辐式仓网、数字化转型、三年战略规划', link: '/l2/c05-supply-chain-strategy' },
   { id: 'L2C-06', path: 'C', title: '品牌战略与全域增长管理', hours: 2, desc: '品牌溢价构建、全域流量分工、独立站品牌资产、长期增长飞轮', link: '/l2/c06-brand-strategy' },
   { id: 'L2C-07', path: 'C', title: '数字化转型与 AI 赋能', hours: 2, desc: '三层数字化架构、AI Agent 自主运营、投入产出评估、选型决策', link: '/l2/c07-digital-ai' },
 ]
