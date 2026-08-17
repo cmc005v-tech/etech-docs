@@ -1,0 +1,182 @@
+---
+title: 跨境电商课程案例库
+description: 26个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约五大领域
+outline: deep
+---
+
+<script setup>
+import { ref, computed } from 'vue'
+
+const activeModule = ref('all')
+const activeType = ref('all')
+
+const modules = [
+  { key: 'all', label: '全部领域', icon: '📚' },
+  { key: 'supply', label: '供应链管理', icon: '🏭' },
+  { key: 'platform', label: '平台运营', icon: '🛒' },
+  { key: 'brand', label: '海外品牌管理', icon: '🏷️' },
+  { key: 'compliance', label: '合规管理', icon: '⚖️' },
+  { key: 'logistics', label: '物流履约', icon: '🚢' },
+]
+
+const typeFilters = [
+  { key: 'all', label: '全部类型' },
+  { key: 'success', label: '✅ 正面成功' },
+  { key: 'failure', label: '❌ 反面失败' },
+  { key: 'trend', label: '📊 趋势/综合' },
+]
+
+const cases = [
+  // === 供应链管理 ===
+  { id: 'SC-01', module: 'supply', type: 'success', title: '巨星科技FBA供应链优化：从传统制造到数据驱动备货', scale: '大卖家（上市公司）', course: 'L2C-05', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '通过亚马逊FBA体系实现供应链数字化转型，利用销售数据反向指导生产备货，降低库存周转天数。核心做法：①FBA库存数据实时同步至生产端；②按ASIN级别设置安全库存阈值；旺季前60天启动批量备货并分散至多个FBA仓。', teaching: '供应链数据化转型路径；FBA库存管理策略；大卖家柔性供应链设计' },
+  { id: 'SC-02', module: 'supply', type: 'success', title: '万魔声学供应链数字化：从OEM到自有品牌的供应链重构', scale: '中型卖家（品牌转型期）', course: 'L2A/L2B', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '从纯OEM代工转型自有品牌1MORE，供应链重构核心：①建立SKU分级管理体系（A类爆款保供/B类常规补货/C类长尾清退）；②通过亚马逊品牌分析工具获取搜索词数据指导产品开发；③与核心供应商建立VMI模式降低原料库存压力。转型后库存周转天数从90天降至45天。', teaching: 'SKU分级管理实操；OEM转品牌的供应链重构；VMI模式在跨境中的应用' },
+  { id: 'SC-03', module: 'supply', type: 'failure', title: '跨境"假发第一股"瑞贝卡供应链失控：库存积压2亿致业绩暴雷', scale: '大卖家（上市公司）', course: 'L2C-05', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '全球假发行业龙头因供应链管理失误导致库存积压超2亿元。核心问题：①过度依赖传统线下渠道数据预测；②SKU膨胀至3000+但缺乏分级淘汰机制；③安全库存设置过高（120天）；④未建立需求波动预警机制。最终导致现金流断裂，股价暴跌。', teaching: '库存失控的连锁反应；传统供应链与电商供应链的数据鸿沟；SKU膨胀的风险管控' },
+  { id: 'SC-04', module: 'supply', type: 'trend', title: '直邮时代黄昏：跨境电商供应链"去中心化"大迁徙', scale: '多规模适用', course: 'L2C-05', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: 'Temu将欧洲80%订单转向本土仓发货，标志着跨境直邮模式供应链重大转型。趋势：①直邮模式的供应链优势正在消失；②本土仓模式要求供应链从"按单发货"转向"预测备货"；③中小卖家面临供应链重构成本压力；④供应链"去中心化"意味着多仓多渠道多模式并行。', teaching: '直邮vs本土仓供应链模式对比；供应链转型的成本与风险；多仓多模式并行管理' },
+  { id: 'SC-05', module: 'supply', type: 'failure', title: '跨境ERP服务商领星遭黑客攻击：卖家供应链数据全面泄露', scale: '中小卖家', course: 'L1-02/L2B', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '跨境ERP服务商领星遭遇黑客攻击，大量卖家供应链数据（含采购成本/供应商信息/库存数据/定价策略）被窃取并勒索。影响：①部分卖家供应链商业机密暴露；②库存数据泄露导致被恶意做空Listing；供应链系统瘫痪3天，备货发货中断。', teaching: '供应链数据安全风险；ERP系统选型的安全维度；供应链中断的应急预案' },
+
+  // === 平台运营 ===
+  { id: 'PO-01', module: 'platform', type: 'success', title: '97年温州小伙跨境卖锅：一年卖出1200万只的爆款运营', scale: '中小卖家', course: 'L1-04/L2A', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '97年温州卖家通过亚马逊将不粘锅品类做到年销1200万只。运营策略：①精准选品——发现海外不粘锅价格比国内高3-5倍；②Listing优化——A/B测试持续迭代标题和主图，CTR从2.1%提升至4.8%；③评论管理——通过Vine计划积累早期评论，评分维持4.3+；④广告策略——新品期SP广告ACOS控制在35%以内，稳定期降至15%。', teaching: '选品方法论（价格差套利）；Listing A/B测试实操；广告ACOS控制策略' },
+  { id: 'PO-02', module: 'platform', type: 'success', title: '从亏损30%到年销千万美金：户外卖家3招实现利润翻倍', scale: '中型卖家', course: 'L2A', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '户外用品卖家初期因广告费失控+FBA滞销库存导致亏损30%。扭亏三招：①广告结构重构——将自动广告拆分为4组，否定无效词后CTR提升60%；②库存周转优化——引入90天库存健康度监控，滞销SKU通过Outlet Deal清仓，仓储费降低40%；③利润品结构——20%引流款+60%利润款+20%形象款，整体利润率从-30%转正至22%。', teaching: '广告结构优化方法论；库存健康度监控体系；产品矩阵设计（引流/利润/形象）' },
+  { id: 'PO-03', module: 'platform', type: 'success', title: '3D蝙蝠灯TikTok爆款：10天近万单的内容电商打法', scale: '中小卖家', course: 'L1-04/L2A', year: '2025', source: 'TikTok Shop出海', sourceUrl: 'https://www.tiktokshopglobalselling.com/zh-cn/hot', summary: '3D蝙蝠灯在TikTok Shop东南亚市场10天卖出近万单。打法拆解：①内容种草——联合50+达人短视频矩阵发布；②直播转化——每晚4场直播，主播现场演示安装和效果，转化率达8%；③达人分销——设置15%佣金吸引达人挂车，3天内200+达人加入；④视频素材复用——将爆款视频素材同步投流Spark Ads，CPA控制在$3以内。', teaching: 'TikTok内容电商全链路；达人矩阵搭建；短视频+直播+投流的协同' },
+  { id: 'PO-04', module: 'platform', type: 'failure', title: 'TikTok服务商跑路+数千店铺被封停：平台政策变动的连锁踩踏', scale: '中小卖家', course: 'L1-04/L2B', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: 'TikTok Shop东南亚政策收紧，大量依赖"灰色玩法"的店铺被封停。同时一家头部TikTok服务商资金链断裂跑路。连锁反应：①店铺被封原因——批量重复铺货/虚假发货/刷单刷评被算法识别；②服务商跑路——代运营店铺全部失去运营权限；③资金冻结——被封店铺待结算款项被冻结，平均每个卖家损失5-20万。', teaching: '平台政策风险识别；服务商依赖的风险；账号安全和资金安全' },
+  { id: 'PO-05', module: 'platform', type: 'trend', title: '亚马逊Cosmo算法上线：中小卖家流量被"再分配"的生存危机', scale: '中小卖家', course: 'L2A', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '亚马逊Cosmo算法全面上线后，流量分配逻辑从"关键词匹配"转向"用户意图理解+场景化推荐"。对中小卖家的冲击：①长尾关键词流量下降30-50%；②头部品牌和广告商品获得更多推荐权重；③Listing需要从"关键词堆砌"转向"场景化内容"。某3C中小卖家自然流量下降42%，广告费上涨60%才维持原销量。', teaching: '算法变革对运营策略的影响；从关键词SEO到场景化内容的转型；中小卖家的算法适应性' },
+
+  // === 海外品牌管理 ===
+  { id: 'BM-01', module: 'brand', type: 'success', title: 'ELEGOO 3D打印独立站：月均183万流量的品牌出海标杆', scale: '中型卖家（品牌成长期）', course: 'L2A/L2C-06', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '通过独立站+亚马逊双渠道打造3D打印机品牌。独立站月均流量183万，品牌策略：①内容营销——建立3D打印社区（含模型库/教程/论坛），UGC内容驱动SEO自然流量占比60%；②KOL合作——与YouTube科技博主深度合作；③产品差异化——定位"高性价比+易上手"；④品牌护城河——申请核心专利12项。年营收超3亿人民币。', teaching: '独立站品牌建设路径；内容社区驱动SEO；KOL长期合作vs一次性投放；品牌护城河构建' },
+  { id: 'BM-02', module: 'brand', type: 'success', title: '盖世小鸡(GameSir)拉美市场品牌拓展：营收同比+200%', scale: '中型卖家', course: 'L2A/L2C-06', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '在拉美市场通过亚马逊品牌注册+品牌旗舰店实现营收同比+200%。品牌策略：①本地化——产品包装/Listing/客服全葡语化，针对巴西市场定制游戏手柄配色；②品牌保护——完成亚马逊品牌注册，通过Project Zero批量清除仿冒Listing 200+；③品牌内容——A+页面展示产品拆解视频；④社媒联动——Instagram+YouTube拉美KOL矩阵，品牌词搜索量季度增长80%。', teaching: '新兴市场品牌本地化；亚马逊品牌注册与防伪；品牌内容（A+/品牌故事）的转化价值' },
+  { id: 'BM-03', module: 'brand', type: 'success', title: '乐歌人体工学：从代工到品牌上市的跨境电商品牌转型', scale: '大卖家（上市公司）', course: 'L2C-06', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '从OEM代工转型自有品牌FlexiSpot，最终在A股上市。品牌转型路径：①品牌定位——从"升降桌制造商"升级为"人体工学家具品牌"，溢价能力提升3倍；②渠道策略——亚马逊+独立站+线下零售三渠道并行；③品牌投资——在洛杉矶自建海外仓+展示中心；④知识产权——全球累计申请专利800+，商标覆盖50+国家。品牌营收占比从10%提升至70%。', teaching: 'OEM到品牌的转型路径；多渠道品牌管理；知识产权布局与品牌溢价' },
+  { id: 'BM-04', module: 'brand', type: 'success', title: 'ITEAWORLD广西茶叶品牌出海：农产品跨境的品牌化', scale: '中小卖家', course: 'L2B-07', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '将广西六堡茶通过亚马逊推向欧美市场。品牌策略：①品类教育——在Listing和A+页面中用图文+视频讲解六堡茶的历史/工艺/功效；②故事化包装——将"茶船古道"历史融入品牌故事；③认证背书——获得USDA Organic认证；④社群运营——建立Facebook茶友社群，定期直播品茶。年销售额突破200万美元。', teaching: '农产品品牌化的挑战与路径；品类教育型Listing设计；认证背书在品牌信任中的作用' },
+  { id: 'BM-05', module: 'brand', type: 'failure', title: 'TikTok爆款被抢注商标专利：品牌保护缺失的血泪教训', scale: '中小卖家', course: 'L1-03/L2A-08', year: '2025', source: '雨果跨境/TikTok Shop出海', sourceUrl: 'https://www.cifnews.com', summary: '某TikTok爆款产品（便携式果汁机）在走红后3个月内被竞争对手在目标市场抢注商标和外观专利。后果：①原卖家的Listing被投诉下架，损失月销20万美金；②抢注者反诉原卖家侵权，要求赔偿；③原卖家被迫花5万美元赎回商标（部分国家赎回失败）。核心问题：只注册了中国商标未注册目标市场商标；未申请外观专利。', teaching: '商标抢注的风险与预防；"产品未动商标先行"原则；TikTok爆款的品牌保护时效性' },
+
+  // === 合规管理 ===
+  { id: 'CM-01', module: 'compliance', type: 'failure', title: '厦门3家跨境出口企业税务被重罚：核定征收/虚开发票/隐瞒收入', scale: '中型卖家', course: 'L2B-03', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '厦门3家跨境电商企业因税务违规被税务稽查并重罚。违规类型：①企业A——利用"核定征收"政策虚报收入，实际销售收入比申报高出8倍，被追缴税款+滞纳金+罚款合计1200万；②企业B——通过"买单报关"方式隐瞒真实出口额，涉嫌骗取出口退税；③企业C——通过个人账户收取海外款项未申报，被认定为偷税，补税+罚款800万。', teaching: '核定征收政策的适用边界；买单报关的税务风险；个人收款与对公收款的合规选择' },
+  { id: 'CM-02', module: 'compliance', type: 'failure', title: '华人海外仓被查！超5万件商品被扣：产品合规盲区', scale: '中型卖家', course: 'L1-06/L2B-04', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '英国某华人海外仓因存放大量不合规商品被海关突击检查，超5万件商品被扣押。违规问题：①CE认证缺失——电子产品未取得CE认证即入仓销售；②玩具安全标准不符——未通过EN71测试；标签合规问题——缺少英文名/制造商/原产国标识；④化妆品未完成SCPN注册。仓库被罚35万英镑，涉及的卖家均被平台下架Listing。', teaching: '欧盟/英国产品合规要求（CE/EN71/SCPN）；海外仓合规责任划分；产品合规的发货前检查清单' },
+  { id: 'CM-03', module: 'compliance', type: 'failure', title: '107家店铺被告！Patrik Lovrin闪粉肌理图TRO侵权案', scale: '中小卖家', course: 'L2A-08', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '艺术家Patrik Lovrin的闪粉肌理画作被107家亚马逊店铺未经授权使用于产品图片，权利人通过TRO（临时禁令）批量起诉。后果：①107家店铺资金被冻结（每家$5,000-$50,000不等）；②Listing全部下架；③和解金平均每店$8,000-$15,000；④部分店铺因资金冻结导致供应链断裂。核心问题：卖家从1688/Pinterest下载图片时未做版权核查。', teaching: 'TRO侵权案件的处理流程；图片版权核查方法；从1688/Pinterest获取素材的合规边界' },
+  { id: 'CM-04', module: 'compliance', type: 'trend', title: '贸法通跨境电商合规典型案例集：知识产权/贸易救济/争端解决', scale: '多规模适用', course: 'L1-06/L2C-04', year: '2025-2026', source: '贸法通(ctils.com)', sourceUrl: 'http://ctils.com/', summary: '贸法通平台收录大量跨境电商涉外商事法律案例，覆盖知识产权保护、贸易救济（反倾销/反补贴）、争端预防与解决、出口管制与经济制裁等领域。典型案例包括：①中国卖家在欧盟被诉外观设计侵权；②跨境电商平台反垄断调查；③海外仓货物被海关扣押的法律救济路径。该平台可为企业提供24小时法律咨询和案例检索。', teaching: '涉外商事法律风险全景；知识产权先行注册原则；争端解决的多元化路径；贸法通平台的使用方法' },
+  { id: 'CM-05', module: 'compliance', type: 'failure', title: '欧盟PPWR包装法规+AI玩法变天：2025合规新规冲击波', scale: '多规模适用', course: 'L2B-04', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '2025年欧盟PPWR（包装和包装废弃物法规）正式实施，对跨境电商包装提出强制要求：所有进入欧盟的包装必须可回收/可重复使用；②包装中有害物质含量不得超标；③最小化包装体积——空隙率不得超过40%；④2026年起需在包装上标注可回收性标签。同时，欧盟AI法案对跨境卖家的AI客服/AI生成内容提出合规要求。不合规后果：产品被海关扣押/平台强制下架/每件罚款最高€1,000。', teaching: 'PPWR法规的核心要求与应对；包装合规的供应链改造；AI法案对跨境运营的影响' },
+  { id: 'CM-06', module: 'compliance', type: 'failure', title: 'USPTO对5981件商标开展大规模合规调查：跨境卖家商标注册的"合规地雷"', scale: '多规模适用', course: 'L1-06/L2B-04', year: '2025-2026', source: '智南针/worldip.cn', sourceUrl: 'https://www.worldip.cn', summary: '2026年7月，USPTO对印度商标代理机构Global Trademark Co.涉及5981件商标申请/注册启动大规模合规调查。违规事实：①该机构无美国执业律师资格，却在Fiverr/Upwork以低至$10/件价格招揽美国商标代理业务；利用美国律师"挂名"获取USPTO系统账户；③伪造商标所有人邮箱/签名。5981件商标面临撤销/终止。同期数据显示：2025年中国企业在美涉跨境电商IP案件2018起，95.3%为被告；商标诉讼平均判赔70.82万美元，51%因缺席应诉败诉。', teaching: '商标代理机构选型的合规审查；USPTO商标申请的真实性要求；中国企业海外IP纠纷全景数据；缺席应诉的严重后果' },
+
+  // === 物流履约 ===
+  { id: 'LF-01', module: 'logistics', type: 'failure', title: '洛杉矶5家海外仓集体暴雷跑路：卖家货物被扣+资金损失', scale: '中小卖家', course: 'L1-05/L2A-09', year: '2025', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '洛杉矶5家华人海外仓因经营不善集体暴雷跑路，涉及卖家货物价值超2000万元。问题根源：①海外仓以低价吸引卖家，实际用新客户预付款支付旧客户运营成本（庞氏模式）；②仓库实际面积远小于宣传，大量货物堆放在非合规仓库；③跑路前一个月仍在收取新卖家入库费。卖家损失：货物被房东扣押抵债/平台Listing因断货被下架/库存资金全部损失。', teaching: '海外仓选型的尽职调查；低价海外仓的风险识别；海外仓暴雷后的应急处理' },
+  { id: 'LF-02', module: 'logistics', type: 'failure', title: '鹿特丹高温致码头停摆+扣货170万件：极端天气下的物流风险', scale: '多规模适用', course: 'L1-05/L2C-04', year: '2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com/article/188106', summary: '2026年夏季鹿特丹港因极端高温导致码头作业停摆3天，叠加海关加强检查，170万件跨境电商货物被扣留。连锁影响：①亚马逊FBA断货——依赖鹿特丹港入仓的卖家Listing排名暴跌；②TikTok Shop延迟发货罚金——超出SLA承诺时效的订单被平台扣罚；③时效承诺违约——对B端客户的DDP承诺无法兑现。应对措施：①多港口分散入仓（汉堡/安特卫普备份）；②购买物流延误险；③与买家主动沟通预期管理。', teaching: '极端天气对跨境物流的连锁冲击；多港口分散策略；物流延误的预期管理' },
+  { id: 'LF-03', module: 'logistics', type: 'success', title: '10年亚马逊FBA实战：从货掉海里到半年狂销20亿', scale: '大卖家', course: 'L2A-09', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '某大卖家10年FBA运营经验，从早期"整柜货掉海里"的惨痛教训到半年狂销20亿。物流策略进化：①头程物流——从单一海运转向海空联运+铁路（中欧班列）多通道；②FBA分仓策略——将货物分散至5个以上FBA仓，避免单仓爆仓风险；③库存预警——建立30/60/90天三级库存预警；④Aged Inventory管理——对超180天库存启动Outlet/批量清仓。核心教训：物流不是成本中心，是竞争力。', teaching: 'FBA头程多通道策略；分仓策略与风险分散；库存预警体系建设；物流从成本中心到竞争力' },
+  { id: 'LF-04', module: 'logistics', type: 'success', title: 'TikTok Shop美通墨FBT仓发模式：东南亚跨境物流新解法', scale: '中小卖家', course: 'L2A-09', year: '2025-2026', source: 'TikTok Shop出海', sourceUrl: 'https://www.tiktokshopglobalselling.com/zh-cn/hot', summary: 'TikTok Shop推出FBT（Fulfilled by TikTok）仓发模式，在美国-墨西哥-东南亚三地建立协同仓网。模式特点：①卖家将货物发至TikTok指定仓（美东/美西/墨西哥/东南亚4大仓群），平台负责后续分拣/打包/配送；②时效承诺——东南亚3日达/美国5日达，较跨境直邮缩短50%；③成本优势——平台补贴头程运费30%，尾程配送费比自发货低40%；④库存共享——一仓发多国。某小家电卖家通过FBT将物流成本从售价的25%降至15%。', teaching: '平台仓发模式 vs 自发货的对比；FBT的成本与时效优势；多国库存共享策略' },
+  { id: 'LF-05', module: 'logistics', type: 'failure', title: '深圳货代暴雷：欠款过亿、资金链断裂的货代行业洗牌', scale: '中小卖家', course: 'L1-05/L2B', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '深圳新一批货代暴雷，欠款过亿。暴雷模式：①低价揽货——以低于市场价30%的价格吸引卖家，实际用后客户货款支付前客户运费；②资金链断裂——海运运价回升后无法履约，货物被船公司扣押；③跑路——负责人失联，卖家货物滞留在途。受害卖家特征：过度依赖单一货代/未签订正式合同/货款预付比例过高。行业洗牌趋势：2024-2026年中小货代淘汰率超40%。教训：货代选型三原则——比价不比最低/合同必签/货款分批付。', teaching: '货代暴雷的典型模式识别；货代选型三原则；物流供应链的多元化备份' },
+]
+
+const filteredCases = computed(() => {
+  return cases.filter(c => {
+    const moduleMatch = activeModule.value === 'all' || c.module === activeModule.value
+    const typeMatch = activeType.value === 'all' || c.type === activeType.value
+    return moduleMatch && typeMatch
+  })
+})
+
+const typeLabel = (t) => {
+  const map = { success: '✅ 正面成功', failure: '❌ 反面失败', trend: ' 趋势/综合' }
+  return map[t] || t
+}
+
+const moduleLabel = (m) => {
+  const map = { supply: '供应链管理', platform: '平台运营', brand: '海外品牌管理', compliance: '合规管理', logistics: '物流履约' }
+  return map[m] || m
+}
+
+const stats = computed(() => {
+  const s = { total: cases.length, success: 0, failure: 0, trend: 0 }
+  cases.forEach(c => { if (c.type === 'success') s.success++; else if (c.type === 'failure') s.failure++; else s.trend++ })
+  return s
+})
+</script>
+
+# 跨境电商课程案例库
+
+<CourseGrid :columns="5" :items="[
+  { label: '案例总数', value: stats.total + ' 个', color: 'blue' },
+  { label: '正面成功', value: stats.success + ' 个', color: 'green' },
+  { label: '反面失败', value: stats.failure + ' 个', color: 'red' },
+  { label: '趋势/综合', value: stats.trend + ' 个', color: 'purple' },
+  { label: '覆盖领域', value: '5 大模块', color: 'orange' },
+]" />
+
+---
+
+## 案例筛选
+
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+  <button v-for="m in modules" :key="m.key" @click="activeModule = m.key" :style="{ padding: '6px 14px', borderRadius: '20px', border: activeModule === m.key ? '2px solid #3b82f6' : '1px solid #d1d5db', background: activeModule === m.key ? '#eff6ff' : '#fff', cursor: 'pointer', fontSize: '14px', fontWeight: activeModule === m.key ? '600' : '400', color: activeModule === m.key ? '#1d4ed8' : '#374151' }">{{ m.icon }} {{ m.label }}</button>
+</div>
+
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+  <button v-for="t in typeFilters" :key="t.key" @click="activeType = t.key" :style="{ padding: '6px 14px', borderRadius: '20px', border: activeType === t.key ? '2px solid #3b82f6' : '1px solid #d1d5db', background: activeType === t.key ? '#eff6ff' : '#fff', cursor: 'pointer', fontSize: '14px', fontWeight: activeType === t.key ? '600' : '400', color: activeType === t.key ? '#1d4ed8' : '#374151' }">{{ t.label }}</button>
+</div>
+
+<div v-if="filteredCases.length === 0" style="text-align:center; padding:40px; color:#6b7280;">
+  当前筛选条件下暂无案例
+</div>
+
+<div v-for="c in filteredCases" :key="c.id" :id="c.id" style="border:1px solid #e5e7eb; border-radius:12px; padding:20px; margin-bottom:16px; background:#fafbfc;">
+
+### {{ c.id }} {{ c.title }}
+
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px; font-size:13px; color:#6b7280;">
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">{{ typeLabel(c.type) }}</span>
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">{{ moduleLabel(c.module) }}</span>
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">{{ c.scale }}</span>
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">适配课程：{{ c.course }}</span>
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">{{ c.year }}</span>
+  <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">来源：{{ c.source }}</span>
+</div>
+
+**案例摘要：**
+
+{{ c.summary }}
+
+**教学要点：** {{ c.teaching }}
+
+<div v-if="c.sourceUrl" style="margin-top:8px;">
+  <a :href="c.sourceUrl" target="_blank" style="color:#3b82f6; font-size:13px; text-decoration:none;">🔗 查看原始来源 →</a>
+</div>
+
+</div>
+
+---
+
+## 教学应用指南
+
+### 正面案例教学路径
+
+::: tip 教学公式
+**展示成果数据**（引发兴趣）→ **拆解核心做法**（学习路径）→ **提炼可复用方法论**（知识沉淀）
+:::
+
+### 反面案例教学路径
+
+::: warning 教学公式
+**展示失败后果**（冲击感）→ **分析失败根因**（深度理解）→ **给出预防措施和应急方案**（实操价值）
+:::
+
+### 正反对比教学设计
+
+::: info 推荐配对
+| 正面案例 | 反面案例 | 对比焦点 |
+|----------|----------|----------|
+| SC-01 巨星科技FBA供应链优化 | SC-03 瑞贝卡供应链失控 | 数据驱动 vs 经验决策的库存管理 |
+| BM-01 ELEGOO品牌出海标杆 | BM-05 TikTok爆款商标被抢注 | 品牌保护先行 vs 品牌保护缺失 |
+| LF-03 10年FBA实战20亿 | LF-01 洛杉矶海外仓暴雷 | 多元备份 vs 单一依赖的物流策略 |
+| PO-01 温州小伙年销1200万只 | PO-04 TikTok服务商跑路封店 | 合规运营 vs 灰色玩法的平台生存 |
+:::
+
+---
+
+## 案例来源站点
+
+| 站点 | 类型 | 覆盖领域 | 访问地址 |
+|------|------|----------|----------|
+| 雨果跨境 (cifnews.com) | 跨境电商行业媒体 | 供应链/品牌/合规/物流全模块 | https://www.cifnews.com/ |
+| 亚马逊全球开店 (globalselling.amazon.com) | 亚马逊官方卖家服务 | 平台运营/品牌管理/FBA实战 | https://gs.amazon.cn/sellerstory |
+| TikTok Shop出海 (tiktokshopglobalselling.com) | TikTok官方卖家服务 | 内容电商/直播/达人/新兴市场 | https://www.tiktokshopglobalselling.com/zh-cn/hot |
+| 贸法通 (ctils.com) | 商务部涉外商事法律平台 | 合规/知识产权/贸易救济/争端解决 | http://ctils.com/ |
+| 智南针 (worldip.cn) | 知识产权专业平台 | 商标/专利/海外IP纠纷 | https://www.worldip.cn/ |
+
+<LastUpdated />

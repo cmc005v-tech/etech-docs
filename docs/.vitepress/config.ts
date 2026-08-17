@@ -57,6 +57,7 @@ export default defineConfig({
           { text: '先修包自学', link: '/resources/pre-study' },
         ],
       },
+      { text: '案例库', link: '/cases/' },
       { text: '师资介绍', link: '/faculty/' },
       { text: '常见问题', link: '/faq/' },
     ],
@@ -86,6 +87,15 @@ export default defineConfig({
             { text: '工具模板全景', link: '/resources/toolkit-preview' },
             { text: '入学诊断', link: '/resources/diagnosis' },
             { text: '先修包自学', link: '/resources/pre-study' },
+          ],
+        },
+      ],
+      '/cases/': [
+        {
+          text: '案例库',
+          collapsed: false,
+          items: [
+            { text: '全部案例', link: '/cases/' },
           ],
         },
       ],
