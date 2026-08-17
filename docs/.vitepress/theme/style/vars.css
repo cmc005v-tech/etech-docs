@@ -1,0 +1,32 @@
+/* 品牌色定制 — 亮色模式 */
+:root {
+  --vp-c-brand-1: #2b6cb0;
+  --vp-c-brand-2: #3182ce;
+  --vp-c-brand-3: #4299e1;
+  --vp-c-brand-soft: rgba(66, 153, 225, 0.14);
+
+  /* 首页 Hero */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #2b6cb0 30%,
+    #4299e1
+  );
+
+  /* 首页 Hero 标语 */
+  --vp-home-hero-tagline-color: var(--vp-c-text-2);
+}
+
+/* 品牌色定制 — 暗色模式 */
+:root.dark {
+  --vp-c-brand-1: #63b3ed;
+  --vp-c-brand-2: #4299e1;
+  --vp-c-brand-3: #90cdf4;
+  --vp-c-brand-soft: rgba(99, 179, 237, 0.16);
+
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #63b3ed 30%,
+    #90cdf4
+  );
+}

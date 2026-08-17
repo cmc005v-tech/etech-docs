@@ -1,0 +1,265 @@
+/* ============================================
+   跨境电商课程站 — 自定义样式
+   ============================================ */
+
+/* --- 全局排版优化 --- */
+:root {
+  --vp-doc-font-size: 16px;
+  --vp-doc-line-height: 1.75;
+}
+
+.VPDoc .content-container {
+  max-width: 860px;
+}
+
+/* --- 首页 Hero 区域 --- */
+.VPHero .name {
+  font-size: 2rem !important;
+  line-height: 1.3 !important;
+}
+
+.VPHero .text {
+  font-size: 3rem !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 640px) {
+  .VPHero .name {
+    font-size: 1.5rem !important;
+  }
+  .VPHero .text {
+    font-size: 2rem !important;
+  }
+}
+
+/* --- 课程卡片网格 --- */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.course-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  background: var(--vp-c-bg);
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: var(--vp-c-brand-2);
+}
+
+.course-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.course-card .title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--vp-c-text-1);
+}
+
+.course-card .meta {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.75rem;
+}
+
+.course-card .meta span {
+  margin-right: 1rem;
+}
+
+.course-card .outcome {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.course-card .cta {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  background: var(--vp-c-brand-1);
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.course-card .cta:hover {
+  background: var(--vp-c-brand-2);
+}
+
+/* --- 快速入口 --- */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  transition: all 0.2s ease;
+}
+
+.quick-link:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-soft);
+}
+
+.quick-link .ql-icon {
+  font-size: 1.5rem;
+}
+
+.quick-link .ql-text {
+  font-weight: 500;
+}
+
+/* --- 下载按钮 --- */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--vp-c-brand-2);
+  border-radius: 8px;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin: 0.25rem;
+}
+
+.download-btn:hover {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-2);
+}
+
+.download-btn .file-type {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+/* --- 资源表格 --- */
+.resource-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.resource-table th,
+.resource-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.resource-table th {
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+}
+
+.resource-table tr:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+/* --- FAQ 折叠面板 --- */
+.faq-item {
+  margin-bottom: 0.75rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.75rem;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.faq-item summary:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-bg-soft);
+}
+
+.faq-item .faq-answer {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  color: var(--vp-c-text-2);
+  line-height: 1.75;
+}
+
+/* --- 内容分级提示 --- */
+.content-notice {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--vp-c-warning-soft, rgba(255, 193, 7, 0.2));
+  border-radius: 8px;
+  background: var(--vp-c-warning-soft, rgba(255, 193, 7, 0.08));
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.content-notice strong {
+  color: var(--vp-c-text-1);
+}
+
+/* --- 页面标题横幅 --- */
+.page-banner {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-banner p {
+  color: var(--vp-c-text-2);
+  font-size: 1.1rem;
+}
