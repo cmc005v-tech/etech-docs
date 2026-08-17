@@ -43,6 +43,7 @@ export default defineConfig({
     // --- 顶部导航 ---
     nav: [
       { text: '体系总览', link: '/overview/' },
+      { text: 'L1 必修课程', link: '/l1/' },
       { text: '知识库课程', link: '/courses/' },
       {
         text: '学习资源',
@@ -85,6 +86,23 @@ export default defineConfig({
             { text: '工具模板全景', link: '/resources/toolkit-preview' },
             { text: '入学诊断', link: '/resources/diagnosis' },
             { text: '先修包自学', link: '/resources/pre-study' },
+          ],
+        },
+      ],
+      '/l1/': [
+        {
+          text: 'L1 必修基础层',
+          collapsed: false,
+          items: [
+            { text: 'L1 课程总览', link: '/l1/' },
+            { text: 'L1-01 商业逻辑总览', link: '/l1/01-business-logic' },
+            { text: 'L1-02 供应链全景认知', link: '/l1/02-supply-chain' },
+            { text: 'L1-03 品牌出海 DTC 框架', link: '/l1/03-brand-dtc' },
+            { text: 'L1-04 平台运营核心逻辑', link: '/l1/04-platform-ops' },
+            { text: 'L1-05 物流与履约基础', link: '/l1/05-logistics' },
+            { text: 'L1-06 合规风险地图', link: '/l1/06-compliance' },
+            { text: 'L1-07 财务与成本认知', link: '/l1/07-finance-cost' },
+            { text: 'L1-08 数据驱动入门', link: '/l1/08-data-driven' },
           ],
         },
       ],
