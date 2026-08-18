@@ -1,6 +1,6 @@
 ---
 title: 跨境电商课程案例库
-description: 26个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约五大领域
+description: 28个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约、商业本质六大领域
 outline: deep
 ---
 
@@ -17,6 +17,7 @@ const modules = [
   { key: 'brand', label: '海外品牌管理', icon: '🏷️' },
   { key: 'compliance', label: '合规管理', icon: '⚖️' },
   { key: 'logistics', label: '物流履约', icon: '🚢' },
+  { key: 'strategy', label: '商业本质', icon: '🧭' },
 ]
 
 const typeFilters = [
@@ -62,6 +63,10 @@ const cases = [
   { id: 'LF-03', module: 'logistics', type: 'success', title: '10年亚马逊FBA实战：从货掉海里到半年狂销20亿', scale: '大卖家', course: 'L2A-09', year: '2025', source: '亚马逊全球开店', sourceUrl: 'https://gs.amazon.cn/sellerstory', summary: '某大卖家10年FBA运营经验，从早期"整柜货掉海里"的惨痛教训到半年狂销20亿。物流策略进化：①头程物流——从单一海运转向海空联运+铁路（中欧班列）多通道；②FBA分仓策略——将货物分散至5个以上FBA仓，避免单仓爆仓风险；③库存预警——建立30/60/90天三级库存预警；④Aged Inventory管理——对超180天库存启动Outlet/批量清仓。核心教训：物流不是成本中心，是竞争力。', teaching: 'FBA头程多通道策略；分仓策略与风险分散；库存预警体系建设；物流从成本中心到竞争力' },
   { id: 'LF-04', module: 'logistics', type: 'success', title: 'TikTok Shop美通墨FBT仓发模式：东南亚跨境物流新解法', scale: '中小卖家', course: 'L2A-09', year: '2025-2026', source: 'TikTok Shop出海', sourceUrl: 'https://www.tiktokshopglobalselling.com/zh-cn/hot', summary: 'TikTok Shop推出FBT（Fulfilled by TikTok）仓发模式，在美国-墨西哥-东南亚三地建立协同仓网。模式特点：①卖家将货物发至TikTok指定仓（美东/美西/墨西哥/东南亚4大仓群），平台负责后续分拣/打包/配送；②时效承诺——东南亚3日达/美国5日达，较跨境直邮缩短50%；③成本优势——平台补贴头程运费30%，尾程配送费比自发货低40%；④库存共享——一仓发多国。某小家电卖家通过FBT将物流成本从售价的25%降至15%。', teaching: '平台仓发模式 vs 自发货的对比；FBT的成本与时效优势；多国库存共享策略' },
   { id: 'LF-05', module: 'logistics', type: 'failure', title: '深圳货代暴雷：欠款过亿、资金链断裂的货代行业洗牌', scale: '中小卖家', course: 'L1-05/L2B', year: '2025-2026', source: '雨果跨境', sourceUrl: 'https://www.cifnews.com', summary: '深圳新一批货代暴雷，欠款过亿。暴雷模式：①低价揽货——以低于市场价30%的价格吸引卖家，实际用后客户货款支付前客户运费；②资金链断裂——海运运价回升后无法履约，货物被船公司扣押；③跑路——负责人失联，卖家货物滞留在途。受害卖家特征：过度依赖单一货代/未签订正式合同/货款预付比例过高。行业洗牌趋势：2024-2026年中小货代淘汰率超40%。教训：货代选型三原则——比价不比最低/合同必签/货款分批付。', teaching: '货代暴雷的典型模式识别；货代选型三原则；物流供应链的多元化备份' },
+
+  // === 商业本质 ===
+  { id: 'BE-01', module: 'strategy', type: 'failure', title: '鲜花电商创业失败复盘：所有致命错误的集合体', scale: '初创/个体创业', course: 'L1-01/L2B-01', year: '2025', source: '生意拆解分析研究', sourceUrl: '', summary: '地产背景创业者跨界做鲜花电商，几乎集齐了失败统计中的全部致命模式：①无市场需求验证——跳过轻资产测试直接重资产投入（对应 35-38% 的“无市场需求”死因）；②资金管理失控——持续追加投入、无止损红线（对应 38-40% 的“资金耗尽”第一大死因）；③跨界认知错配——地产大额 B 端思维套用鲜花 C 端零售；④沉没成本执念——“加大投入摊薄成本”惯性，错过所有止损节点；⑤忽视隐性成本——15-30% 货损率、冷链固定支出、售后赔付吃掉全部账面利润；⑥无壁垒纯内卷——产品同质化，9.9 元低价引流。对照：同一人摆摊反而能赚——当日拿货当日售罄、现款现货、零隐性成本、直面真实需求。', teaching: '轻资产验证先于重资产投入；止损红线设计；隐性成本识别（损耗/冷链/售后）；沉没成本谬误；付费才是唯一需求标尺' },
+  { id: 'BE-02', module: 'strategy', type: 'success', title: '航空货运包机业务拆解：套利→过渡→创新的三阶段壁垒构建', scale: '中大型企业', course: 'L1-01/L2C-01', year: '2025', source: '生意拆解分析研究', sourceUrl: '', summary: '航空货运包机业务完整展示了一条“套利→过渡→创新”的商业进化路径与壁垒递进：①套利阶段——舱位分销，发现航司运力与货主需求的供需差，搬运赚差价，低风险快回血；②过渡阶段——增值打包（清关/仓配/时效承诺），沉淀客户与行业认知；③创新阶段——年度长协锁价（比临时包机低 20-40%），自建海外清关网络与数字化系统。壁垒三层：短期准入壁垒（航司签约资质/包机预付 30-70% 全款）、中期经营壁垒（双客户结构/千万级垫资能力，90% 散户在此被淘汰）、长期护城河（长协锁价+上游绑定+自建仓网）。', teaching: '套利→过渡→创新三阶段进化路径；壁垒分层构建方法；轻资产验证后重投入的节奏控制；供需话语权=定价权' },
 ]
 
 const filteredCases = computed(() => {
@@ -78,7 +83,7 @@ const typeLabel = (t) => {
 }
 
 const moduleLabel = (m) => {
-  const map = { supply: '供应链管理', platform: '平台运营', brand: '海外品牌管理', compliance: '合规管理', logistics: '物流履约' }
+  const map = { supply: '供应链管理', platform: '平台运营', brand: '海外品牌管理', compliance: '合规管理', logistics: '物流履约', strategy: '商业本质' }
   return map[m] || m
 }
 
@@ -96,7 +101,7 @@ const stats = computed(() => {
   { label: '正面成功', value: stats.success + ' 个', color: 'green' },
   { label: '反面失败', value: stats.failure + ' 个', color: 'red' },
   { label: '趋势/综合', value: stats.trend + ' 个', color: 'purple' },
-  { label: '覆盖领域', value: '5 大模块', color: 'orange' },
+  { label: '覆盖领域', value: '6 大模块', color: 'orange' },
 ]" />
 
 ---
@@ -165,6 +170,7 @@ const stats = computed(() => {
 | BM-01 ELEGOO品牌出海标杆 | BM-05 TikTok爆款商标被抢注 | 品牌保护先行 vs 品牌保护缺失 |
 | LF-03 10年FBA实战20亿 | LF-01 洛杉矶海外仓暴雷 | 多元备份 vs 单一依赖的物流策略 |
 | PO-01 温州小伙年销1200万只 | PO-04 TikTok服务商跑路封店 | 合规运营 vs 灰色玩法的平台生存 |
+| BE-02 航空包机三阶段壁垒构建 | BE-01 鲜花电商重资产直投失败 | 分阶段验证壁垒递进 vs 跳过验证直接重投入 |
 :::
 
 ---
