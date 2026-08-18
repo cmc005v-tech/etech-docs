@@ -202,6 +202,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '课程区说明', link: '/courses/' },
+            { text: '课程选型指南', link: '/courses/course-selection' },
             {
               text: '供应链管理',
               collapsed: true,
