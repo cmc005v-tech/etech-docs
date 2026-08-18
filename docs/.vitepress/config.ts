@@ -344,6 +344,105 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: '财务管控与经营分析',
+              collapsed: true,
+              items: [
+                { text: '课程简介', link: '/courses/finance-management/' },
+                {
+                  text: '学习路线图',
+                  link: '/courses/finance-management/learning-path',
+                },
+                { text: '课程 FAQ', link: '/courses/finance-management/faq' },
+                {
+                  text: '全课大纲',
+                  link: '/courses/finance-management/outline',
+                },
+                {
+                  text: '试听样章：第1课',
+                  link: '/courses/finance-management/sample-lesson-1',
+                },
+                {
+                  text: '工具包样例',
+                  link: '/courses/finance-management/toolkit-sample',
+                },
+              ],
+            },
+            {
+              text: '资金链与外汇风控',
+              collapsed: true,
+              items: [
+                { text: '课程简介', link: '/courses/cashflow-forex/' },
+                {
+                  text: '学习路线图',
+                  link: '/courses/cashflow-forex/learning-path',
+                },
+                { text: '课程 FAQ', link: '/courses/cashflow-forex/faq' },
+                { text: '全课大纲', link: '/courses/cashflow-forex/outline' },
+                {
+                  text: '试听样章：第1课',
+                  link: '/courses/cashflow-forex/sample-lesson-1',
+                },
+                {
+                  text: '工具包样例',
+                  link: '/courses/cashflow-forex/toolkit-sample',
+                },
+              ],
+            },
+            {
+              text: '数字化转型与AI赋能',
+              collapsed: true,
+              items: [
+                {
+                  text: '课程简介',
+                  link: '/courses/digital-transformation/',
+                },
+                {
+                  text: '学习路线图',
+                  link: '/courses/digital-transformation/learning-path',
+                },
+                {
+                  text: '课程 FAQ',
+                  link: '/courses/digital-transformation/faq',
+                },
+                {
+                  text: '全课大纲',
+                  link: '/courses/digital-transformation/outline',
+                },
+                {
+                  text: '试听样章：第1课',
+                  link: '/courses/digital-transformation/sample-lesson-1',
+                },
+                {
+                  text: '工具包样例',
+                  link: '/courses/digital-transformation/toolkit-sample',
+                },
+              ],
+            },
+            {
+              text: '团队组织与项目管理',
+              collapsed: true,
+              items: [
+                { text: '课程简介', link: '/courses/team-management/' },
+                {
+                  text: '学习路线图',
+                  link: '/courses/team-management/learning-path',
+                },
+                { text: '课程 FAQ', link: '/courses/team-management/faq' },
+                {
+                  text: '全课大纲',
+                  link: '/courses/team-management/outline',
+                },
+                {
+                  text: '试听样章：第1课',
+                  link: '/courses/team-management/sample-lesson-1',
+                },
+                {
+                  text: '工具包样例',
+                  link: '/courses/team-management/toolkit-sample',
+                },
+              ],
+            },
           ],
         },
       ],
