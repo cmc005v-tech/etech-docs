@@ -16,6 +16,10 @@ description: 跨境电商课程配套资源，按模块分类整理
 - 🔧 [**工具模板全景**](/resources/toolkit-preview) — 6 门课程 52 件工具一览
 - 🩺 [**入学诊断**](/resources/diagnosis) — 六维度评估，匹配学习路径
 - 📚 [**先修包自学**](/resources/pre-study) — 密集制学员课前预习材料
+- 🧭 [**学习指南**](/resources/study-guide) — 如何使用本网站 + 学习方法建议
+- 📑 [**行业报告摘要**](/resources/industry-reports) — 5 份深度研究报告核心发现
+- 👨‍🏫 [**讲师手册样例**](/resources/instructor-handbook-sample) — 教学设计深度展示
+- 🏆 [**学员成果展示**](/resources/student-showcase) — 学习前后能力变化对比
 
 ---
 
