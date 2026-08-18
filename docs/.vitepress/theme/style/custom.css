@@ -597,3 +597,125 @@
 .dark button[style*='color: #374151'] {
   color: var(--vp-c-text-2) !important;
 }
+
+/* ============================================
+   暗色模式细节优化（配合深邃石板蓝主题）
+   ============================================ */
+
+/* 提示容器：加彩色左边框 + 标题提亮，避免默认发白 */
+.dark .custom-block {
+  border: 1px solid var(--vp-c-divider);
+  border-left-width: 4px;
+  color: var(--vp-c-text-2);
+}
+
+.dark .custom-block.tip {
+  background: var(--vp-c-green-soft);
+  border-left-color: var(--vp-c-green-2);
+}
+
+.dark .custom-block.tip .custom-block-title {
+  color: var(--vp-c-green-1);
+}
+
+.dark .custom-block.info {
+  background: var(--vp-c-brand-soft);
+  border-left-color: var(--vp-c-brand-2);
+}
+
+.dark .custom-block.info .custom-block-title {
+  color: var(--vp-c-brand-1);
+}
+
+.dark .custom-block.warning {
+  background: var(--vp-c-yellow-soft);
+  border-left-color: var(--vp-c-yellow-2);
+}
+
+.dark .custom-block.warning .custom-block-title {
+  color: var(--vp-c-yellow-1);
+}
+
+.dark .custom-block.danger {
+  background: var(--vp-c-red-soft);
+  border-left-color: var(--vp-c-red-2);
+}
+
+.dark .custom-block.danger .custom-block-title {
+  color: var(--vp-c-red-1);
+}
+
+.dark .custom-block.details {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+/* 表格：斑马纹 + 表头强化，大表格不再糊成一片 */
+.dark .vp-doc table {
+  border-collapse: collapse;
+}
+
+.dark .vp-doc tr:nth-child(2n) {
+  background: var(--vp-c-bg-soft);
+}
+
+.dark .vp-doc th {
+  background: var(--vp-c-bg-mute) !important;
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .vp-doc td {
+  border-color: var(--vp-c-divider-light);
+}
+
+/* 引用块：左边框提亮 */
+.dark .vp-doc blockquote {
+  border-left-color: var(--vp-c-brand-2);
+  background: var(--vp-c-bg-soft);
+  padding: 0.6rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 行内代码：暗底上用柔和的蓝色调 */
+.dark .vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-brand-3);
+}
+
+/* 侧边栏当前项：更明显的选中态 */
+.dark .VPSidebarItem.is-active .indicator {
+  background: var(--vp-c-brand-1);
+}
+
+.dark .VPSidebarItem.is-active > .item .indicator,
+.dark .VPSidebarItem.is-active .text {
+  color: var(--vp-c-brand-1);
+}
+
+/* 自测卡片在暗底上再提一层，避免与正文背景粘连 */
+.dark .quiz {
+  background: var(--vp-c-bg-elv);
+}
+
+.dark .quiz-option {
+  background: var(--vp-c-bg);
+}
+
+.dark .quiz-option.correct {
+  background: rgba(60, 198, 140, 0.14);
+}
+
+.dark .quiz-option.wrong {
+  background: rgba(239, 93, 93, 0.12);
+}
+
+/* 进度看板摘要卡提层 */
+.dark .progress-summary {
+  background: var(--vp-c-bg-elv);
+}
+
+/* 课程卡片悬停阴影在暗底上改用品牌色微光 */
+.dark .course-card:hover {
+  box-shadow: 0 4px 16px rgba(124, 196, 250, 0.12);
+}

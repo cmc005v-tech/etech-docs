@@ -17,16 +17,47 @@
   --vp-home-hero-tagline-color: var(--vp-c-text-2);
 }
 
-/* 品牌色定制 — 暗色模式 */
+/* 品牌色定制 — 暗色模式（深邃石板蓝主题） */
 :root.dark {
-  --vp-c-brand-1: #63b3ed;
-  --vp-c-brand-2: #4299e1;
-  --vp-c-brand-3: #90cdf4;
-  --vp-c-brand-soft: rgba(99, 179, 237, 0.16);
+  /* 背景层级：底色 → 侧边栏/导航 → 悬浮层 → 卡片 → 强调块 */
+  --vp-c-bg: #161920;
+  --vp-c-bg-alt: #111318;
+  --vp-c-bg-elv: #1d2230;
+  --vp-c-bg-soft: #1c212c;
+  --vp-c-bg-mute: #252b3a;
 
+  /* 分割线与文字：拉开对比，避免灰蒙蒙 */
+  --vp-c-divider: #2b3243;
+  --vp-c-divider-light: #232937;
+  --vp-c-gutter: #202531;
+  --vp-c-text-1: #eef1f7;
+  --vp-c-text-2: #adb6c7;
+  --vp-c-text-3: #78829a;
+
+  /* 品牌色：暗底下提亮，保证可读性 */
+  --vp-c-brand-1: #7cc4fa;
+  --vp-c-brand-2: #55a8f0;
+  --vp-c-brand-3: #a3d5fd;
+  --vp-c-brand-soft: rgba(124, 196, 250, 0.16);
+
+  /* 状态色 */
+  --vp-c-green-1: #57d9a3;
+  --vp-c-green-2: #3cc68c;
+  --vp-c-green-3: #2fb37b;
+  --vp-c-green-soft: rgba(60, 198, 140, 0.16);
+  --vp-c-yellow-1: #f7c96a;
+  --vp-c-yellow-2: #edb54e;
+  --vp-c-yellow-3: #dfa337;
+  --vp-c-yellow-soft: rgba(237, 181, 78, 0.16);
+  --vp-c-red-1: #f97d7d;
+  --vp-c-red-2: #ef5d5d;
+  --vp-c-red-3: #e04848;
+  --vp-c-red-soft: rgba(239, 93, 93, 0.16);
+
+  /* 首页 Hero */
   --vp-home-hero-name-background: linear-gradient(
     120deg,
-    #63b3ed 30%,
-    #90cdf4
+    #7cc4fa 30%,
+    #a3d5fd
   );
 }

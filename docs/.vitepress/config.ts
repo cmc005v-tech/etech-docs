@@ -7,10 +7,20 @@ export default defineConfig({
     'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的完整学习体系',
   lang: 'zh-CN',
 
-  // === Favicon ===
+  // === Favicon + 默认浅色模式 ===
+  // 首次访问或存储为 auto 时，预置为浅色偏好，避免跟随系统深色给长文本阅读带来负担
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    [
+      'script',
+      {},
+      `try{var _v=localStorage.getItem('vitepress-theme-appearance');if(!_v||_v==='auto'){localStorage.setItem('vitepress-theme-appearance','light')}}catch(e){}`,
+    ],
   ],
+
+  // === 外观：右上角亮/暗切换按钮，用户自主选择 ===
+  // 切换结果由主题层 MutationObserver 固化为明确的 light/dark（见 theme/index.ts），防止写回 auto 后跟随系统
+  appearance: true,
 
   // === 死链检查（忽略静态资源文件） ===
   ignoreDeadLinks: [

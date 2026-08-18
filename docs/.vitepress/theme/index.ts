@@ -1,5 +1,26 @@
 import DefaultTheme from 'vitepress/theme'
 import type { EnhanceAppContext } from 'vitepress'
+import { inBrowser } from 'vitepress'
+
+// 固化外观偏好：VitePress 切回浅色时会写回 'auto'（跟随系统），
+// 这里按 html.dark 的实际状态写明确的 light/dark，确保用户手动选择后不再跟随系统
+if (inBrowser) {
+  const APPEARANCE_KEY = 'vitepress-theme-appearance'
+  const syncAppearance = () => {
+    try {
+      localStorage.setItem(
+        APPEARANCE_KEY,
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+      )
+    } catch {
+      /* localStorage 不可用时静默降级 */
+    }
+  }
+  new MutationObserver(syncAppearance).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
+}
 
 // 自定义组件
 import CourseCard from './components/CourseCard.vue'
