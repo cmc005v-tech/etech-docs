@@ -263,3 +263,337 @@
   color: var(--vp-c-text-2);
   font-size: 1.1rem;
 }
+
+/* ============================================
+   随堂自测 Quiz 组件
+   ============================================ */
+.quiz {
+  margin: 2rem 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  overflow: hidden;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: var(--vp-c-brand-soft);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.quiz-title {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+.quiz-progress {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+}
+
+.quiz-question {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.quiz-question:last-of-type {
+  border-bottom: none;
+}
+
+.quiz-q {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--vp-c-text-1);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--vp-c-brand-2);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.correct {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.quiz-option.wrong {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.quiz-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.quiz-mark {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+.quiz-option.correct .quiz-mark {
+  color: #10b981;
+}
+
+.quiz-option.wrong .quiz-mark {
+  color: #ef4444;
+}
+
+.quiz-explain {
+  margin-top: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-2);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.quiz-result {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-mute);
+  font-size: 0.92rem;
+}
+
+.quiz-reset {
+  margin-left: 1rem;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--vp-c-brand-2);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--vp-c-brand-1);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.quiz-reset:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/* ============================================
+   学习进度组件（MarkDone + ProgressDashboard）
+   ============================================ */
+.mark-done {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+  padding: 0.55rem 1.1rem;
+  border: 1px dashed var(--vp-c-brand-2);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mark-done:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+.mark-done--active {
+  border-style: solid;
+  background: var(--vp-c-brand-soft);
+}
+
+.progress-board {
+  margin: 1.5rem 0;
+}
+
+.progress-summary {
+  position: relative;
+  padding: 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  margin-bottom: 1.5rem;
+}
+
+.progress-summary-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.progress-percent {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--vp-c-bg-mute);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  transition: width 0.4s ease;
+}
+
+.progress-clear {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-3);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.progress-clear:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.progress-group {
+  margin-bottom: 1.25rem;
+}
+
+.progress-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.progress-group-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.progress-group-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  font-weight: 400;
+}
+
+.progress-group-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.5rem;
+}
+
+.progress-course {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.progress-course:hover {
+  border-color: var(--vp-c-brand-2);
+  color: var(--vp-c-text-1);
+}
+
+.progress-course--done {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.progress-course-date {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+}
+
+/* ============================================
+   术语表搜索框
+   ============================================ */
+.glossary-search {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.95rem;
+}
+
+.glossary-search:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-2);
+}
+
+/* ============================================
+   暗色模式适配（覆盖页面内内联样式的固定浅色）
+   ============================================ */
+.dark div[style*='background:#fafbfc'],
+.dark div[style*='background:#f9fafb'] {
+  background: var(--vp-c-bg-soft) !important;
+  border-color: var(--vp-c-divider) !important;
+}
+
+.dark div[style*='color:#4b5563'] {
+  color: var(--vp-c-text-2) !important;
+}
+
+.dark span[style*='background:#f3f4f6'] {
+  background: var(--vp-c-bg-mute) !important;
+  color: var(--vp-c-text-2) !important;
+}
+
+.dark button[style*='background: #fff'] {
+  background: var(--vp-c-bg) !important;
+  border-color: var(--vp-c-divider) !important;
+}
+
+.dark button[style*='color: #374151'] {
+  color: var(--vp-c-text-2) !important;
+}

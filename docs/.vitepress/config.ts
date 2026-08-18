@@ -93,6 +93,7 @@ export default defineConfig({
             { text: '行业报告摘要', link: '/resources/industry-reports' },
             { text: '讲师手册样例', link: '/resources/instructor-handbook-sample' },
             { text: '学员成果展示', link: '/resources/student-showcase' },
+            { text: '我的学习进度', link: '/resources/progress' },
           ],
         },
       ],

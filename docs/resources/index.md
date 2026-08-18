@@ -20,6 +20,7 @@ description: 跨境电商课程配套资源，按模块分类整理
 - 📑 [**行业报告摘要**](/resources/industry-reports) — 5 份深度研究报告核心发现
 - 👨‍🏫 [**讲师手册样例**](/resources/instructor-handbook-sample) — 教学设计深度展示
 - 🏆 [**学员成果展示**](/resources/student-showcase) — 学习前后能力变化对比
+- ✅ [**我的学习进度**](/resources/progress) — 本地进度追踪看板
 
 ---
 

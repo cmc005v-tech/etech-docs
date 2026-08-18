@@ -3,9 +3,27 @@ title: 核心术语表
 description: 跨境电商高级实战系列核心术语中英对照，按领域分类
 ---
 
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const input = document.getElementById('glossary-search')
+  const rows = document.querySelectorAll('.vp-doc table tbody tr')
+  if (!input) return
+  input.addEventListener('input', () => {
+    const kw = input.value.trim().toLowerCase()
+    rows.forEach(row => {
+      row.style.display = !kw || row.textContent.toLowerCase().includes(kw) ? '' : 'none'
+    })
+  })
+})
+</script>
+
 # 核心术语表
 
 本课程体系涉及的核心术语中英对照，按 8 大知识领域分类。掌握这些术语是进入 L1 必修层的基础前提。
+
+<input id="glossary-search" class="glossary-search" type="search" placeholder="🔍 搜索术语（支持中文/英文，如：周转 / ACOS / 海外仓）" />
 
 ---
 

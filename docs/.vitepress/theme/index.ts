@@ -12,6 +12,9 @@ import FAQItem from './components/FAQItem.vue'
 import HeroBanner from './components/HeroBanner.vue'
 import ContentNotice from './components/ContentNotice.vue'
 import LastUpdated from './components/LastUpdated.vue'
+import Quiz from './components/Quiz.vue'
+import MarkDone from './components/MarkDone.vue'
+import ProgressDashboard from './components/ProgressDashboard.vue'
 
 // 自定义样式
 import './style/vars.css'
@@ -30,5 +33,8 @@ export default {
     app.component('HeroBanner', HeroBanner)
     app.component('ContentNotice', ContentNotice)
     app.component('LastUpdated', LastUpdated)
+    app.component('Quiz', Quiz)
+    app.component('MarkDone', MarkDone)
+    app.component('ProgressDashboard', ProgressDashboard)
   },
 }
