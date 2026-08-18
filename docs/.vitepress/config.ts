@@ -207,6 +207,8 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '课程简介', link: '/courses/supply-chain/' },
+                { text: '学习路线图', link: '/courses/supply-chain/learning-path' },
+                { text: '课程 FAQ', link: '/courses/supply-chain/faq' },
                 { text: '全课大纲', link: '/courses/supply-chain/outline' },
                 {
                   text: '试听样章：第1课',
@@ -223,6 +225,11 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '课程简介', link: '/courses/platform-operations/' },
+                {
+                  text: '学习路线图',
+                  link: '/courses/platform-operations/learning-path',
+                },
+                { text: '课程 FAQ', link: '/courses/platform-operations/faq' },
                 {
                   text: '全课大纲',
                   link: '/courses/platform-operations/outline',
@@ -242,6 +249,8 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '课程简介', link: '/courses/compliance/' },
+                { text: '学习路线图', link: '/courses/compliance/learning-path' },
+                { text: '课程 FAQ', link: '/courses/compliance/faq' },
                 { text: '全课大纲', link: '/courses/compliance/outline' },
                 {
                   text: '试听样章：第1课',
@@ -258,6 +267,11 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '课程简介', link: '/courses/brand-management/' },
+                {
+                  text: '学习路线图',
+                  link: '/courses/brand-management/learning-path',
+                },
+                { text: '课程 FAQ', link: '/courses/brand-management/faq' },
                 { text: '全课大纲', link: '/courses/brand-management/outline' },
                 {
                   text: '试听样章：第1课',
@@ -276,6 +290,14 @@ export default defineConfig({
                 {
                   text: '课程简介',
                   link: '/courses/logistics-overseas-warehouse/',
+                },
+                {
+                  text: '学习路线图',
+                  link: '/courses/logistics-overseas-warehouse/learning-path',
+                },
+                {
+                  text: '课程 FAQ',
+                  link: '/courses/logistics-overseas-warehouse/faq',
                 },
                 {
                   text: '全课大纲',
@@ -298,6 +320,14 @@ export default defineConfig({
                 {
                   text: '课程简介',
                   link: '/courses/supply-chain-execution/',
+                },
+                {
+                  text: '学习路线图',
+                  link: '/courses/supply-chain-execution/learning-path',
+                },
+                {
+                  text: '课程 FAQ',
+                  link: '/courses/supply-chain-execution/faq',
                 },
                 {
                   text: '全课大纲',
