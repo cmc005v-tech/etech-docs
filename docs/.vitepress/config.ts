@@ -217,6 +217,7 @@ export default defineConfig({
           text: 'L2-A 运营精进（24 课时）',
           collapsed: false,
           items: [
+            { text: '🎧 试听：L2A-01 算法与流量', link: '/l2/a01-sample-lesson' },
             { text: 'L2A-01 平台算法与流量', link: '/l2/a01-algorithm-traffic' },
             { text: 'L2A-02 Listing 高阶优化', link: '/l2/a02-listing-cro' },
             { text: 'L2A-03 广告投放与 ROI', link: '/l2/a03-ads-roi' },
@@ -232,6 +233,7 @@ export default defineConfig({
           text: 'L2-B 创业实战（22 课时）',
           collapsed: false,
           items: [
+            { text: '🎧 试听：L2B-01 选品与调研', link: '/l2/b01-sample-lesson' },
             { text: 'L2B-01 选品与市场调研', link: '/l2/b01-product-research' },
             { text: 'L2B-02 供应链从 0 搭建', link: '/l2/b02-supply-chain-setup' },
             { text: 'L2B-03 国内税务合规', link: '/l2/b03-tax-compliance' },
@@ -246,6 +248,7 @@ export default defineConfig({
           text: 'L2-C 管理升级（19 课时）',
           collapsed: false,
           items: [
+            { text: '🎧 试听：L2C-01 战略规划', link: '/l2/c01-sample-lesson' },
             { text: 'L2C-01 战略规划与商业模式', link: '/l2/c01-strategy' },
             { text: 'L2C-02 团队组织与绩效管理', link: '/l2/c02-organization' },
             { text: 'L2C-03 财务管控与经营分析', link: '/l2/c03-finance-digital' },
@@ -263,8 +266,11 @@ export default defineConfig({
           items: [
             { text: 'L3 项目总览', link: '/l3/' },
             { text: 'L3-A 运营操盘手毕业项目', link: '/l3/l3a-operations-project' },
+            { text: '🎧 试听：L3-A 项目导论', link: '/l3/l3a-sample-lesson' },
             { text: 'L3-B 创业实战沙盘', link: '/l3/l3b-startup-sandbox' },
+            { text: '🎧 试听：L3-B 沙盘导论', link: '/l3/l3b-sample-lesson' },
             { text: 'L3-C 战略决策模拟', link: '/l3/l3c-strategy-simulation' },
+            { text: '🎧 试听：L3-C 推演导论', link: '/l3/l3c-sample-lesson' },
           ],
         },
       ],
