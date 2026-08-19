@@ -36,6 +36,7 @@ import LastUpdated from './components/LastUpdated.vue'
 import Quiz from './components/Quiz.vue'
 import MarkDone from './components/MarkDone.vue'
 import ProgressDashboard from './components/ProgressDashboard.vue'
+import CaseDetail from './components/CaseDetail.vue'
 
 // 自定义样式
 import './style/vars.css'
@@ -57,5 +58,6 @@ export default {
     app.component('Quiz', Quiz)
     app.component('MarkDone', MarkDone)
     app.component('ProgressDashboard', ProgressDashboard)
+    app.component('CaseDetail', CaseDetail)
   },
 }

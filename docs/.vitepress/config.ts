@@ -111,8 +111,78 @@ export default defineConfig({
         {
           text: '案例库',
           collapsed: false,
+          items: [{ text: '全部案例', link: '/cases/' }],
+        },
+        {
+          text: '🏭 供应链管理',
+          collapsed: true,
           items: [
-            { text: '全部案例', link: '/cases/' },
+            { text: 'SC-01 巨星科技FBA供应链优化', link: '/cases/sc-01' },
+            { text: 'SC-02 万魔声学供应链数字化', link: '/cases/sc-02' },
+            { text: 'SC-03 瑞贝卡供应链失控', link: '/cases/sc-03' },
+            { text: 'SC-04 直邮时代黄昏', link: '/cases/sc-04' },
+            { text: 'SC-05 领星ERP数据泄露', link: '/cases/sc-05' },
+          ],
+        },
+        {
+          text: '🛒 平台运营',
+          collapsed: true,
+          items: [
+            { text: 'PO-01 温州小伙跨境卖锅', link: '/cases/po-01' },
+            { text: 'PO-02 户外卖家扭亏三招', link: '/cases/po-02' },
+            { text: 'PO-03 3D蝙蝠灯TikTok爆款', link: '/cases/po-03' },
+            { text: 'PO-04 TikTok服务商跑路封店', link: '/cases/po-04' },
+            { text: 'PO-05 亚马逊Cosmo算法', link: '/cases/po-05' },
+          ],
+        },
+        {
+          text: '🏷️ 海外品牌管理',
+          collapsed: true,
+          items: [
+            { text: 'BM-01 ELEGOO独立站品牌', link: '/cases/bm-01' },
+            { text: 'BM-02 盖世小鸡拉美品牌', link: '/cases/bm-02' },
+            { text: 'BM-03 乐歌品牌转型上市', link: '/cases/bm-03' },
+            { text: 'BM-04 ITEAWORLD茶叶出海', link: '/cases/bm-04' },
+            { text: 'BM-05 爆款商标被抢注', link: '/cases/bm-05' },
+          ],
+        },
+        {
+          text: '⚖️ 合规管理',
+          collapsed: true,
+          items: [
+            { text: 'CM-01 厦门税务被重罚', link: '/cases/cm-01' },
+            { text: 'CM-02 海外仓被查扣5万件', link: '/cases/cm-02' },
+            { text: 'CM-03 TRO闪粉肌理图侵权', link: '/cases/cm-03' },
+            { text: 'CM-04 贸法通案例集', link: '/cases/cm-04' },
+            { text: 'CM-05 欧盟PPWR包装法规', link: '/cases/cm-05' },
+            { text: 'CM-06 USPTO商标合规调查', link: '/cases/cm-06' },
+            { text: 'CM-07 欧盟小包裹税', link: '/cases/cm-07' },
+          ],
+        },
+        {
+          text: '🚢 物流履约',
+          collapsed: true,
+          items: [
+            { text: 'LF-01 洛杉矶海外仓暴雷', link: '/cases/lf-01' },
+            { text: 'LF-02 鹿特丹高温扣170万件', link: '/cases/lf-02' },
+            { text: 'LF-03 10年FBA实战', link: '/cases/lf-03' },
+            { text: 'LF-04 TikTok FBT仓发', link: '/cases/lf-04' },
+            { text: 'LF-05 深圳货代暴雷', link: '/cases/lf-05' },
+            { text: 'LF-06 欧洲前置仓研判', link: '/cases/lf-06' },
+            { text: 'LF-07 英国专线小包政策', link: '/cases/lf-07' },
+            { text: 'LF-08 英国海外仓合同风控', link: '/cases/lf-08' },
+          ],
+        },
+        {
+          text: '🧭 商业本质',
+          collapsed: true,
+          items: [
+            { text: 'BE-01 鲜花电商失败复盘', link: '/cases/be-01' },
+            { text: 'BE-02 航空包机三阶段壁垒', link: '/cases/be-02' },
+            { text: 'BE-03 森大集团先贸易后建厂', link: '/cases/be-03' },
+            { text: 'BE-04 Labubu娃衣泡沫', link: '/cases/be-04' },
+            { text: 'BE-05 宠物鲜食高潜赛道', link: '/cases/be-05' },
+            { text: 'BE-06 泳池清洁机器人', link: '/cases/be-06' },
           ],
         },
       ],
@@ -220,6 +290,10 @@ export default defineConfig({
                   link: '/courses/supply-chain/sample-lesson-2',
                 },
                 {
+                  text: '试听样章：第3课',
+                  link: '/courses/supply-chain/sample-lesson-3',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain/toolkit-sample',
                 },
@@ -248,6 +322,10 @@ export default defineConfig({
                   link: '/courses/platform-operations/sample-lesson-2',
                 },
                 {
+                  text: '试听样章：第3课',
+                  link: '/courses/platform-operations/sample-lesson-3',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/platform-operations/toolkit-sample',
                 },
@@ -268,6 +346,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第2课',
                   link: '/courses/compliance/sample-lesson-2',
+                },
+                {
+                  text: '试听样章：第3课',
+                  link: '/courses/compliance/sample-lesson-3',
                 },
                 {
                   text: '工具包样例',
@@ -293,6 +375,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第2课',
                   link: '/courses/brand-management/sample-lesson-2',
+                },
+                {
+                  text: '试听样章：第3课',
+                  link: '/courses/brand-management/sample-lesson-3',
                 },
                 {
                   text: '工具包样例',
@@ -329,6 +415,10 @@ export default defineConfig({
                   link: '/courses/logistics-overseas-warehouse/sample-lesson-2',
                 },
                 {
+                  text: '试听样章：第3课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-3',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/logistics-overseas-warehouse/toolkit-sample',
                 },
@@ -363,6 +453,10 @@ export default defineConfig({
                   link: '/courses/supply-chain-execution/sample-lesson-2',
                 },
                 {
+                  text: '试听样章：第3课',
+                  link: '/courses/supply-chain-execution/sample-lesson-3',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain-execution/toolkit-sample',
                 },
@@ -391,6 +485,10 @@ export default defineConfig({
                   link: '/courses/finance-management/sample-lesson-2',
                 },
                 {
+                  text: '试听样章：第3课',
+                  link: '/courses/finance-management/sample-lesson-3',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/finance-management/toolkit-sample',
                 },
@@ -414,6 +512,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第2课',
                   link: '/courses/cashflow-forex/sample-lesson-2',
+                },
+                {
+                  text: '试听样章：第3课',
+                  link: '/courses/cashflow-forex/sample-lesson-3',
                 },
                 {
                   text: '工具包样例',
@@ -476,6 +578,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第2课',
                   link: '/courses/team-management/sample-lesson-2',
+                },
+                {
+                  text: '试听样章：第3课',
+                  link: '/courses/team-management/sample-lesson-3',
                 },
                 {
                   text: '工具包样例',
