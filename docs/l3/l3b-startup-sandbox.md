@@ -91,6 +91,8 @@ L3-B 是面向创业者的沙盘推演式毕业考核。学员以"准创业者"�
 | 第三轮资金链+风险 | [L2B-05 资金链与外汇风控](/l2/b05-finance-fx) |
 | 答辩商业计划书 | [L2B-07 品牌启动与冷启动](/l2/b07-brand-launch)、[L2B-08 多平台快速启动](/l2/b08-multi-platform) |
 
+<MarkDone id="l3-b" title="L3-B 创业实战沙盘" />
+
 <LastUpdated />
 
 <ContentNotice />

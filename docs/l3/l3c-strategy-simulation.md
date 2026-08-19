@@ -84,6 +84,8 @@ L3-C 是面向企业管理者的战略推演式毕业考核。学员基于真实
 | 案例二组织变革 | [L2C-02 团队组织与绩效管理](/l2/c02-organization) |
 | 案例三危机处置 | [L2C-04 全链路风控体系](/l2/c04-compliance-strategy)、[L2C-05 供应链战略与库存](/l2/c05-supply-chain-strategy) |
 
+<MarkDone id="l3-c" title="L3-C 战略决策模拟" />
+
 <LastUpdated />
 
 <ContentNotice />

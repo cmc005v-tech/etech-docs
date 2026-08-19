@@ -81,6 +81,22 @@ const groups: GroupDef[] = [
       { id: 'l3-c', title: 'L3-C 战略决策模拟', link: '/l3/l3c-strategy-simulation' },
     ],
   },
+  {
+    name: '知识库专业课',
+    color: '#14b8a6',
+    courses: [
+      { id: 'kb-po-101', title: 'PO-101 平台运营', link: '/courses/platform-operations/sample-lesson-1' },
+      { id: 'kb-scm-101', title: 'SCM-101 供应链管理', link: '/courses/supply-chain/sample-lesson-1' },
+      { id: 'kb-cm-101', title: 'CM-101 合规管理', link: '/courses/compliance/sample-lesson-1' },
+      { id: 'kb-bm-101', title: 'BM-101 品牌管理', link: '/courses/brand-management/sample-lesson-1' },
+      { id: 'kb-lw-101', title: 'LW-101 物流与海外仓', link: '/courses/logistics-overseas-warehouse/sample-lesson-1' },
+      { id: 'kb-sce-101', title: 'SCE-101 供应链落地执行', link: '/courses/supply-chain-execution/sample-lesson-1' },
+      { id: 'kb-fin-101', title: 'FIN-101 财务管控与经营分析', link: '/courses/finance-management/sample-lesson-1' },
+      { id: 'kb-cfm-101', title: 'CFM-101 资金链与外汇风控', link: '/courses/cashflow-forex/sample-lesson-1' },
+      { id: 'kb-om-101', title: 'OM-101 团队组织与项目管理', link: '/courses/team-management/sample-lesson-1' },
+      { id: 'kb-dt-101', title: 'DT-101 数字化转型与AI赋能', link: '/courses/digital-transformation/sample-lesson-1' },
+    ],
+  },
 ]
 
 const doneMap = ref<Record<string, { title?: string; at?: string }>>({})

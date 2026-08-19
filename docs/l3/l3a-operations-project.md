@@ -87,6 +87,8 @@ L3-A 是面向高阶运营操盘手的项目制毕业考核。学员需在真实
 | 第三阶段数据复盘 | [L2A-05 数据驱动决策](/l2/a05-data-driven) |
 | AI 贯穿 | [L2A-04 AI 辅助运营实操](/l2/a04-ai-ops) |
 
+<MarkDone id="l3-a" title="L3-A 运营操盘手毕业项目" />
+
 <LastUpdated />
 
 <ContentNotice />
