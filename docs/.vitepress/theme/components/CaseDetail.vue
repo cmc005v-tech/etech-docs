@@ -14,6 +14,47 @@ const page = (id) => '/cases/' + id.toLowerCase()
 
 const typeLabel = (t) => ({ success: '✅ 正面成功', failure: '❌ 反面失败', trend: '📊 趋势/综合' }[t] || t)
 const moduleLabel = (m) => ({ supply: '供应链管理', platform: '平台运营', brand: '海外品牌管理', compliance: '合规管理', logistics: '物流履约', strategy: '商业本质' }[m] || m)
+
+// 课程编码 → 站点路由映射（交叉导流）
+const courseMap = {
+  'L1-01': ['/l1/01-business-logic', '商业逻辑总览'],
+  'L1-02': ['/l1/02-supply-chain', '供应链全景认知'],
+  'L1-03': ['/l1/03-brand-dtc', '品牌出海 DTC 框架'],
+  'L1-04': ['/l1/04-platform-ops', '平台运营核心逻辑'],
+  'L1-05': ['/l1/05-logistics', '物流与履约基础'],
+  'L1-06': ['/l1/06-compliance', '合规风险地图'],
+  'L1-07': ['/l1/07-finance-cost', '财务与成本认知'],
+  'L1-08': ['/l1/08-data-driven', '数据驱动入门'],
+  'L2A': ['/l2/', 'L2 路径A · 平台运营'],
+  'L2A-08': ['/l2/a08-compliance-ops', '平台合规运营'],
+  'L2A-09': ['/l2/a09-logistics-ops', '物流运营实操'],
+  'L2B': ['/l2/', 'L2 路径B · 独立站品牌'],
+  'L2B-01': ['/l2/b01-product-research', '选品与需求验证'],
+  'L2B-03': ['/l2/b03-tax-compliance', '税务合规'],
+  'L2B-04': ['/l2/b04-overseas-compliance', '海外合规'],
+  'L2B-07': ['/l2/b07-brand-launch', '品牌发布'],
+  'L2C-01': ['/l2/c01-strategy', '战略与商业模式'],
+  'L2C-04': ['/l2/c04-compliance-strategy', '合规战略'],
+  'L2C-05': ['/l2/c05-supply-chain-strategy', '供应链战略'],
+  'L2C-06': ['/l2/c06-brand-strategy', '品牌战略'],
+}
+// 案例模块 → 知识库专业课导流
+const moduleCourse = {
+  supply: ['/courses/supply-chain/', '供应链管理'],
+  platform: ['/courses/platform-operations/', '平台运营'],
+  brand: ['/courses/brand-management/', '品牌管理'],
+  compliance: ['/courses/compliance/', '合规管理'],
+  logistics: ['/courses/logistics-overseas-warehouse/', '物流与海外仓'],
+  strategy: ['/courses/', '知识库专业课总览'],
+}
+const relatedCourses = computed(() => {
+  if (!c.value) return []
+  return String(c.value.course).split('/').map(code => code.trim()).filter(Boolean).map(code => {
+    const hit = courseMap[code]
+    return hit ? { code, link: hit[0], name: hit[1] } : { code, link: '', name: '' }
+  })
+})
+const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null))
 </script>
 
 <template>
@@ -63,7 +104,22 @@ const moduleLabel = (m) => ({ supply: '供应链管理', platform: '平台运营
 
       <h3>教学延展</h3>
       <div class="extend">💡 {{ d.extend }}</div>
+
+      <h3 v-if="d.field">教学实录</h3>
+      <div v-if="d.field" class="field">📝 {{ d.field }}</div>
     </template>
+
+    <h2>相关课程</h2>
+    <div class="related">
+      <a v-for="r in relatedCourses" :key="r.code" :href="r.link || '/l1/'" :class="{ plain: !r.link }" class="related-item">
+        <span class="related-code">{{ r.code }}</span>
+        <span class="related-name">{{ r.name || '课程大纲详见课程体系' }}</span>
+      </a>
+      <a v-if="moduleLink" :href="moduleLink[0]" class="related-item module">
+        <span class="related-code">🎯 深度专题</span>
+        <span class="related-name">知识库专业课 · {{ moduleLink[1] }}</span>
+      </a>
+    </div>
 
     <div class="case-nav">
       <a v-if="prev" :href="page(prev.id)">← {{ prev.id }} {{ prev.title.slice(0, 18) }}…</a>
@@ -107,6 +163,48 @@ const moduleLabel = (m) => ({ supply: '供应链管理', platform: '平台运营
   padding: 12px 16px;
   border-radius: 0 8px 8px 0;
   line-height: 1.8;
+}
+.field {
+  border-left: 4px solid var(--vp-c-green-1);
+  background: var(--vp-c-bg-soft);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.9;
+}
+.related {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.related-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.related-item:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+}
+.related-item.plain {
+  opacity: 0.75;
+}
+.related-item.module {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+.related-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+.related-name {
+  font-size: 14px;
+  color: var(--vp-c-text-1);
 }
 .case-nav {
   display: flex;

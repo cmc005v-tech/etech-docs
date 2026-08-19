@@ -192,6 +192,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'L1 课程总览', link: '/l1/' },
+            { text: '🎧 试听：L1-01 盈利模型', link: '/l1/01-sample-lesson' },
+            { text: '🎧 试听：L1-04 平台选型', link: '/l1/04-sample-lesson' },
             { text: 'L1-01 商业逻辑总览', link: '/l1/01-business-logic' },
             { text: 'L1-02 供应链全景认知', link: '/l1/02-supply-chain' },
             { text: 'L1-03 品牌出海 DTC 框架', link: '/l1/03-brand-dtc' },
