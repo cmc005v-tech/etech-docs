@@ -216,6 +216,10 @@ export default defineConfig({
                   link: '/courses/supply-chain/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/supply-chain/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain/toolkit-sample',
                 },
@@ -240,6 +244,10 @@ export default defineConfig({
                   link: '/courses/platform-operations/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/platform-operations/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/platform-operations/toolkit-sample',
                 },
@@ -256,6 +264,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第1课',
                   link: '/courses/compliance/sample-lesson-1',
+                },
+                {
+                  text: '试听样章：第2课',
+                  link: '/courses/compliance/sample-lesson-2',
                 },
                 {
                   text: '工具包样例',
@@ -277,6 +289,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第1课',
                   link: '/courses/brand-management/sample-lesson-1',
+                },
+                {
+                  text: '试听样章：第2课',
+                  link: '/courses/brand-management/sample-lesson-2',
                 },
                 {
                   text: '工具包样例',
@@ -309,6 +325,10 @@ export default defineConfig({
                   link: '/courses/logistics-overseas-warehouse/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/logistics-overseas-warehouse/toolkit-sample',
                 },
@@ -339,6 +359,10 @@ export default defineConfig({
                   link: '/courses/supply-chain-execution/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/supply-chain-execution/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain-execution/toolkit-sample',
                 },
@@ -363,6 +387,10 @@ export default defineConfig({
                   link: '/courses/finance-management/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/finance-management/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/finance-management/toolkit-sample',
                 },
@@ -382,6 +410,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第1课',
                   link: '/courses/cashflow-forex/sample-lesson-1',
+                },
+                {
+                  text: '试听样章：第2课',
+                  link: '/courses/cashflow-forex/sample-lesson-2',
                 },
                 {
                   text: '工具包样例',
@@ -414,6 +446,10 @@ export default defineConfig({
                   link: '/courses/digital-transformation/sample-lesson-1',
                 },
                 {
+                  text: '试听样章：第2课',
+                  link: '/courses/digital-transformation/sample-lesson-2',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/digital-transformation/toolkit-sample',
                 },
@@ -436,6 +472,10 @@ export default defineConfig({
                 {
                   text: '试听样章：第1课',
                   link: '/courses/team-management/sample-lesson-1',
+                },
+                {
+                  text: '试听样章：第2课',
+                  link: '/courses/team-management/sample-lesson-2',
                 },
                 {
                   text: '工具包样例',
