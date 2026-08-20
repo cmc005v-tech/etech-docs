@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   // === 站点基础 ===
@@ -7,10 +8,25 @@ export default defineConfig({
     'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的完整学习体系',
   lang: 'zh-CN',
 
-  // === Favicon + 默认浅色模式 ===
+  // === Favicon + 默认浅色模式 + SEO ===
   // 首次访问或存储为 auto 时，预置为浅色偏好，避免跟随系统深色给长文本阅读带来负担
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['meta', { name: 'theme-color', content: '#3b82f6' }],
+    // Open Graph
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: '跨境电商高级实战系列 · 学习网站' }],
+    ['meta', { property: 'og:description', content: 'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的完整学习体系' }],
+    ['meta', { property: 'og:site_name', content: '跨境电商高级实战系列' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '跨境电商高级实战系列 · 学习网站' }],
+    ['meta', { name: 'twitter:description', content: 'L1 必修基础 · L2 分路径选修 · L3 高阶专精' }],
+    // 其他 SEO
+    ['meta', { name: 'keywords', content: '跨境电商,亚马逊运营,TikTok Shop,品牌出海,供应链管理,合规风控,DTC独立站' }],
+    ['meta', { name: 'author', content: '跨境电商高级实战系列' }],
     [
       'script',
       {},
@@ -45,6 +61,54 @@ export default defineConfig({
     },
   },
 
+  // === Vite 插件配置 ===
+  vite: {
+    plugins: [
+      VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png'],
+        manifest: {
+          name: '跨境电商高级实战系列 · 学习网站',
+          short_name: '跨境电商课程',
+          description: 'L1 必修基础 · L2 分路径选修 · L3 高阶专精',
+          theme_color: '#3b82f6',
+          background_color: '#ffffff',
+          display: 'standalone',
+          scope: '/',
+          start_url: '/',
+          icons: [
+            {
+              src: '/icon-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+            },
+            {
+              src: '/icon-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+            },
+          ],
+        },
+        workbox: {
+          globPatterns: ['**/*.{html,css,js,json,png,svg,woff2}'],
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'google-fonts-cache',
+                expiration: {
+                  maxEntries: 10,
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
+                },
+              },
+            },
+          ],
+        },
+      }),
+    ],
+  },
+
   // === 主题配置 ===
   themeConfig: {
     logo: '/images/logo.svg',
@@ -66,6 +130,7 @@ export default defineConfig({
           { text: '行业数据看板', link: '/resources/industry-data' },
           { text: '工具模板全景', link: '/resources/toolkit-preview' },
           { text: '入学诊断', link: '/resources/diagnosis' },
+          { text: '学习证书', link: '/resources/certificate' },
           { text: '先修包自学', link: '/resources/pre-study' },
         ],
       },
@@ -98,6 +163,7 @@ export default defineConfig({
             { text: '行业数据看板', link: '/resources/industry-data' },
             { text: '工具模板全景', link: '/resources/toolkit-preview' },
             { text: '入学诊断', link: '/resources/diagnosis' },
+            { text: '学习证书', link: '/resources/certificate' },
             { text: '先修包自学', link: '/resources/pre-study' },
             { text: '学习指南', link: '/resources/study-guide' },
             { text: '行业报告摘要', link: '/resources/industry-reports' },
@@ -193,7 +259,13 @@ export default defineConfig({
           items: [
             { text: 'L1 课程总览', link: '/l1/' },
             { text: '🎧 试听：L1-01 盈利模型', link: '/l1/01-sample-lesson' },
+            { text: '🎧 试听：L1-02 供应链全链路', link: '/l1/02-sample-lesson' },
+            { text: '🎧 试听：L1-03 品牌分界线', link: '/l1/03-sample-lesson' },
             { text: '🎧 试听：L1-04 平台选型', link: '/l1/04-sample-lesson' },
+            { text: '🎧 试听：L1-05 物流六大模式', link: '/l1/05-sample-lesson' },
+            { text: '🎧 试听：L1-06 合规七大维度', link: '/l1/06-sample-lesson' },
+            { text: '🎧 试听：L1-07 成本结构拆解', link: '/l1/07-sample-lesson' },
+            { text: '🎧 试听：L1-08 数据驱动入门', link: '/l1/08-sample-lesson' },
             { text: 'L1-01 商业逻辑总览', link: '/l1/01-business-logic' },
             { text: 'L1-02 供应链全景认知', link: '/l1/02-supply-chain' },
             { text: 'L1-03 品牌出海 DTC 框架', link: '/l1/03-brand-dtc' },
