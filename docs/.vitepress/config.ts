@@ -135,7 +135,6 @@ export default defineConfig({
         ],
       },
       { text: '案例库', link: '/cases/' },
-      { text: '师资介绍', link: '/faculty/' },
       { text: '常见问题', link: '/faq/' },
     ],
 
