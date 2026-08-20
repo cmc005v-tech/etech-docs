@@ -75,7 +75,32 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
     <p><strong>教学要点：</strong>{{ c.teaching }}</p>
     <p v-if="c.sourceUrl"><a :href="c.sourceUrl" target="_blank">🔗 查看原始来源 →</a></p>
 
+    <div v-if="c.intro" class="case-intro">
+      <h3>📋 案例简介</h3>
+      <p>{{ c.intro }}</p>
+    </div>
+
     <template v-if="d">
+      <div v-if="d.analysis" class="case-analysis">
+        <h2>🔍 案例拆解分析</h2>
+        <p v-if="d.analysis.background" class="analysis-bg">{{ d.analysis.background }}</p>
+        <div class="analysis-grid">
+          <div v-for="(dim, i) in d.analysis.dimensions" :key="i" class="analysis-card">
+            <div class="analysis-card-title">{{ dim[0] }}</div>
+            <div class="analysis-card-desc">{{ dim[1] }}</div>
+          </div>
+        </div>
+        <div v-if="d.analysis.keyData" class="analysis-data">
+          <h4>📊 关键数据</h4>
+          <div class="data-points">
+            <span v-for="(dp, i) in d.analysis.keyData" :key="i" class="data-point">{{ dp }}</span>
+          </div>
+        </div>
+        <div v-if="d.analysis.related" class="analysis-related">
+          <strong>🔗 关联案例：</strong>{{ d.analysis.related }}
+        </div>
+      </div>
+
       <h2>深度教学手册</h2>
 
       <h3>教学目标</h3>
@@ -148,6 +173,90 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
   padding: 3px 12px;
   border-radius: 14px;
   border: 1px solid var(--vp-c-divider);
+}
+.case-intro {
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  padding: 14px 18px;
+  border-radius: 0 10px 10px 0;
+  margin: 1.25rem 0;
+}
+.case-intro h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+.case-intro p {
+  margin: 0;
+  line-height: 1.9;
+}
+.case-analysis {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+.case-analysis > h2 {
+  margin-top: 0;
+}
+.analysis-bg {
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+.analysis-card {
+  padding: 12px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+}
+.analysis-card-title {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.analysis-card-desc {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+}
+.analysis-data {
+  margin-top: 1rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-mute);
+}
+.analysis-data h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.92rem;
+}
+.data-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.data-point {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  padding: 3px 12px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.analysis-related {
+  margin-top: 1rem;
+  padding: 10px 14px;
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-mute);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 .case-summary {
   line-height: 1.9;
