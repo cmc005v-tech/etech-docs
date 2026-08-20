@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "跨境电商高级实战系列"
-  text: "从课程到产品的完整学习体系"
+  text: "从课程到产品的学习体系"
   tagline: "L1 必修基础 · L2 分路径选修 · L3 高阶专精"
   actions:
     - theme: brand

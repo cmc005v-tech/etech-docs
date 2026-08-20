@@ -5,7 +5,7 @@ export default defineConfig({
   // === 站点基础 ===
   title: '跨境电商高级实战系列 · 学习网站',
   description:
-    'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的完整学习体系',
+    'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的学习体系',
   lang: 'zh-CN',
 
   // === Favicon + 默认浅色模式 + SEO ===
@@ -17,7 +17,7 @@ export default defineConfig({
     // Open Graph
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '跨境电商高级实战系列 · 学习网站' }],
-    ['meta', { property: 'og:description', content: 'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的完整学习体系' }],
+    ['meta', { property: 'og:description', content: 'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的学习体系' }],
     ['meta', { property: 'og:site_name', content: '跨境电商高级实战系列' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     // Twitter Card
@@ -841,10 +841,9 @@ export default defineConfig({
     },
 
     // --- 编辑链接 ---
-    editLink: {
-      pattern: 'https://github.com/your-org/course-site/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页',
-    },
+    // 本站采用本地编辑工作流，不通过GitHub在线编辑
+    // 编辑方式：修改 docs/ 目录下的 .md 文件后执行 npm run build 重新构建
+    editLink: false,
 
     // --- 最后更新 ---
     lastUpdated: {

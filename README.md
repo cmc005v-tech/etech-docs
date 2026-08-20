@@ -220,6 +220,40 @@ git push -u origin main
 
 ## 🔧 开发规范
 
+### 本地编辑工作流
+
+本站采用**本地编辑**方式维护内容，不通过GitHub在线编辑。
+
+**编辑流程**：
+
+1. **定位文件**：找到要编辑的页面，位于 `docs/` 目录下
+   - L1课程：`docs/l1/01-business-logic.md` 等
+   - L2课程：`docs/l2/L2A-01-xxx.md` 等
+   - L3课程：`docs/l3/xxx.md`
+   - 知识库课程：`docs/courses/课程名/index.md` 等
+   - 案例库：`docs/cases/caseData.js`（案例数据源）
+
+2. **编辑内容**：使用任意Markdown编辑器修改 `.md` 文件
+   - 推荐：VS Code / Typora / Obsidian
+   - 注意：Vue组件属性中避免使用英文直双引号（会导致构建失败）
+
+3. **本地预览**：
+   ```bash
+   npm run dev
+   ```
+   访问 http://localhost:5173 查看效果
+
+4. **构建发布**：
+   ```bash
+   npm run build
+   ```
+   构建产物在 `docs/.vitepress/dist/`，部署到托管平台即可
+
+**注意事项**：
+- 修改后需重新 `npm run build` 才能更新线上站点
+- `lastUpdated` 时间戳基于Git提交历史，本地编辑后需commit才能更新
+- 编辑 `caseData.js` 后需重启dev server才能看到变化
+
 ### 添加新课程
 
 1. 在 `docs/l1/`(或l2/l3/courses)下创建目录
