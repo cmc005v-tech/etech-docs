@@ -28,4 +28,10 @@ description: "跨境电商数字化转型与AI赋能课程全部 2 课主题清�
 
 <LastUpdated />
 
+<script setup>
+import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
+</script>
+
+<RelatedCases :course-codes="['L2C-07']" />
+
 <ContentNotice />

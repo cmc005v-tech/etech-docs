@@ -597,6 +597,26 @@ export default defineConfig({
                   link: '/courses/logistics-overseas-warehouse/sample-lesson-5',
                 },
                 {
+                  text: '试听样章：第6课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-8',
+                },
+                {
+                  text: '试听样章：第9课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-9',
+                },
+                {
+                  text: '试听样章：第10课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-10',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/logistics-overseas-warehouse/toolkit-sample',
                 },
@@ -641,6 +661,26 @@ export default defineConfig({
                 {
                   text: '试听样章：第5课',
                   link: '/courses/supply-chain-execution/sample-lesson-5',
+                },
+                {
+                  text: '试听样章：第6课',
+                  link: '/courses/supply-chain-execution/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/supply-chain-execution/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/supply-chain-execution/sample-lesson-8',
+                },
+                {
+                  text: '试听样章：第9课',
+                  link: '/courses/supply-chain-execution/sample-lesson-9',
+                },
+                {
+                  text: '试听样章：第10课',
+                  link: '/courses/supply-chain-execution/sample-lesson-10',
                 },
                 {
                   text: '工具包样例',

@@ -29,4 +29,10 @@ description: "跨境电商团队组织与项目管理课程全部 3 课主题清
 
 <LastUpdated />
 
+<script setup>
+import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
+</script>
+
+<RelatedCases :course-codes="['L2C-02']" />
+
 <ContentNotice />

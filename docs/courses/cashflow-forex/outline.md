@@ -29,4 +29,10 @@ description: "跨境电商资金链管理与外汇风控课程全部 3 课主题
 
 <LastUpdated />
 
+<script setup>
+import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
+</script>
+
+<RelatedCases :course-codes="['L2B-05']" />
+
 <ContentNotice />
