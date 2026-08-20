@@ -906,8 +906,6 @@ export default defineConfig({
 
     // --- 页脚 ---
     footer: {
-      message:
-        '完整课程资料面向报名学员定向分发，本站仅公开课程大纲与试听样章',
       copyright: `跨境电商高级实战系列 · 学习网站 ｜ Copyright © ${new Date().getFullYear()}`,
     },
 
