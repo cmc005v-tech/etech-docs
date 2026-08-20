@@ -392,6 +392,18 @@ export default defineConfig({
                   link: '/courses/supply-chain/sample-lesson-5',
                 },
                 {
+                  text: '试听样章：第6课',
+                  link: '/courses/supply-chain/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/supply-chain/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/supply-chain/sample-lesson-8',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain/toolkit-sample',
                 },
@@ -432,6 +444,18 @@ export default defineConfig({
                   link: '/courses/platform-operations/sample-lesson-5',
                 },
                 {
+                  text: '试听样章：第6课',
+                  link: '/courses/platform-operations/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/platform-operations/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/platform-operations/sample-lesson-8',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/platform-operations/toolkit-sample',
                 },
@@ -464,6 +488,18 @@ export default defineConfig({
                 {
                   text: '试听样章：第5课',
                   link: '/courses/compliance/sample-lesson-5',
+                },
+                {
+                  text: '试听样章：第6课',
+                  link: '/courses/compliance/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/compliance/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/compliance/sample-lesson-8',
                 },
                 {
                   text: '工具包样例',
@@ -501,6 +537,18 @@ export default defineConfig({
                 {
                   text: '试听样章：第5课',
                   link: '/courses/brand-management/sample-lesson-5',
+                },
+                {
+                  text: '试听样章：第6课',
+                  link: '/courses/brand-management/sample-lesson-6',
+                },
+                {
+                  text: '试听样章：第7课',
+                  link: '/courses/brand-management/sample-lesson-7',
+                },
+                {
+                  text: '试听样章：第8课',
+                  link: '/courses/brand-management/sample-lesson-8',
                 },
                 {
                   text: '工具包样例',
