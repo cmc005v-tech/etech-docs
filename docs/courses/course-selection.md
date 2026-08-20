@@ -39,10 +39,31 @@ description: "十门知识库课程怎么选：按角色选课、课程关系、
 | 部门负责人 / HR / OD | OM-101 | DT-101 | 离职率与执行力问题先做组织诊断，再谈工具 |
 
 ::: tip 拿不准就先看样章
-每门课的第 1 课完整教案均免费公开（侧边栏"试听样章"），且每篇样章末尾附**随章自测**。花 20 分钟读一遍样章并做自测，比任何选型建议都准。
+每门课的第 1 课完整教案均免费公开（侧边栏“试听样章”），且每篇样章末尾附**随章自测**。花 20 分钟读一遍样章并做自测，比任何选型建议都准。
 :::
 
-## 三、课程之间的关系
+## 二、课程对比工具
+
+如果两门课看起来都很适合你，但拿不定主意先学哪门，可以使用**课程对比工具**快速决策：
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; margin-top:16px;">
+  <a href="/courses/comparison/l2a03-l2b07" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🎯 平台运营 vs 品牌创业</div>
+    <div style="font-size:13px; color:#374151;">L2A-03 广告投放与 ROI<br/>vs<br/>L2B-07 品牌发布与冷启动</div>
+    <div style="font-size:12px; color:#6b7280; margin-top:8px;">适合纠结于“深耕平台还是自建品牌”的学员</div>
+  </a>
+  <a href="/courses/comparison/l2c03-l2c05" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#7c3aed; margin-bottom:6px;">💰 财务管控 vs 供应链战略</div>
+    <div style="font-size:13px; color:#374151;">L2C-03 财务管控与经营分析<br/>vs<br/>L2C-05 供应链战略设计</div>
+    <div style="font-size:12px; color:#6b7280; margin-top:8px;">适合管理层在“管钱还是管货”之间权衡</div>
+  </a>
+</div>
+
+<p style="margin-top:12px; font-size:0.9rem; color:var(--vp-c-text-2);">💡 对比工具展示两门课的学时/难度/前置要求/核心主题/适用人群/配套案例等维度，帮助你快速决策。</p>
+
+---
+
+## 四、课程之间的关系
 
 ### 3.1 供应链"战略版 + 执行版"双层结构
 
@@ -74,7 +95,7 @@ CM-101 覆盖的税务、产品安全、数据隐私、知识产权等七大维�
 - **OM-101 与 DT-101 数据同源**：AI 对岗位结构的影响（AI 岗位 +127% / 基础运营 -49%）在数字化课给出趋势，在组织课落到岗位重设与绩效调整；
 - **OM-101 与 L2B-06 分工**：OM 是管理版组织课（部门负责人视角），L2 选修 L2B-06 是创业版兼任方案（创始人视角），小团队可二选一。
 
-## 四、学习组合建议
+## 五、学习组合建议
 
 | 组合方案 | 课程 | 总学时 | 适合人群 |
 |---------|------|-------|---------|
@@ -90,7 +111,7 @@ CM-101 覆盖的税务、产品安全、数据隐私、知识产权等七大维�
 每门课都要求随课产出实操作业（占考核 30%-50%，各课不同）。并行超过两门，作业质量必然下滑，学而不用等于没学。
 :::
 
-## 五、与分层体系的联动
+## 六、与分层体系的联动
 
 知识库课程是整个课程体系的**内容底座**，与 L1/L2/L3 分层体系双向打通：
 

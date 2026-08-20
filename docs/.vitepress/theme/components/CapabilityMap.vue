@@ -1,5 +1,35 @@
 <script setup>
+import { ref, computed, onMounted } from 'vue'
+
 // 跨境电商能力地图 - 完整学习路径可视化
+const STORAGE_KEY = 'course-study-progress'
+const expandedLevels = ref({})
+const doneMap = ref({})
+
+// 初始化展开状态（默认全部展开）
+const initExpanded = () => {
+  const allExpanded = {}
+  levels.forEach(lvl => {
+    allExpanded[lvl.level] = true
+  })
+  expandedLevels.value = allExpanded
+}
+
+// 加载学习进度
+const loadProgress = () => {
+  try {
+    doneMap.value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
+  } catch {
+    doneMap.value = {}
+  }
+}
+
+const isDone = (code) => !!doneMap.value[code]
+
+const toggleLevel = (level) => {
+  expandedLevels.value[level] = !expandedLevels.value[level]
+}
+
 const levels = [
   {
     level: 'L1',
@@ -129,6 +159,11 @@ const getCourseLink = (code) => {
   }
   return map[code] || '/l1/'
 }
+
+onMounted(() => {
+  initExpanded()
+  loadProgress()
+})
 </script>
 
 <template>
@@ -138,28 +173,30 @@ const getCourseLink = (code) => {
 
     <div class="levels-container">
       <div v-for="(lvl, idx) in levels" :key="lvl.level" class="level-section">
-        <!-- 层级标题 -->
-        <div class="level-header" :class="`level-${lvl.level.toLowerCase().replace('-', '')}`">
+        <!-- 层级标题（可点击展开/折叠） -->
+        <div class="level-header" :class="`level-${lvl.level.toLowerCase().replace('-', '')}`" @click="toggleLevel(lvl.level)">
           <div class="level-badge">{{ lvl.level }}</div>
           <div class="level-info">
             <h3>{{ lvl.title }}</h3>
             <div class="level-meta">{{ lvl.subtitle }} · {{ lvl.desc }}</div>
           </div>
+          <div class="expand-icon">{{ expandedLevels[lvl.level] ? '▲' : '▼' }}</div>
         </div>
 
-        <!-- 课程网格 -->
-        <div class="courses-grid">
-          <a v-for="c in lvl.courses" :key="c.code" :href="getCourseLink(c.code)" class="course-card">
+        <!-- 课程网格（可折叠） -->
+        <div v-if="expandedLevels[lvl.level]" class="courses-grid">
+          <a v-for="c in lvl.courses" :key="c.code" :href="getCourseLink(c.code)" class="course-card" :class="{ done: isDone(c.code) }">
             <span class="course-icon">{{ c.icon }}</span>
             <div class="course-info">
               <div class="course-code">{{ c.code }}</div>
               <div class="course-name">{{ c.name }}</div>
             </div>
+            <span v-if="isDone(c.code)" class="done-badge">✓</span>
           </a>
         </div>
 
-        <!-- 关联案例 -->
-        <div v-if="lvl.cases && lvl.cases.length > 0" class="related-cases">
+        <!-- 关联案例（可折叠） -->
+        <div v-if="expandedLevels[lvl.level] && lvl.cases && lvl.cases.length > 0" class="related-cases">
           <div class="cases-label">📚 配套案例</div>
           <div class="cases-list">
             <a v-for="caseId in lvl.cases" :key="caseId" :href="getCaseLink(caseId)" class="case-tag">
@@ -218,6 +255,13 @@ const getCourseLink = (code) => {
   padding: 14px 18px;
   border-radius: 12px;
   margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.level-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .level-l1 {
@@ -264,6 +308,14 @@ const getCourseLink = (code) => {
   color: var(--vp-c-text-2);
 }
 
+.expand-icon {
+  margin-left: auto;
+  font-size: 1rem;
+  color: var(--vp-c-text-2);
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -287,6 +339,18 @@ const getCourseLink = (code) => {
   border-color: var(--vp-c-brand-1);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.course-card.done {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.done-badge {
+  font-size: 1.1rem;
+  color: #10b981;
+  font-weight: 700;
+  margin-left: auto;
 }
 
 .course-icon {

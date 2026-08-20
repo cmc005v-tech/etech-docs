@@ -41,6 +41,7 @@ import CaseComparison from './components/CaseComparison.vue'
 import CapabilityMap from './components/CapabilityMap.vue'
 import RelatedCases from './components/RelatedCases.vue'
 import InstructorHandbook from './components/InstructorHandbook.vue'
+import CourseComparison from './components/CourseComparison.vue'
 import PathRecommender from './components/PathRecommender.vue'
 import LearningCertificate from './components/LearningCertificate.vue'
 
@@ -69,6 +70,7 @@ export default {
     app.component('CapabilityMap', CapabilityMap)
     app.component('RelatedCases', RelatedCases)
     app.component('InstructorHandbook', InstructorHandbook)
+    app.component('CourseComparison', CourseComparison)
     app.component('PathRecommender', PathRecommender)
     app.component('LearningCertificate', LearningCertificate)
   },
