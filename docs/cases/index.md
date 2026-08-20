@@ -10,6 +10,7 @@ import { cases } from './caseData.js'
 
 const activeModule = ref('all')
 const activeType = ref('all')
+const searchQuery = ref('')
 
 const modules = [
   { key: 'all', label: '全部领域', icon: '📚' },
@@ -32,7 +33,11 @@ const filteredCases = computed(() => {
   return cases.filter(c => {
     const moduleMatch = activeModule.value === 'all' || c.module === activeModule.value
     const typeMatch = activeType.value === 'all' || c.type === activeType.value
-    return moduleMatch && typeMatch
+    const searchMatch = !searchQuery.value || 
+      c.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      c.summary.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      c.id.toLowerCase().includes(searchQuery.value.toLowerCase())
+    return moduleMatch && typeMatch && searchMatch
   })
 })
 
@@ -73,6 +78,10 @@ const stats = computed(() => {
 
 <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
   <button v-for="t in typeFilters" :key="t.key" @click="activeType = t.key" :style="{ padding: '6px 14px', borderRadius: '20px', border: activeType === t.key ? '2px solid #3b82f6' : '1px solid #d1d5db', background: activeType === t.key ? '#eff6ff' : '#fff', cursor: 'pointer', fontSize: '14px', fontWeight: activeType === t.key ? '600' : '400', color: activeType === t.key ? '#1d4ed8' : '#374151' }">{{ t.label }}</button>
+</div>
+
+<div style="margin-bottom:20px;">
+  <input v-model="searchQuery" placeholder="🔍 搜索案例（标题/摘要/编号）..." :style="{ width: '100%', padding: '10px 16px', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '14px', outline: 'none' }" />
 </div>
 
 <div v-if="filteredCases.length === 0" style="text-align:center; padding:40px; color:#6b7280;">
@@ -134,6 +143,27 @@ const stats = computed(() => {
 | BE-03 森大集团先贸易后建厂 | BE-04 Labubu娃衣短期泡沫 | 长期需求驱动阶梯投入 vs 短期流量泡沫套利 |
 | BE-08 基烁新材料贸易转生产 | BE-07 信息差纯搬运套利 | 壁垒叠加的长期主义 vs 止步搬运的短期红利 |
 :::
+
+### 📊 快速进入正反配对专题
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; margin-top:16px;">
+  <a href="/cases/comparison/sc-01-sc-03" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">📦 供应链对决</div>
+    <div style="font-size:13px; color:#374151;">SC-01 vs SC-03<br/>数据驱动 vs 经验决策</div>
+  </a>
+  <a href="/cases/comparison/bm-01-bm-05" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🏷️ 品牌保卫战</div>
+    <div style="font-size:13px; color:#374151;">BM-01 vs BM-05<br/>保护先行 vs 保护缺失</div>
+  </a>
+  <a href="/cases/comparison/po-01-po-04" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🛒 平台生存法则</div>
+    <div style="font-size:13px; color:#374151;">PO-01 vs PO-04<br/>合规运营 vs 灰色玩法</div>
+  </a>
+  <a href="/cases/comparison/be-02-be-01" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+    <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🧭 创业生死线</div>
+    <div style="font-size:13px; color:#374151;">BE-02 vs BE-01<br/>分阶验证 vs 重资直投</div>
+  </a>
+</div>
 
 ---
 

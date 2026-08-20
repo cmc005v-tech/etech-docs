@@ -37,6 +37,7 @@ import Quiz from './components/Quiz.vue'
 import MarkDone from './components/MarkDone.vue'
 import ProgressDashboard from './components/ProgressDashboard.vue'
 import CaseDetail from './components/CaseDetail.vue'
+import CaseComparison from './components/CaseComparison.vue'
 import PathRecommender from './components/PathRecommender.vue'
 import LearningCertificate from './components/LearningCertificate.vue'
 
@@ -61,6 +62,7 @@ export default {
     app.component('MarkDone', MarkDone)
     app.component('ProgressDashboard', ProgressDashboard)
     app.component('CaseDetail', CaseDetail)
+    app.component('CaseComparison', CaseComparison)
     app.component('PathRecommender', PathRecommender)
     app.component('LearningCertificate', LearningCertificate)
   },

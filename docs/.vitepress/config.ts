@@ -180,6 +180,16 @@ export default defineConfig({
           items: [{ text: '全部案例', link: '/cases/' }],
         },
         {
+          text: '⚖️ 正反配对专题',
+          collapsed: true,
+          items: [
+            { text: '📦 供应链对决：SC-01 vs SC-03', link: '/cases/comparison/sc-01-sc-03' },
+            { text: '🏷️ 品牌保卫战：BM-01 vs BM-05', link: '/cases/comparison/bm-01-bm-05' },
+            { text: '🛒 平台生存法则：PO-01 vs PO-04', link: '/cases/comparison/po-01-po-04' },
+            { text: '🧭 创业生死线：BE-02 vs BE-01', link: '/cases/comparison/be-02-be-01' },
+          ],
+        },
+        {
           text: '🏭 供应链管理',
           collapsed: true,
           items: [
