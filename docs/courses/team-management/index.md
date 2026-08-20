@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商团队组织与项目管理课程定位、目标与适用学员"
+keywords: [团队组织, 绩效管理, 组织架构, 人才发展, OKR]
 course:
   name: "跨境电商团队组织与项目管理"
   code: "OM-101"

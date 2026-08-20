@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商合规管理课程定位、目标与适用学员"
+keywords: [合规管理, 税务合规, 产品安全, 知识产权, 欧盟法规]
 course:
   name: "跨境电商合规管理"
   code: "CM-101"

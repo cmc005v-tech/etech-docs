@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商供应链管理课程定位、目标与适用学员"
+keywords: [供应链管理, 跨境物流, 库存管理, FBA, 供应链战略]
 course:
   name: "跨境电商供应链管理"
   code: "SCM-101"

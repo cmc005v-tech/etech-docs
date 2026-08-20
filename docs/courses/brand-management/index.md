@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商海外品牌管理课程定位、目标与适用学员"
+keywords: [品牌管理, DTC出海, 品牌建设, 品牌资产, 海外营销]
 course:
   name: "跨境电商海外品牌管理"
   code: "BM-101"

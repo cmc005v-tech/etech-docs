@@ -822,3 +822,135 @@
     white-space: nowrap;
   }
 }
+
+/* ============================================
+   新组件暗色模式适配（CapabilityMap/CourseComparison/RelatedCases等）
+   ============================================ */
+
+/* CapabilityMap.vue 能力地图 */
+.dark .capability-map {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .level-l1 {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
+.dark .level-l2a {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+.dark .level-l2b {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+.dark .level-l2c {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.dark .level-l3 {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.dark .course-card {
+  background: var(--vp-c-bg);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .course-card.done {
+  border-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, var(--vp-c-bg) 100%);
+}
+
+.dark .case-tag {
+  background: rgba(59, 130, 246, 0.15);
+  color: #7cc4fa;
+}
+
+.dark .case-tag:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* CourseComparison.vue 课程对比 */
+.dark .course-comparison {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .course-card.left {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, var(--vp-c-bg) 100%);
+}
+
+.dark .course-card.right {
+  border-color: #8b5cf6;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, var(--vp-c-bg) 100%);
+}
+
+.dark .dimension {
+  background: var(--vp-c-bg);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .recommendation {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border-left-color: #f59e0b;
+}
+
+/* RelatedCases.vue 相关案例 */
+.dark .related-cases-section {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .case-card {
+  background: var(--vp-c-bg);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .case-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(124, 196, 250, 0.1);
+}
+
+/* InstructorHandbook.vue 讲师手册 */
+.dark .instructor-handbook {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+.dark .info-table td {
+  border-color: var(--vp-c-divider);
+}
+
+.dark .data-tag.positive {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border-left-color: #10b981;
+}
+
+.dark .data-tag.negative {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-left-color: #ef4444;
+}
+
+/* LearningCertificate.vue 学习证书 */
+.dark .progress-hint {
+  background: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+}
+
+.dark .progress-bar-bg {
+  background: rgba(226, 232, 240, 0.2);
+}
+
+.dark .share-btn {
+  background: #3b82f6;
+}
+
+.dark .share-btn:hover {
+  background: #2563eb;
+}

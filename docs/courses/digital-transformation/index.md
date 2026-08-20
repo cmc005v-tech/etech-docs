@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商数字化转型与AI赋能课程定位、目标与适用学员"
+keywords: [数字化转型, AI赋能, ERP选型, 数字化ROI, 技术投资]
 course:
   name: "跨境电商数字化转型与AI赋能"
   code: "DT-101"

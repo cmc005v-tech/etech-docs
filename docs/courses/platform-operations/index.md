@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "跨境电商平台运营课程定位、目标与适用学员"
+keywords: [跨境电商, 平台运营, 亚马逊, TikTok Shop, Listing优化, 广告投放]
 course:
   name: "跨境电商平台运营"
   code: "PO-101"

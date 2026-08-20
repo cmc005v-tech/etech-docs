@@ -1,6 +1,7 @@
 ---
 title: "课程简介"
 description: "供应链落地执行实战课程定位、目标与适用学员"
+keywords: [供应链执行, SOP流程, 岗位职责, 备货方案, 落地执行]
 course:
   name: "供应链落地执行实战"
   code: "SCE-101"
