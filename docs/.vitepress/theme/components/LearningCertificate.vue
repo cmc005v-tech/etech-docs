@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 const props = defineProps({
   pathName: { type: String, required: true },
@@ -8,15 +8,50 @@ const props = defineProps({
   courseCount: { type: Number, required: true },
 })
 
+const STORAGE_KEY = 'course-study-progress'
 const userName = ref('')
 const completedDate = ref('')
 const showCertificate = ref(false)
+const progressData = ref({})
 
 const certificateId = computed(() => {
   const date = completedDate.value.replace(/-/g, '')
   const random = Math.random().toString(36).substring(2, 8).toUpperCase()
   return `CBEC-${props.pathCode}-${date}-${random}`
 })
+
+// 检查学习进度
+const checkProgress = () => {
+  try {
+    progressData.value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
+  } catch {
+    progressData.value = {}
+  }
+  
+  // 计算当前路径的完成度
+  let doneCount = 0
+  const courses = getCoursesForPath(props.pathCode)
+  courses.forEach(code => {
+    if (progressData.value[code]) doneCount++
+  })
+  
+  const percent = Math.round((doneCount / courses.length) * 100)
+  return { doneCount, total: courses.length, percent }
+}
+
+// 获取路径对应的课程列表
+const getCoursesForPath = (pathCode) => {
+  const map = {
+    'L1': ['L1-01', 'L1-02', 'L1-03', 'L1-04', 'L1-05', 'L1-06', 'L1-07', 'L1-08'],
+    'L2A': ['L2A-01', 'L2A-02', 'L2A-03', 'L2A-04', 'L2A-05', 'L2A-06', 'L2A-07', 'L2A-08', 'L2A-09'],
+    'L2B': ['L2B-01', 'L2B-02', 'L2B-03', 'L2B-04', 'L2B-05', 'L2B-06', 'L2B-07'],
+    'L2C': ['L2C-01', 'L2C-02', 'L2C-03', 'L2C-04', 'L2C-05', 'L2C-06'],
+  }
+  return map[pathCode] || []
+}
+
+const progress = computed(() => checkProgress())
+const canGenerate = computed(() => progress.value.percent >= 80)
 
 const pathNames = {
   'L1': 'L1 必修基础层',
@@ -39,13 +74,45 @@ function resetCertificate() {
   userName.value = ''
   completedDate.value = ''
 }
+
+// 分享证书
+async function shareCertificate() {
+  const shareData = {
+    title: `学习完成证书 - ${userName.value}`,
+    text: `我已完戉${props.pathName}全部课程，共${props.courseCount}门课${props.totalHours}学时！`,
+    url: window.location.href,
+  }
+  
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData)
+    } else {
+      // 降级方案：复制链接到剪贴板
+      await navigator.clipboard.writeText(window.location.href)
+      alert('证书链接已复制到剪贴板，可分享给好友！')
+    }
+  } catch (err) {
+    console.error('分享失败:', err)
+  }
+}
 </script>
 
 <template>
   <div class="certificate-generator">
     <div v-if="!showCertificate" class="input-section">
       <h3>🎓 生成学习证书</h3>
-      <p>完成 <strong>{{ pathName }}</strong> 全部课程后，输入姓名生成学习证书。</p>
+      
+      <!-- 进度提示 -->
+      <div v-if="progress.percent < 80" class="progress-hint">
+        <p>当前进度：<strong>{{ progress.doneCount }} / {{ progress.total }}</strong> 门课已完成（{{ progress.percent }}%）</p>
+        <p style="font-size:0.9rem; color:#6b7280;">💡 完成度达到 80% 即可生成证书</p>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" :style="{ width: progress.percent + '%' }"></div>
+        </div>
+      </div>
+      
+      <p v-else style="color:#10b981; font-weight:600;">✅ 恭喜！您已完成 {{ progress.percent }}% 的课程，可以生成证书了！</p>
+      
       <div class="input-group">
         <input
           v-model="userName"
@@ -53,9 +120,10 @@ function resetCertificate() {
           placeholder="请输入您的姓名"
           class="name-input"
           @keyup.enter="generateCertificate"
+          :disabled="!canGenerate"
         />
-        <button @click="generateCertificate" class="generate-btn" :disabled="!userName.trim()">
-          生成证书
+        <button @click="generateCertificate" class="generate-btn" :disabled="!canGenerate || !userName.trim()">
+          {{ canGenerate ? '生成证书' : `还需 ${Math.ceil(progress.total * 0.8) - progress.doneCount} 门课` }}
         </button>
       </div>
     </div>
@@ -100,6 +168,7 @@ function resetCertificate() {
 
       <div class="actions">
         <button @click="resetCertificate" class="reset-btn">重新生成</button>
+        <button @click="shareCertificate" class="share-btn">📤 分享证书</button>
       </div>
     </div>
   </div>
@@ -127,6 +196,34 @@ function resetCertificate() {
 .input-section p {
   color: #64748b;
   margin-bottom: 1.5rem;
+}
+
+.progress-hint {
+  background: #f0f9ff;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+.progress-hint p {
+  margin: 4px 0;
+  color: #1e293b;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+  transition: width 0.3s ease;
 }
 
 .input-group {
@@ -311,6 +408,9 @@ function resetCertificate() {
 .actions {
   text-align: center;
   margin-top: 1.5rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
 }
 
 .reset-btn {
@@ -326,5 +426,20 @@ function resetCertificate() {
 
 .reset-btn:hover {
   background: #fef3c7;
+}
+
+.share-btn {
+  padding: 10px 20px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.share-btn:hover {
+  background: #2563eb;
 }
 </style>

@@ -5,12 +5,38 @@ outline: deep
 ---
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { cases } from './caseData.js'
 
+const STORAGE_KEY = 'case-favorites'
 const activeModule = ref('all')
 const activeType = ref('all')
 const searchQuery = ref('')
+const activeScale = ref('all')
+const activeYear = ref('all')
+const favorites = ref([])
+
+// 加载收藏列表
+const loadFavorites = () => {
+  try {
+    favorites.value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+  } catch {
+    favorites.value = []
+  }
+}
+
+// 切换收藏状态
+const toggleFavorite = (caseId) => {
+  const index = favorites.value.indexOf(caseId)
+  if (index > -1) {
+    favorites.value.splice(index, 1)
+  } else {
+    favorites.value.push(caseId)
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites.value))
+}
+
+const isFavorite = (caseId) => favorites.value.includes(caseId)
 
 const modules = [
   { key: 'all', label: '全部领域', icon: '📚' },
@@ -33,11 +59,13 @@ const filteredCases = computed(() => {
   return cases.filter(c => {
     const moduleMatch = activeModule.value === 'all' || c.module === activeModule.value
     const typeMatch = activeType.value === 'all' || c.type === activeType.value
+    const scaleMatch = activeScale.value === 'all' || c.scale.includes(activeScale.value)
+    const yearMatch = activeYear.value === 'all' || c.year === activeYear.value
     const searchMatch = !searchQuery.value || 
       c.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       c.summary.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       c.id.toLowerCase().includes(searchQuery.value.toLowerCase())
-    return moduleMatch && typeMatch && searchMatch
+    return moduleMatch && typeMatch && scaleMatch && yearMatch && searchMatch
   })
 })
 
@@ -55,6 +83,31 @@ const stats = computed(() => {
   const s = { total: cases.length, success: 0, failure: 0, trend: 0 }
   cases.forEach(c => { if (c.type === 'success') s.success++; else if (c.type === 'failure') s.failure++; else s.trend++ })
   return s
+})
+
+// 提取体量和年份选项
+const scaleOptions = computed(() => {
+  const scales = new Set()
+  cases.forEach(c => {
+    if (c.scale.includes('大卖家')) scales.add('大卖家')
+    else if (c.scale.includes('中型')) scales.add('中型卖家')
+    else if (c.scale.includes('中小')) scales.add('中小卖家')
+    else if (c.scale.includes('初创')) scales.add('初创')
+  })
+  return ['all', ...Array.from(scales)]
+})
+
+const yearOptions = computed(() => {
+  const years = new Set()
+  cases.forEach(c => {
+    const year = c.year.split('-')[0] // 取起始年份
+    years.add(year)
+  })
+  return ['all', ...Array.from(years).sort().reverse()]
+})
+
+onMounted(() => {
+  loadFavorites()
 })
 </script>
 
@@ -84,11 +137,39 @@ const stats = computed(() => {
   <input v-model="searchQuery" placeholder="🔍 搜索案例（标题/摘要/编号）..." :style="{ width: '100%', padding: '10px 16px', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '14px', outline: 'none' }" />
 </div>
 
+<!-- 高级筛选 -->
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px; padding:16px; background:#f9fafb; border-radius:10px; border:1px solid #e5e7eb;">
+  <div style="flex:1; min-width:200px;">
+    <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">📊 企业体量</label>
+    <select v-model="activeScale" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', fontSize: '14px' }">
+      <option value="all">全部体量</option>
+      <option v-for="scale in scaleOptions" v-if="scale !== 'all'" :key="scale" :value="scale">{{ scale }}</option>
+    </select>
+  </div>
+  <div style="flex:1; min-width:200px;">
+    <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">📅 案例年份</label>
+    <select v-model="activeYear" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', fontSize: '14px' }">
+      <option value="all">全部年份</option>
+      <option v-for="year in yearOptions" v-if="year !== 'all'" :key="year" :value="year">{{ year }}</option>
+    </select>
+  </div>
+  <div style="flex:1; min-width:200px;">
+    <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">⭐ 我的收藏</label>
+    <button @click="activeModule = 'all'; activeType = 'all'; activeScale = 'all'; activeYear = 'all'; searchQuery = ''" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', background: favorites.length > 0 ? '#fef3c7' : '#fff', fontSize: '14px', cursor: 'pointer' }">
+      {{ favorites.length > 0 ? `查看收藏 (${favorites.length})` : '暂无收藏' }}
+    </button>
+  </div>
+</div>
+
 <div v-if="filteredCases.length === 0" style="text-align:center; padding:40px; color:#6b7280;">
   当前筛选条件下暂无案例
 </div>
 
-<div v-for="c in filteredCases" :key="c.id" :id="c.id" style="border:1px solid #e5e7eb; border-radius:12px; padding:20px; margin-bottom:16px; background:#fafbfc;">
+<div v-for="c in filteredCases" :key="c.id" :id="c.id" style="border:1px solid #e5e7eb; border-radius:12px; padding:20px; margin-bottom:16px; background:#fafbfc; position:relative;">
+  <!-- 收藏按钮 -->
+  <button @click="toggleFavorite(c.id)" :style="{ position:'absolute', top:'12px', right:'12px', padding:'6px 10px', borderRadius:'8px', border:'none', background: isFavorite(c.id) ? '#fef3c7' : 'transparent', cursor:'pointer', fontSize:'1.2rem', transition:'all 0.2s' }" title="点击收藏/取消收藏">
+    {{ isFavorite(c.id) ? '⭐' : '☆' }}
+  </button>
 
 ### {{ c.id }} {{ c.title }}
 
