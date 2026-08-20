@@ -50,7 +50,7 @@ export default defineConfig({
   // === Markdown 扩展 ===
   markdown: {
     lineNumbers: false,
-    anchor: { permalink: undefined },
+    // 注意：不可覆盖 anchor.permalink——本地搜索索引依赖标题内的锚点链接切分章节
     toc: { level: [2, 3] },
     container: {
       tipLabel: '提示',
@@ -374,6 +374,14 @@ export default defineConfig({
                   link: '/courses/supply-chain/sample-lesson-3',
                 },
                 {
+                  text: '试听样章：第4课',
+                  link: '/courses/supply-chain/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/supply-chain/sample-lesson-5',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/supply-chain/toolkit-sample',
                 },
@@ -406,6 +414,14 @@ export default defineConfig({
                   link: '/courses/platform-operations/sample-lesson-3',
                 },
                 {
+                  text: '试听样章：第4课',
+                  link: '/courses/platform-operations/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/platform-operations/sample-lesson-5',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/platform-operations/toolkit-sample',
                 },
@@ -430,6 +446,14 @@ export default defineConfig({
                 {
                   text: '试听样章：第3课',
                   link: '/courses/compliance/sample-lesson-3',
+                },
+                {
+                  text: '试听样章：第4课',
+                  link: '/courses/compliance/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/compliance/sample-lesson-5',
                 },
                 {
                   text: '工具包样例',
@@ -459,6 +483,14 @@ export default defineConfig({
                 {
                   text: '试听样章：第3课',
                   link: '/courses/brand-management/sample-lesson-3',
+                },
+                {
+                  text: '试听样章：第4课',
+                  link: '/courses/brand-management/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/brand-management/sample-lesson-5',
                 },
                 {
                   text: '工具包样例',
@@ -499,6 +531,14 @@ export default defineConfig({
                   link: '/courses/logistics-overseas-warehouse/sample-lesson-3',
                 },
                 {
+                  text: '试听样章：第4课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/logistics-overseas-warehouse/sample-lesson-5',
+                },
+                {
                   text: '工具包样例',
                   link: '/courses/logistics-overseas-warehouse/toolkit-sample',
                 },
@@ -535,6 +575,14 @@ export default defineConfig({
                 {
                   text: '试听样章：第3课',
                   link: '/courses/supply-chain-execution/sample-lesson-3',
+                },
+                {
+                  text: '试听样章：第4课',
+                  link: '/courses/supply-chain-execution/sample-lesson-4',
+                },
+                {
+                  text: '试听样章：第5课',
+                  link: '/courses/supply-chain-execution/sample-lesson-5',
                 },
                 {
                   text: '工具包样例',

@@ -46,4 +46,21 @@ defineProps({
 .stat-red .stat-value { color: #ef4444; }
 .stat-purple .stat-value { color: #8b5cf6; }
 .stat-orange .stat-value { color: #f59e0b; }
+
+/* 移动端：内联指定的固定列数降级为自适应，避免窄屏挤压 */
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 0.75rem;
+  }
+  .stat-card {
+    padding: 0.9rem 0.6rem;
+  }
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+  }
+}
 </style>

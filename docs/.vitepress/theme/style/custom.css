@@ -719,3 +719,106 @@
 .dark .course-card:hover {
   box-shadow: 0 4px 16px rgba(124, 196, 250, 0.12);
 }
+
+/* ============================================
+   移动端适配优化（≤768px）
+   ============================================ */
+@media (max-width: 768px) {
+  /* 正文容器与基础排版 */
+  .VPDoc .content-container {
+    max-width: 100%;
+  }
+
+  /* 课程卡片：压缩内边距与标题字号 */
+  .course-card {
+    padding: 1rem;
+  }
+
+  .course-card .title {
+    font-size: 1.05rem;
+  }
+
+  /* 快速入口：双列改单列，减小内边距 */
+  .quick-links {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .quick-link {
+    padding: 0.75rem 1rem;
+  }
+
+  /* 页面横幅：缩小标题与留白 */
+  .page-banner {
+    padding: 2rem 0.5rem 1.5rem;
+  }
+
+  .page-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-banner p {
+    font-size: 0.95rem;
+  }
+
+  /* 表格：缩小字号与内边距，保留横向滚动 */
+  .vp-doc table {
+    font-size: 0.85rem;
+  }
+
+  .vp-doc th,
+  .vp-doc td {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .resource-table th,
+  .resource-table td {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  /* Quiz：压缩头部与选项内边距 */
+  .quiz-header {
+    padding: 0.7rem 0.9rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .quiz-question {
+    padding: 0.9rem;
+  }
+
+  .quiz-option {
+    padding: 0.6rem 0.75rem;
+  }
+
+  /* 进度看板：摘要卡内边距与清空按钮位置 */
+  .progress-summary {
+    padding: 1rem;
+  }
+
+  .progress-summary-text {
+    flex-wrap: wrap;
+    padding-right: 3.5rem;
+  }
+
+  .progress-group-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* 下载按钮：全宽更易点击 */
+  .download-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  /* 导航栏标题：超长时截断，避免窄屏横向溢出 */
+  .VPNavBarTitle .title {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
