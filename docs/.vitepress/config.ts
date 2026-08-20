@@ -345,13 +345,52 @@ export default defineConfig({
           text: 'L3 高阶毕业项目',
           collapsed: false,
           items: [
-            { text: 'L3 项目总览', link: '/l3/' },
+            { text: 'L3 课程总览', link: '/l3/' },
+          ],
+        },
+        // === L3-A 运营操盘手毕业项目 ===
+        {
+          text: 'L3-A 运营操盘手(12课时)',
+          collapsed: true,
+          items: [
+            { text: '🎧 试听:L3-A 项目导论', link: '/l3/l3a-sample-lesson' },
             { text: 'L3-A 运营操盘手毕业项目', link: '/l3/l3a-operations-project' },
-            { text: '🎧 试听：L3-A 项目导论', link: '/l3/l3a-sample-lesson' },
+            { text: '  第2课:项目定位与团队', link: '/l3/l3a-lesson-2' },
+            { text: '  第3课:选品分析与上架', link: '/l3/l3a-lesson-3' },
+            { text: '  第4课:广告投放与流量', link: '/l3/l3a-lesson-4' },
+            { text: '  第5课:数据复盘与优化', link: '/l3/l3a-lesson-5' },
+            { text: '  第6课:综合成果展示', link: '/l3/l3a-lesson-6' },
+            { text: '   工具包', link: '/l3/l3a-toolkit' },
+          ],
+        },
+        // === L3-B 创业实战沙盘 ===
+        {
+          text: 'L3-B 创业实战沙盘(12课时)',
+          collapsed: true,
+          items: [
+            { text: '🎧 试听:L3-B 沙盘导论', link: '/l3/l3b-sample-lesson' },
             { text: 'L3-B 创业实战沙盘', link: '/l3/l3b-startup-sandbox' },
-            { text: '🎧 试听：L3-B 沙盘导论', link: '/l3/l3b-sample-lesson' },
+            { text: '  第2课:选品决策与市场', link: '/l3/l3b-lesson-2' },
+            { text: '  第3课:供应链搭建', link: '/l3/l3b-lesson-3' },
+            { text: '  第4课:品牌启动与冷启', link: '/l3/l3b-lesson-4' },
+            { text: '  第5课:规模扩张', link: '/l3/l3b-lesson-5' },
+            { text: '  第6课:综合复盘', link: '/l3/l3b-lesson-6' },
+            { text: '   工具包', link: '/l3/l3b-toolkit' },
+          ],
+        },
+        // === L3-C 战略决策模拟 ===
+        {
+          text: 'L3-C 战略决策模拟(12课时)',
+          collapsed: true,
+          items: [
+            { text: '🎧 试听:L3-C 推演导论', link: '/l3/l3c-sample-lesson' },
             { text: 'L3-C 战略决策模拟', link: '/l3/l3c-strategy-simulation' },
-            { text: '🎧 试听：L3-C 推演导论', link: '/l3/l3c-sample-lesson' },
+            { text: '  第2课:市场进入战略', link: '/l3/l3c-lesson-2' },
+            { text: '  第3课:危机应对', link: '/l3/l3c-lesson-3' },
+            { text: '  第4课:并购整合', link: '/l3/l3c-lesson-4' },
+            { text: '  第5课:战略答辩', link: '/l3/l3c-lesson-5' },
+            { text: '  第6课:方法论总结', link: '/l3/l3c-lesson-6' },
+            { text: '   工具包', link: '/l3/l3c-toolkit' },
           ],
         },
       ],
@@ -406,6 +445,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/supply-chain/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/supply-chain/toolkit',
+                },
               ],
             },
             {
@@ -458,6 +500,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/platform-operations/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/platform-operations/toolkit',
+                },
               ],
             },
             {
@@ -503,6 +548,9 @@ export default defineConfig({
                 {
                   text: '工具包样例',
                   link: '/courses/compliance/toolkit-sample',
+                },
+                { text: '完整工具包',
+                  link: '/courses/compliance/toolkit',
                 },
               ],
             },
@@ -552,6 +600,9 @@ export default defineConfig({
                 {
                   text: '工具包样例',
                   link: '/courses/brand-management/toolkit-sample',
+                },
+                { text: '完整工具包',
+                  link: '/courses/brand-management/toolkit',
                 },
               ],
             },
@@ -619,6 +670,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/logistics-overseas-warehouse/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/logistics-overseas-warehouse/toolkit',
+                },
               ],
             },
             {
@@ -685,6 +739,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/supply-chain-execution/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/supply-chain-execution/toolkit',
+                },
               ],
             },
             {
@@ -717,6 +774,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/finance-management/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/finance-management/toolkit',
+                },
               ],
             },
             {
@@ -745,6 +805,9 @@ export default defineConfig({
                 {
                   text: '工具包样例',
                   link: '/courses/cashflow-forex/toolkit-sample',
+                },
+                { text: '完整工具包',
+                  link: '/courses/cashflow-forex/toolkit',
                 },
               ],
             },
@@ -780,6 +843,9 @@ export default defineConfig({
                   text: '工具包样例',
                   link: '/courses/digital-transformation/toolkit-sample',
                 },
+                { text: '完整工具包',
+                  link: '/courses/digital-transformation/toolkit',
+                },
               ],
             },
             {
@@ -811,6 +877,9 @@ export default defineConfig({
                 {
                   text: '工具包样例',
                   link: '/courses/team-management/toolkit-sample',
+                },
+                { text: '完整工具包',
+                  link: '/courses/team-management/toolkit',
                 },
               ],
             },
