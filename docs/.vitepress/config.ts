@@ -91,6 +91,7 @@ export default defineConfig({
         },
         workbox: {
           globPatterns: ['**/*.{html,css,js,json,png,svg,woff2}'],
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB (资源矩阵页面导致搜索索引变大)
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -128,6 +129,7 @@ export default defineConfig({
           { text: '核心术语表', link: '/resources/glossary' },
           { text: '学习路线图', link: '/resources/learning-roadmap' },
           { text: '行业数据看板', link: '/resources/industry-data' },
+          { text: '学习资源矩阵', link: '/resources/resource-matrix' },
           { text: '工具模板全景', link: '/resources/toolkit-preview' },
           { text: '入学诊断', link: '/resources/diagnosis' },
           { text: '学习证书', link: '/resources/certificate' },
@@ -160,6 +162,7 @@ export default defineConfig({
             { text: '核心术语表', link: '/resources/glossary' },
             { text: '学习路线图', link: '/resources/learning-roadmap' },
             { text: '行业数据看板', link: '/resources/industry-data' },
+            { text: '学习资源矩阵', link: '/resources/resource-matrix' },
             { text: '工具模板全景', link: '/resources/toolkit-preview' },
             { text: '入学诊断', link: '/resources/diagnosis' },
             { text: '学习证书', link: '/resources/certificate' },
