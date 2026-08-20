@@ -69,10 +69,6 @@ hero:
     <span class="ql-icon">📁</span>
     <span class="ql-text">资源下载中心</span>
   </a>
-  <a class="quick-link" href="/faculty/">
-    <span class="ql-icon">👨‍🏫</span>
-    <span class="ql-text">师资介绍</span>
-  </a>
   <a class="quick-link" href="/resources/diagnosis">
     <span class="ql-icon">📋</span>
     <span class="ql-text">入学诊断</span>
