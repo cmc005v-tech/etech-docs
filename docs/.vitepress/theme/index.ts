@@ -38,6 +38,9 @@ import MarkDone from './components/MarkDone.vue'
 import ProgressDashboard from './components/ProgressDashboard.vue'
 import CaseDetail from './components/CaseDetail.vue'
 import CaseComparison from './components/CaseComparison.vue'
+import CapabilityMap from './components/CapabilityMap.vue'
+import RelatedCases from './components/RelatedCases.vue'
+import InstructorHandbook from './components/InstructorHandbook.vue'
 import PathRecommender from './components/PathRecommender.vue'
 import LearningCertificate from './components/LearningCertificate.vue'
 
@@ -63,6 +66,9 @@ export default {
     app.component('ProgressDashboard', ProgressDashboard)
     app.component('CaseDetail', CaseDetail)
     app.component('CaseComparison', CaseComparison)
+    app.component('CapabilityMap', CapabilityMap)
+    app.component('RelatedCases', RelatedCases)
+    app.component('InstructorHandbook', InstructorHandbook)
     app.component('PathRecommender', PathRecommender)
     app.component('LearningCertificate', LearningCertificate)
   },

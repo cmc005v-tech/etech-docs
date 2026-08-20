@@ -146,6 +146,8 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
       </a>
     </div>
 
+    <InstructorHandbook v-if="d" :case-id="c.id" />
+
     <div class="case-nav">
       <a v-if="prev" :href="page(prev.id)">← {{ prev.id }} {{ prev.title.slice(0, 18) }}…</a>
       <span v-else></span>
