@@ -932,6 +932,17 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
+        // 自定义搜索索引：排除低价值页面 + 截断长内容，减小索引体积
+        _render(src, env, md) {
+          // 排除工具包页面和课时独立页面（不生成索引）
+          if (env.relativePath && /toolkit/.test(env.relativePath)) return ''
+          if (env.relativePath && /l[123][\\/].*lesson-\d/.test(env.relativePath)) return ''
+          // 对超长内容截断（保留前 3000 字符，足够搜索匹配）
+          if (src.length > 3000) src = src.slice(0, 3000)
+          const html = md.render(src, env)
+          if (env.frontmatter?.search === false) return ''
+          return html
+        },
         translations: {
           button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
           modal: {
