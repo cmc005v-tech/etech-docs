@@ -15,10 +15,6 @@ title: "全课大纲"
 - **第7课** 品牌指标体系与资产估值
 - **第8课** 组织人才、分体量战略与12个月行动方案（期末课）
 
-::: info 内容说明
-本页为免费公开样例。完整教案、讲师手册、全部工具模板与随堂小测面向报名学员定向分发，不在本站公开。
-:::
-
 <script setup>
 import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
 </script>

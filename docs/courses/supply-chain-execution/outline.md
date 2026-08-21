@@ -19,10 +19,6 @@ title: "全课大纲"
 
 > 课程地图：第 2-5 课 = 四大执行工具，第 6-7 课 = 两大场景，第 8-9 课 = 组织落地，第 10 课 = 检验闭环。
 
-::: info 内容说明
-本页为免费公开样例。完整教案、讲师手册、全部工具模板与随堂小测面向报名学员定向分发，不在本站公开。
-:::
-
 <script setup>
 import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
 </script>

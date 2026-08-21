@@ -15,10 +15,6 @@ title: "全课大纲"
 - **第7课** 风险管控与数字化转型
 - **第8课** 未来趋势与战略规划（期末课）
 
-::: info 内容说明
-本页为免费公开样例。完整教案、讲师手册、全部工具模板与随堂小测面向报名学员定向分发，不在本站公开。
-:::
-
 <script setup>
 import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
 </script>

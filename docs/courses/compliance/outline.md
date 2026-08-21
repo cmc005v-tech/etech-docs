@@ -15,10 +15,6 @@ title: "全课大纲"
 - **第7课** 平台合规、知识产权合规与合规成本ROI
 - **第8课** 合规体系搭建、RegTech转型与12个月行动方案（期末课）
 
-::: info 内容说明
-本页为免费公开样例。完整教案、讲师手册、全部工具模板与随堂小测面向报名学员定向分发，不在本站公开。
-:::
-
 <script setup>
 import RelatedCases from '../../.vitepress/theme/components/RelatedCases.vue'
 </script>
