@@ -29,7 +29,6 @@ course:
 2. 步骤2
 3. 步骤3
 
-**下载**: [工具1.xlsx](/resources/toolkit-samples/l106-tool1.xlsx)
 
 ---
 
@@ -39,7 +38,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具2.xlsx](/resources/toolkit-samples/l106-tool2.xlsx)
 
 ---
 
@@ -49,7 +47,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具3.xlsx](/resources/toolkit-samples/l106-tool3.xlsx)
 
 ---
 
@@ -59,7 +56,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具4.xlsx](/resources/toolkit-samples/l106-tool4.xlsx)
 
 ---
 
@@ -69,7 +65,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具5.xlsx](/resources/toolkit-samples/l106-tool5.xlsx)
 
 ---
 
@@ -79,7 +74,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具6.xlsx](/resources/toolkit-samples/l106-tool6.xlsx)
 
 ---
 

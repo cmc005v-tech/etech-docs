@@ -24,7 +24,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具1.xlsx](/resources/toolkit-samples/digital-transformation-tool1.xlsx)
 
 ---
 
@@ -43,7 +42,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具2.xlsx](/resources/toolkit-samples/digital-transformation-tool2.xlsx)
 
 ---
 
@@ -62,7 +60,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具3.xlsx](/resources/toolkit-samples/digital-transformation-tool3.xlsx)
 
 ---
 
@@ -81,7 +78,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具4.xlsx](/resources/toolkit-samples/digital-transformation-tool4.xlsx)
 
 ---
 
@@ -100,7 +96,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具5.xlsx](/resources/toolkit-samples/digital-transformation-tool5.xlsx)
 
 ---
 
@@ -119,7 +114,6 @@ description: "数字化转型课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具6.xlsx](/resources/toolkit-samples/digital-transformation-tool6.xlsx)
 
 ---
 

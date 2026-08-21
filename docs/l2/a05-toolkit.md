@@ -29,7 +29,6 @@ course:
 2. 步骤2
 3. 步骤3
 
-**下载**: [工具1.xlsx](/resources/toolkit-samples/l2a05-tool1.xlsx)
 
 ---
 
@@ -37,7 +36,6 @@ course:
 
 [工具内容表格/清单/模板]
 
-**下载**: [工具2-6.xlsx](/resources/toolkit-samples/l2a05-tool2-6.xlsx)
 
 ---
 

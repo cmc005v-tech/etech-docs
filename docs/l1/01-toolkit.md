@@ -34,7 +34,6 @@ course:
 2. 乘以权重,计算加权总分
 3. 选择总分最高的品类
 
-**下载**: [选品评估表.xlsx](/resources/toolkit-samples/product-evaluation.xlsx)
 
 ---
 
@@ -61,7 +60,6 @@ course:
 2. 各成本项占比可根据实际情况调整
 3. 自动计算净利润和利润率
 
-**下载**: [成本计算器.xlsx](/resources/toolkit-samples/cost-calculator.xlsx)
 
 ---
 
@@ -83,7 +81,6 @@ course:
 - 库存占比上限: 60%
 - 单平台依赖度: ≤70%
 
-**下载**: [现金流预测表.xlsx](/resources/toolkit-samples/cashflow-forecast.xlsx)
 
 ---
 
@@ -110,7 +107,6 @@ course:
 | Shopee | 中(3) | 低(2-3) | 低(1-2) | 低(1-2) | 加权计算 |
 | 独立站 | 中(3) | 中(3) | 高(4-5) | 高(4-5) | 加权计算 |
 
-**下载**: [平台选型矩阵.xlsx](/resources/toolkit-samples/platform-selection.xlsx)
 
 ---
 
@@ -154,7 +150,6 @@ course:
 
 **产出**: 正式开售
 
-**下载**: [30天启动计划.xlsx](/resources/toolkit-samples/30-day-plan.xlsx)
 
 ---
 
@@ -189,7 +184,6 @@ course:
 | 库存周转率 | >4次/年 | | ✅/❌ |
 | CCC | <60天 | | ✅/❌ |
 
-**下载**: [指标监控看板.xlsx](/resources/toolkit-samples/kpi-dashboard.xlsx)
 
 ---
 

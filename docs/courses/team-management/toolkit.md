@@ -24,7 +24,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具1.xlsx](/resources/toolkit-samples/team-management-tool1.xlsx)
 
 ---
 
@@ -43,7 +42,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具2.xlsx](/resources/toolkit-samples/team-management-tool2.xlsx)
 
 ---
 
@@ -62,7 +60,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具3.xlsx](/resources/toolkit-samples/team-management-tool3.xlsx)
 
 ---
 
@@ -81,7 +78,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具4.xlsx](/resources/toolkit-samples/team-management-tool4.xlsx)
 
 ---
 
@@ -100,7 +96,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具5.xlsx](/resources/toolkit-samples/team-management-tool5.xlsx)
 
 ---
 
@@ -119,7 +114,6 @@ description: "团队管理课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具6.xlsx](/resources/toolkit-samples/team-management-tool6.xlsx)
 
 ---
 

@@ -24,7 +24,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具1.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool1.xlsx)
 
 ---
 
@@ -43,7 +42,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具2.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool2.xlsx)
 
 ---
 
@@ -62,7 +60,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具3.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool3.xlsx)
 
 ---
 
@@ -81,7 +78,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具4.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool4.xlsx)
 
 ---
 
@@ -100,7 +96,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具5.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool5.xlsx)
 
 ---
 
@@ -119,7 +114,6 @@ description: "物流与海外仓课程全部配套工具模板,即拿即用"
 2. 步骤2
 3. 步骤3
 
-**下载**:[工具6.xlsx](/resources/toolkit-samples/logistics-overseas-warehouse-tool6.xlsx)
 
 ---
 
