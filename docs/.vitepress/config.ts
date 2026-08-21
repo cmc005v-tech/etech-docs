@@ -7,8 +7,8 @@ export default defineConfig({
   description:
     'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的学习体系',
   lang: 'zh-CN',
-  // GitHub Pages 项目站点 base（CI 部署时用 /etech-docs/，本地开发用 /）
-  base: process.env.CI ? '/etech-docs/' : '/',
+  // Cloudflare Pages / GitHub Pages 均部署在根域名，base 统一为 /
+  base: '/',
 
   // === Favicon + 默认浅色模式 + SEO ===
   // 首次访问或存储为 auto 时，预置为浅色偏好，避免跟随系统深色给长文本阅读带来负担
