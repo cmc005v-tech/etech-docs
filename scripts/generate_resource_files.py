@@ -155,8 +155,7 @@ def build_pdf(md_src: Path, course_name: str, course_code: str, out_pdf: Path):
 <div class="cover">
   <span class="tag">跨境电商高级实战系列 · 试听样章</span>
   <h1>{html.escape(course_name)}</h1>
-  <div class="meta">课程代码：{course_code} ｜ 本文档为第 1 课完整教案（讲师版样例）<br>
-  完整课程资料（全课教案 / 讲师手册 / PPT 大纲 / 配套工具包）面向报名学员定向分发</div>
+  <div class="meta">课程代码：{course_code} ｜ 本文档为第 1 课完整教案（讲师版样例）</div>
 </div>
 {body}
 <div class="footer">跨境电商高级实战系列 · 学习网站 ｜ 教案样例仅供试听评估使用</div>
@@ -362,7 +361,7 @@ def build_toolkit_zip(path: Path):
     # 1) 说明文件
     readme = """# 跨境电商高级实战系列 · 配套工具包样例
 
-本压缩包为课程配套工具模板的**样例合集**，完整工具包（共 8 件）面向报名学员定向分发。
+本压缩包为课程配套工具模板的**样例合集**，包含 5 件核心工具模板。
 
 ## 文件清单
 
