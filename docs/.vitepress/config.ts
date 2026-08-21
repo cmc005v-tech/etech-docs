@@ -7,6 +7,8 @@ export default defineConfig({
   description:
     'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的学习体系',
   lang: 'zh-CN',
+  // GitHub Pages 项目站点 base（CI 部署时用 /etech-docs/，本地开发用 /）
+  base: process.env.CI ? '/etech-docs/' : '/',
 
   // === Favicon + 默认浅色模式 + SEO ===
   // 首次访问或存储为 auto 时，预置为浅色偏好，避免跟随系统深色给长文本阅读带来负担
@@ -27,6 +29,13 @@ export default defineConfig({
     // 其他 SEO
     ['meta', { name: 'keywords', content: '跨境电商,亚马逊运营,TikTok Shop,品牌出海,供应链管理,合规风控,DTC独立站' }],
     ['meta', { name: 'author', content: '跨境电商高级实战系列' }],
+    // Google Analytics 4（请替换 G-XXXXXXXXXX 为实际 Measurement ID）
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX' }],
+    [
+      'script',
+      {},
+      `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');`,
+    ],
     [
       'script',
       {},
@@ -63,6 +72,20 @@ export default defineConfig({
 
   // === Vite 插件配置 ===
   vite: {
+    build: {
+      chunkSizeWarningLimit: 2500,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            // 将 node_modules 中的大型依赖单独分包
+            if (id.includes('node_modules')) {
+              if (id.includes('@vue/') || id.includes('vue/')) return 'vue-vendor'
+              if (id.includes('minisearch')) return 'search-vendor'
+            }
+          },
+        },
+      },
+    },
     plugins: [
       VitePWA({
         registerType: 'autoUpdate',
