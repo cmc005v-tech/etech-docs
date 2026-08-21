@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 跨境电商课程学习网站
 
 > 基于 VitePress 构建的跨境电商专业课程学习平台，覆盖 L1/L2/L3 三层学员分层体系与 10 门知识库专业课。
@@ -348,8 +347,4 @@ git push -u origin main
 
 ---
 
-**⭐ 如果这个项目对你有帮助，请给一个Star！**
-=======
-# etech-docs
-VitePress technical documentation site
->>>>>>> 3b366c6b5ae4c46b35ef3886e3a3fd60826116a6
+**⭐ 如果这个项目对你有帮助，请给一个 Star！**
