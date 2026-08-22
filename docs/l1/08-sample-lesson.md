@@ -35,6 +35,14 @@ description: 数据驱动运营思维、关键指标定义与五维看板概念
 
 ### 二、必须掌握的关键指标
 
+::: tip 术语注释（首次出现）
+- **ACOS**（Advertising Cost of Sales，广告销售成本比）= 广告花费 ÷ 广告销售额，衡量广告投放效率。
+- **TACOS**（Total Advertising Cost of Sales，总广告销售成本比）= 广告花费 ÷ 总销售额，衡量广告对整体业务的贡献。
+- **CPC**（Cost Per Click，每次点击成本）= 广告花费 ÷ 点击次数，衡量单次流量获取成本。
+- **CAC**（Customer Acquisition Cost，获客成本）= 获取一个新客户所需的平均投入。
+- **LTV**（Lifetime Value，客户终身价值）= 一个客户在整个生命周期内为企业带来的总价值。
+:::
+
 | 指标 | 定义 | 健康基准 |
 |------|------|---------|
 | ACOS | 广告花费 ÷ 广告销售额 | ≤ 25%（成熟期） |
@@ -69,9 +77,9 @@ description: 数据驱动运营思维、关键指标定义与五维看板概念
 
 <Quiz
   :questions="[
-    { q: '成熟期 ACOS 的健康基准是多少？', options: ['≤ 15%', '≤ 25%', '≤ 35%', '≤ 50%'], answer: 1, explain: '成熟期 ACOS 目标 ≤ 25%' },
-    { q: 'LTV/CAC 的健康比值是多少？', options: ['> 1', '> 2', '> 3', '> 4'], answer: 2, explain: 'LTV/CAC > 3 为健康' },
-    { q: '库存周转的健康基准是多少天？', options: ['≤ 30 天', '≤ 60 天', '≤ 90 天', '≤ 120 天'], answer: 1, explain: '库存周转 ≤ 60 天为健康' },
+    { q: '成熟期 ACOS 的健康基准是多少？', options: ['≤ 15%', '≤ 25%', '≤ 35%', '≤ 50%'], correct: 1, explanation: '成熟期 ACOS 目标 ≤ 25%' },
+    { q: 'LTV/CAC 的健康比值是多少？', options: ['> 1', '> 2', '> 3', '> 4'], correct: 2, explanation: 'LTV/CAC > 3 为健康' },
+    { q: '库存周转的健康基准是多少天？', options: ['≤ 30 天', '≤ 60 天', '≤ 90 天', '≤ 120 天'], correct: 1, explanation: '库存周转 ≤ 60 天为健康' },
   ]"
 />
 
