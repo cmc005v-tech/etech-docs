@@ -133,10 +133,10 @@ A: 运营分析关注怎么做更好（效率），战略分析关注做什么�
 ## Quiz 自测
 
 <Quiz title="L3-C 第2课 · 自测" :questions="[
-  { q: 'L3-C 战略决策模拟的案例数量与课时是？', options: ['2 个案例/8 课时', '3 个案例/12 课时', '4 个案例/16 课时', '3 个案例+答辩/12 课时'], answer: 1, explain: 'L3-C 共 3 个案例（增长/转型/危机），每个案例 3 课时，加上答辩 3 课时，共 12 课时。' },
-  { q: '波特五力分析的核心对象是？', options: ['企业内部能力', '行业竞争结构', '宏观环境', '财务健康度'], answer: 1, explain: '波特五力分析行业竞争结构：供应商/买家/新进入者/替代品/现有竞争。企业内部能力用 SWOT 的 S/W 分析。' },
-  { q: 'SWOT 分析中最容易被忽略但最重要的维度是？', options: ['Strength（优势）', 'Opportunity（机会）', 'Weakness（劣势）和 Threat（威胁）', '全部同等重要'], answer: 2, explain: 'Weakness 和 Threat 最容易被忽略但最重要——战略决策的关键是识别盲区而非展示优势。' },
-  { q: 'PESTLE 分析的六个维度不包括？', options: ['政治（Political）', '技术（Technological）', '文化（Cultural）', '环境（Environmental）'], answer: 2, explain: 'PESTLE 六维度：政治/经济/社会/技术/法律/环境。文化包含在社会维度中，不是独立维度。' }
+  { q: 'L3-C 战略决策模拟的案例数量与课时是？', options: ['2 个案例/8 课时', '3 个案例/12 课时', '4 个案例/16 课时', '3 个案例+答辩/12 课时'], correct: 1, explanation: 'L3-C 共 3 个案例（增长/转型/危机），每个案例 3 课时，加上答辩 3 课时，共 12 课时。' },
+  { q: '波特五力分析的核心对象是？', options: ['企业内部能力', '行业竞争结构', '宏观环境', '财务健康度'], correct: 1, explanation: '波特五力分析行业竞争结构：供应商/买家/新进入者/替代品/现有竞争。企业内部能力用 SWOT 的 S/W 分析。' },
+  { q: 'SWOT 分析中最容易被忽略但最重要的维度是？', options: ['Strength（优势）', 'Opportunity（机会）', 'Weakness（劣势）和 Threat（威胁）', '全部同等重要'], correct: 2, explanation: 'Weakness 和 Threat 最容易被忽略但最重要——战略决策的关键是识别盲区而非展示优势。' },
+  { q: 'PESTLE 分析的六个维度不包括？', options: ['政治（Political）', '技术（Technological）', '文化（Cultural）', '环境（Environmental）'], correct: 2, explanation: 'PESTLE 六维度：政治/经济/社会/技术/法律/环境。文化包含在社会维度中，不是独立维度。' }
 ]" />
 
 ---

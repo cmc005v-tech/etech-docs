@@ -1,17 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 interface Question {
   q: string
   options: string[]
-  answer: number
+  answer?: number
+  correct?: number
   explain?: string
+  explanation?: string
 }
 
 const props = defineProps<{
   title?: string
   questions: Question[]
 }>()
+
+// 兼容两种属性名：新规范 correct/explanation（L1 v2.0 及 L2A 起），旧规范 answer/explain
+const normalized = computed(() =>
+  props.questions.map(item => ({
+    q: item.q,
+    options: item.options,
+    answer: item.answer ?? item.correct,
+    explain: item.explain ?? item.explanation
+  }))
+)
 
 const picked = ref<(number | null)[]>(props.questions.map(() => null))
 
@@ -21,14 +33,14 @@ const pick = (qi: number, oi: number) => {
 }
 
 const isCorrect = (qi: number, oi: number) =>
-  picked.value[qi] !== null && oi === props.questions[qi].answer
+  picked.value[qi] !== null && oi === normalized.value[qi].answer
 
 const isWrongPick = (qi: number, oi: number) =>
-  picked.value[qi] === oi && oi !== props.questions[qi].answer
+  picked.value[qi] === oi && oi !== normalized.value[qi].answer
 
 const answeredCount = () => picked.value.filter(p => p !== null).length
 const correctCount = () =>
-  props.questions.reduce((acc, q, i) => acc + (picked.value[i] === q.answer ? 1 : 0), 0)
+  normalized.value.reduce((acc, q, i) => acc + (picked.value[i] === q.answer ? 1 : 0), 0)
 const allAnswered = () => answeredCount() === props.questions.length
 
 const reset = () => {
@@ -43,7 +55,7 @@ const reset = () => {
       <span class="quiz-progress">已答 {{ answeredCount() }} / {{ questions.length }}</span>
     </div>
 
-    <div v-for="(q, qi) in questions" :key="qi" class="quiz-question">
+    <div v-for="(q, qi) in normalized" :key="qi" class="quiz-question">
       <div class="quiz-q">{{ qi + 1 }}. {{ q.q }}</div>
       <div class="quiz-options">
         <button

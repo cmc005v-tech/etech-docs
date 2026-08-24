@@ -134,10 +134,10 @@ A: 单个素材的效果无法预判，A/B 测试用数据说话。建议至少 
 ## Quiz 自测
 
 <Quiz title="L3-A 第4课 · 自测" :questions="[
-  { q: 'L3-A 第二阶段的核心交付件不包括？', options: ['广告体系方案', '竞价与预算表', '选品分析报告', '投放数据报告'], answer: 2, explain: '第二阶段交付件：广告体系方案+竞价与预算表+投放数据报告。选品分析报告是第一阶段的交付件。' },
-  { q: 'SP/SB/SD 三种广告类型中，负责品牌建设的是？', options: ['SP（Sponsored Products）', 'SB（Sponsored Brands）', 'SD（Sponsored Display）', '三者都是'], answer: 1, explain: 'SP 管转化、SB 管品牌、SD 管再营销。只投 SP 不顾品牌等于只顾今天不顾明天。' },
-  { q: 'AI 竞价建议通常能将 ACOS 降低多少？', options: ['5-10%', '10-20%', '30-50%', '80%以上'], answer: 2, explain: 'AI 竞价建议基于历史数据，通常能降低 30-50% ACOS。但新品类需预留 20% 探索预算，前 7 天先积累数据。' },
-  { q: '广告素材 A/B 测试的推荐数量是？', options: ['1-2 组', '3 组', '至少 5 组', '10 组以上'], answer: 2, explain: '建议至少 5 组素材同时投放，7 天后保留 CTR 最高的 2 组。AI 工具可批量生成，但选择权在人。' }
+  { q: 'L3-A 第二阶段的核心交付件不包括？', options: ['广告体系方案', '竞价与预算表', '选品分析报告', '投放数据报告'], correct: 2, explanation: '第二阶段交付件：广告体系方案+竞价与预算表+投放数据报告。选品分析报告是第一阶段的交付件。' },
+  { q: 'SP/SB/SD 三种广告类型中，负责品牌建设的是？', options: ['SP（Sponsored Products）', 'SB（Sponsored Brands）', 'SD（Sponsored Display）', '三者都是'], correct: 1, explanation: 'SP 管转化、SB 管品牌、SD 管再营销。只投 SP 不顾品牌等于只顾今天不顾明天。' },
+  { q: 'AI 竞价建议通常能将 ACOS 降低多少？', options: ['5-10%', '10-20%', '30-50%', '80%以上'], correct: 2, explanation: 'AI 竞价建议基于历史数据，通常能降低 30-50% ACOS。但新品类需预留 20% 探索预算，前 7 天先积累数据。' },
+  { q: '广告素材 A/B 测试的推荐数量是？', options: ['1-2 组', '3 组', '至少 5 组', '10 组以上'], correct: 2, explanation: '建议至少 5 组素材同时投放，7 天后保留 CTR 最高的 2 组。AI 工具可批量生成，但选择权在人。' }
 ]" />
 
 ---

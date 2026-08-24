@@ -73,6 +73,10 @@ hero:
     <span class="ql-icon">📋</span>
     <span class="ql-text">入学诊断</span>
   </a>
+  <a class="quick-link" href="/community/">
+    <span class="ql-icon">💬</span>
+    <span class="ql-text">学习社区</span>
+  </a>
   <a class="quick-link" href="/faq/">
     <span class="ql-icon">❓</span>
     <span class="ql-text">常见问题</span>

@@ -100,10 +100,10 @@ A: 法规未规定报告有效期，但三种情况必须重新检测：一是�
 ## Quiz 自测
 
 <Quiz title="L2B-04 第4课 · 自测" :questions="[
-  { q: '美国儿童产品上市需要哪种认证？', options: ['FCC SDoC', 'FDA 注册', 'CPC 证书+第三方检测', 'MoCRA 注册'], answer: 2, explain: '儿童产品需 CPSC 的 CPC 证书+第三方检测（$2000-5000）；FCC 管电子，FDA 管食品接触，MoCRA 管化妆品。' },
-  { q: 'FCC 认证中，带蓝牙功能的产品应走？', options: ['SDoC 自我声明', 'Certification（需 FCC ID）', '无需认证', 'FDA 通道'], answer: 1, explain: '带无线发射模块（蓝牙/WiFi）走 Certification 需 FCC ID；无无线功能的电子产品走 SDoC。' },
-  { q: '产品合规 SOP 中送检实验室的选择标准是？', options: ['价格最低即可', 'ISO 17025 认可+监管承认', '距离最近', '熟人介绍'], answer: 1, explain: '选择 ISO 17025 认可且被目标监管机构承认的实验室，报告才被监管和平台认可。' },
-  { q: 'CE 认证造假案例的后果是？', options: ['罚款放行', '整批货物被海关扣押', '仅警告', '补缴认证费'], answer: 1, explain: '假证书无法验真，清关抽检发现后整批扣押——证书可以买，风险买不掉，所有证书必须自己送检取得。' }
+  { q: '美国儿童产品上市需要哪种认证？', options: ['FCC SDoC', 'FDA 注册', 'CPC 证书+第三方检测', 'MoCRA 注册'], correct: 2, explanation: '儿童产品需 CPSC 的 CPC 证书+第三方检测（$2000-5000）；FCC 管电子，FDA 管食品接触，MoCRA 管化妆品。' },
+  { q: 'FCC 认证中，带蓝牙功能的产品应走？', options: ['SDoC 自我声明', 'Certification（需 FCC ID）', '无需认证', 'FDA 通道'], correct: 1, explanation: '带无线发射模块（蓝牙/WiFi）走 Certification 需 FCC ID；无无线功能的电子产品走 SDoC。' },
+  { q: '产品合规 SOP 中送检实验室的选择标准是？', options: ['价格最低即可', 'ISO 17025 认可+监管承认', '距离最近', '熟人介绍'], correct: 1, explanation: '选择 ISO 17025 认可且被目标监管机构承认的实验室，报告才被监管和平台认可。' },
+  { q: 'CE 认证造假案例的后果是？', options: ['罚款放行', '整批货物被海关扣押', '仅警告', '补缴认证费'], correct: 1, explanation: '假证书无法验真，清关抽检发现后整批扣押——证书可以买，风险买不掉，所有证书必须自己送检取得。' }
 ]" />
 
 ---

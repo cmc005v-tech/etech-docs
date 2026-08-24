@@ -92,10 +92,10 @@ A: 不要硬做，但先做两件事再放弃：一是拆解核价逻辑——�
 ## Quiz 自测
 
 <Quiz title="L2B-08 第3课 · 自测" :questions="[
-  { q: '亚马逊启动清单中，解锁 A+ 页面与 Vine 计划的前置条件是？', options: ['FBA 入仓', '品牌注册（Brand Registry）', 'SP 广告开启', '日销达标'], answer: 1, explain: '品牌备案先行：A+ 页面和 Vine 评价计划都依赖 Brand Registry，所以备案是亚马逊启动第一步。' },
-  { q: 'TikTok Shop 启动与亚马逊的本质差异是？', options: ['TikTok 上架即有流量', 'TikTok 流量要靠内容和达人推出来', 'TikTok 不需要上架商品', '两者完全相同'], answer: 1, explain: '亚马逊上架可被搜索触达，TikTok 上架≠有流量——启动重心在内容引擎点火（日更+KOL 建联 20-30 位）。' },
-  { q: 'Temu 启动时判断单品是否值得做的底线是？', options: ['平台给流量就做', '毛利覆盖仓储物流+退货损耗', '先亏三个月再说', '竞品在做就跟'], answer: 1, explain: 'Temu 量大利薄：核价倒推毛利必须覆盖仓储物流+退货损耗，算不过账的单品不要幻想靠量翻盘。' },
-  { q: '三平台中启动资金门槛排序（从高到低）是？', options: ['TikTok>Temu>亚马逊', '亚马逊>Temu>TikTok', 'Temu>亚马逊>TikTok', '三平台相同'], answer: 1, explain: '资金门槛：亚马逊>Temu>TikTok——资金有限时选低门槛平台先跑通模式。' }
+  { q: '亚马逊启动清单中，解锁 A+ 页面与 Vine 计划的前置条件是？', options: ['FBA 入仓', '品牌注册（Brand Registry）', 'SP 广告开启', '日销达标'], correct: 1, explanation: '品牌备案先行：A+ 页面和 Vine 评价计划都依赖 Brand Registry，所以备案是亚马逊启动第一步。' },
+  { q: 'TikTok Shop 启动与亚马逊的本质差异是？', options: ['TikTok 上架即有流量', 'TikTok 流量要靠内容和达人推出来', 'TikTok 不需要上架商品', '两者完全相同'], correct: 1, explanation: '亚马逊上架可被搜索触达，TikTok 上架≠有流量——启动重心在内容引擎点火（日更+KOL 建联 20-30 位）。' },
+  { q: 'Temu 启动时判断单品是否值得做的底线是？', options: ['平台给流量就做', '毛利覆盖仓储物流+退货损耗', '先亏三个月再说', '竞品在做就跟'], correct: 1, explanation: 'Temu 量大利薄：核价倒推毛利必须覆盖仓储物流+退货损耗，算不过账的单品不要幻想靠量翻盘。' },
+  { q: '三平台中启动资金门槛排序（从高到低）是？', options: ['TikTok>Temu>亚马逊', '亚马逊>Temu>TikTok', 'Temu>亚马逊>TikTok', '三平台相同'], correct: 1, explanation: '资金门槛：亚马逊>Temu>TikTok——资金有限时选低门槛平台先跑通模式。' }
 ]" />
 
 ---
