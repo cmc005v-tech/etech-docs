@@ -44,6 +44,7 @@ import InstructorHandbook from './components/InstructorHandbook.vue'
 import CourseComparison from './components/CourseComparison.vue'
 import PathRecommender from './components/PathRecommender.vue'
 import LearningCertificate from './components/LearningCertificate.vue'
+import Comments from './components/Comments.vue'
 
 // 自定义样式
 import './style/vars.css'
@@ -73,5 +74,6 @@ export default {
     app.component('CourseComparison', CourseComparison)
     app.component('PathRecommender', PathRecommender)
     app.component('LearningCertificate', LearningCertificate)
+    app.component('Comments', Comments)
   },
 }

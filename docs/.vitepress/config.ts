@@ -145,6 +145,7 @@ export default defineConfig({
       { text: 'L2 选修课程', link: '/l2/' },
       { text: 'L3 毕业项目', link: '/l3/' },
       { text: '知识库课程', link: '/courses/' },
+      { text: '学习社区', link: '/community/' },
       {
         text: '学习资源',
         items: [
@@ -162,6 +163,22 @@ export default defineConfig({
       { text: '案例库', link: '/cases/' },
       { text: '常见问题', link: '/faq/' },
     ],
+
+    // --- 评论系统（Giscus，基于 GitHub Discussions，免费） ---
+    // 配置后，页面中的 <Comments /> 组件将显示真实评论区（登录 GitHub 即可发言）；
+    // 留空则显示接入引导。获取方式：1) 仓库 Settings → Features 启用 Discussions；
+    // 2) 安装 Giscus App 并授权该仓库；3) 打开 https://giscus.app 按向导生成并复制四项值。
+    comments: {
+      provider: 'giscus', // 'giscus' 或 'utterances'
+      giscus: {
+        repo: '', // 形如 'owner/repo'
+        repoId: '',
+        category: 'Announcements',
+        categoryId: '',
+        mapping: 'pathname',
+        lang: 'zh-CN',
+      },
+    },
 
     // --- 侧边栏（按路径多侧边栏） ---
     sidebar: {
@@ -909,6 +926,18 @@ export default defineConfig({
                 },
               ],
             },
+          ],
+        },
+      ],
+      '/community/': [
+        {
+          text: '学习社区',
+          collapsed: false,
+          items: [
+            { text: '社区首页', link: '/community/' },
+            { text: '发帖模板', link: '/community/#发帖模板' },
+            { text: '社区公约', link: '/community/#社区公约' },
+            { text: '帮助与支持', link: '/community/#帮助与支持' },
           ],
         },
       ],

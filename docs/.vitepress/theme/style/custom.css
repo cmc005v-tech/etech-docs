@@ -954,3 +954,65 @@
 .dark .share-btn:hover {
   background: #2563eb;
 }
+
+/* Comments.vue 评论区 */
+.comments-block {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.comments-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.comments-hint {
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.comments-mount {
+  min-height: 120px;
+}
+
+.comments-guide {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.92rem;
+}
+
+.comments-guide ol {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.comments-guide li {
+  margin-bottom: 0.4rem;
+}
+
+.comments-guide code {
+  font-size: 0.85em;
+}
+
+.comments-guide-code-title {
+  margin: 0.75rem 0 0.4rem;
+  font-weight: 600;
+}
+
+.comments-guide-code {
+  background: var(--vp-code-block-bg);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.comments-guide a {
+  font-weight: 500;
+}
