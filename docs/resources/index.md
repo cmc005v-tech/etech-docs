@@ -18,6 +18,7 @@ description: 跨境电商课程配套资源，按模块分类整理
 - 📚 [**先修包自学**](/resources/pre-study) — 密集制学员课前预习材料
 - 🧭 [**学习指南**](/resources/study-guide) — 如何使用本网站 + 学习方法建议
 - 📑 [**行业报告摘要**](/resources/industry-reports) — 5 份深度研究报告核心发现
+- 📰 [**公众号文章解读（2025-2026）**](/resources/industry-articles-2026) — 亚狮跨境 114 篇文章六大主题域解读与趋势研判
 - 👨‍🏫 [**讲师手册样例**](/resources/instructor-handbook-sample) — 教学设计深度展示
 - 🏆 [**学员成果展示**](/resources/student-showcase) — 学习前后能力变化对比
 - ✅ [**我的学习进度**](/resources/progress) — 本地进度追踪看板
