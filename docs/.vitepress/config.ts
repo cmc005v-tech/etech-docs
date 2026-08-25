@@ -171,10 +171,10 @@ export default defineConfig({
     comments: {
       provider: 'giscus', // 'giscus' 或 'utterances'
       giscus: {
-        repo: '', // 形如 'owner/repo'
-        repoId: '',
+        repo: 'cmc005v-tech/etech-docs',
+        repoId: 'R_kgDOT-QCgA',
         category: 'Announcements',
-        categoryId: '',
+        categoryId: 'DIC_kwDOT-QCgM4DEETR',
         mapping: 'pathname',
         lang: 'zh-CN',
       },
