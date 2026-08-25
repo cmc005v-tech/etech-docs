@@ -211,6 +211,7 @@ export default defineConfig({
             { text: '行业报告摘要', link: '/resources/industry-reports' },
             { text: '全球平台版图拓展', link: '/resources/platform-extension' },
             { text: '职业发展参考', link: '/resources/career-development' },
+            { text: '外部学习资源（MOOC）', link: '/resources/external-learning' },
             { text: '讲师手册样例', link: '/resources/instructor-handbook-sample' },
             { text: '学员成果展示', link: '/resources/student-showcase' },
             { text: '我的学习进度', link: '/resources/progress' },
