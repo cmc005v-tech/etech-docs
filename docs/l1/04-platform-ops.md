@@ -189,4 +189,6 @@ course:
 
 > 更多案例请前往 [案例库](/cases/) 浏览
 
+📚 **平台版图拓展**：主课聚焦四大平台，想了解欧洲本土（OTTO/Allegro/eMAG）、拉美（美客多）、东南亚本土平台？前往 [全球平台版图拓展](/resources/platform-extension) ——面试高频加分项。
+
 <ContentNotice />
