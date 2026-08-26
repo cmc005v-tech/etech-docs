@@ -1,20 +1,25 @@
 import { defineConfig } from 'vitepress'
 import { VitePWA } from 'vite-plugin-pwa'
 
+// === 双平台部署 base ===
+// GitHub Pages 部署在子路径 /etech-docs/ 下；Cloudflare Pages（etech-docs.pages.dev）部署在根域名。
+// Cloudflare Pages 构建时自动注入 CF_PAGES 环境变量，据此动态切换 base，保证两平台资源路径均正确。
+export const base = process.env.CF_PAGES ? '/' : '/etech-docs/'
+
 export default defineConfig({
   // === 站点基础 ===
   title: '跨境电商高级实战系列 · 学习网站',
   description:
     'L1 必修基础 · L2 分路径选修 · L3 高阶专精 —— 从课程到产品的学习体系',
   lang: 'zh-CN',
-  // GitHub Pages 部署在子路径 /etech-docs/ 下，base 必须与部署路径一致（否则资源 404、交互组件失效）
-  base: '/etech-docs/',
+  // GitHub Pages 部署在子路径 /etech-docs/ 下；Cloudflare Pages（etech-docs.pages.dev）在根域名——base 由 CF_PAGES 环境变量动态决定
+  base,
 
   // === Favicon + 默认浅色模式 + SEO ===
   // 首次访问或存储为 auto 时，预置为浅色偏好，避免跟随系统深色给长文本阅读带来负担
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/etech-docs/favicon.svg' }],
-    ['link', { rel: 'apple-touch-icon', href: '/etech-docs/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
+    ['link', { rel: 'apple-touch-icon', href: `${base}apple-touch-icon.png` }],
     ['meta', { name: 'theme-color', content: '#3b82f6' }],
     // Open Graph
     ['meta', { property: 'og:type', content: 'website' }],
@@ -97,16 +102,16 @@ export default defineConfig({
           theme_color: '#3b82f6',
           background_color: '#ffffff',
           display: 'standalone',
-          scope: '/etech-docs/',
-          start_url: '/etech-docs/',
+          scope: base,
+          start_url: base,
           icons: [
             {
-              src: '/etech-docs/icon-192x192.png',
+              src: `${base}icon-192x192.png`,
               sizes: '192x192',
               type: 'image/png',
             },
             {
-              src: '/etech-docs/icon-512x512.png',
+              src: `${base}icon-512x512.png`,
               sizes: '512x512',
               type: 'image/png',
             },
