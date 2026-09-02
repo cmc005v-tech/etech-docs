@@ -192,6 +192,7 @@ export default defineConfig({
           text: '体系总览',
           items: [
             { text: '课程体系总览', link: '/overview/' },
+            { text: '课程序言', link: '/overview/preface' },
             { text: '分层课程体系详解', link: '/overview/layered-system' },
             { text: '案例库精选', link: '/overview/case-library' },
             { text: '核心数据亮点', link: '/overview/data-highlights' },
