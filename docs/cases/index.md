@@ -1,7 +1,7 @@
 ---
 title: 跨境电商课程案例库
-description: 54个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约、商业本质六大领域
-keywords: [跨境电商案例, 供应链案例, 平台运营案例, 品牌出海案例, 合规案例, 物流案例, 商业案例]
+description: 54个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约、商业本质六大领域，每个案例标注核心思维模型标签
+keywords: [跨境电商案例, 供应链案例, 平台运营案例, 品牌出海案例, 合规案例, 物流案例, 商业案例, 思维模型, 芒格]
 outline: deep
 ---
 
@@ -15,6 +15,7 @@ const activeType = ref('all')
 const searchQuery = ref('')
 const activeScale = ref('all')
 const activeYear = ref('all')
+const activeModel = ref('all')
 const favorites = ref([])
 
 // 加载收藏列表
@@ -62,11 +63,13 @@ const filteredCases = computed(() => {
     const typeMatch = activeType.value === 'all' || c.type === activeType.value
     const scaleMatch = activeScale.value === 'all' || c.scale.includes(activeScale.value)
     const yearMatch = activeYear.value === 'all' || c.year === activeYear.value
+    const modelMatch = activeModel.value === 'all' || (c.models || []).includes(activeModel.value)
     const searchMatch = !searchQuery.value || 
       c.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
       c.summary.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      c.id.toLowerCase().includes(searchQuery.value.toLowerCase())
-    return moduleMatch && typeMatch && scaleMatch && yearMatch && searchMatch
+      c.id.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      (c.models || []).some(m => m.toLowerCase().includes(searchQuery.value.toLowerCase()))
+    return moduleMatch && typeMatch && scaleMatch && yearMatch && modelMatch && searchMatch
   })
 })
 
@@ -80,9 +83,19 @@ const moduleLabel = (m) => {
   return map[m] || m
 }
 
+// 提取思维模型选项（模型↔案例双链：详情页标签可反查案例库）
+const modelOptions = computed(() => {
+  const models = new Set()
+  cases.forEach(c => (c.models || []).forEach(m => models.add(m)))
+  return ['all', ...Array.from(models).sort()]
+})
+
 const stats = computed(() => {
-  const s = { total: cases.length, success: 0, failure: 0, trend: 0 }
+  const s = { total: cases.length, success: 0, failure: 0, trend: 0, models: 0 }
   cases.forEach(c => { if (c.type === 'success') s.success++; else if (c.type === 'failure') s.failure++; else s.trend++ })
+  const ms = new Set()
+  cases.forEach(c => (c.models || []).forEach(m => ms.add(m)))
+  s.models = ms.size
   return s
 })
 
@@ -109,6 +122,12 @@ const yearOptions = computed(() => {
 
 onMounted(() => {
   loadFavorites()
+  // 支持 ?model=xxx 深链：案例详情页的模型标签点击后跳转此处并自动筛选
+  const params = new URLSearchParams(window.location.search)
+  const model = params.get('model')
+  if (model && modelOptions.value.includes(model)) {
+    activeModel.value = model
+  }
 })
 </script>
 
@@ -120,6 +139,7 @@ onMounted(() => {
   { label: '反面失败', value: stats.failure + ' 个', color: 'red' },
   { label: '趋势/综合', value: stats.trend + ' 个', color: 'purple' },
   { label: '覆盖领域', value: '6 大模块', color: 'orange' },
+  { label: '思维模型标签', value: stats.models + ' 个', color: 'teal' },
 ]" />
 
 ---
@@ -155,8 +175,15 @@ onMounted(() => {
     </select>
   </div>
   <div style="flex:1; min-width:200px;">
+    <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">🧠 核心思维模型</label>
+    <select v-model="activeModel" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', fontSize: '14px' }">
+      <option value="all">全部模型</option>
+      <option v-for="model in modelOptions" v-if="model !== 'all'" :key="model" :value="model">{{ model }}</option>
+    </select>
+  </div>
+  <div style="flex:1; min-width:200px;">
     <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">⭐ 我的收藏</label>
-    <button @click="activeModule = 'all'; activeType = 'all'; activeScale = 'all'; activeYear = 'all'; searchQuery = ''" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', background: favorites.length > 0 ? '#fef3c7' : '#fff', fontSize: '14px', cursor: 'pointer' }">
+    <button @click="activeModule = 'all'; activeType = 'all'; activeScale = 'all'; activeYear = 'all'; activeModel = 'all'; searchQuery = ''" :style="{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #d1d5db', background: favorites.length > 0 ? '#fef3c7' : '#fff', fontSize: '14px', cursor: 'pointer' }">
       {{ favorites.length > 0 ? `查看收藏 (${favorites.length})` : '暂无收藏' }}
     </button>
   </div>
@@ -183,6 +210,11 @@ onMounted(() => {
   <span style="background:#f3f4f6; padding:2px 10px; border-radius:12px;">来源：{{ c.source }}</span>
 </div>
 
+<div v-if="c.models && c.models.length" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+  <span style="font-size:13px; color:#6b7280; line-height:24px;">🧠</span>
+  <button v-for="model in c.models" :key="model" @click="activeModel = activeModel === model ? 'all' : model" :style="{ padding: '2px 12px', borderRadius: '14px', border: activeModel === model ? '2px solid #7c3aed' : '1px solid #ddd6fe', background: activeModel === model ? '#f5f3ff' : '#faf5ff', cursor: 'pointer', fontSize: '12px', color: '#6d28d9', fontWeight: activeModel === model ? '600' : '400' }" title="点击按该模型筛选">{{ model }}</button>
+</div>
+
 **案例摘要：**
 
 {{ c.summary }}
@@ -195,6 +227,16 @@ onMounted(() => {
 </div>
 
 </div>
+
+---
+
+## 模型 ↔ 案例双链
+
+每个案例已标注**核心思维模型**标签（取自课程《跨境电商课程 × 芒格思维模型映射表》的 64 个高价值模型，当前覆盖其中 42 个；另有 1 个案例特用标签「复利」）。双链用法：
+
+- **案例 → 模型**：点击案例卡片上的 🧠 标签，可筛选出应用了同一思维模型的全部案例；
+- **模型 → 案例**：在「🧠 核心思维模型」下拉中选择模型，或在案例详情页点击模型标签直达筛选结果；
+- **教学用途**：讲授某课时（如 L2C-05 供应链战略的「系统思维」），可一键调出全部关联案例作为课堂素材；对比同一模型在成功案例与失败案例中的运用差异。
 
 ---
 

@@ -70,6 +70,11 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
       <span>来源：{{ c.source }}</span>
     </div>
 
+    <div v-if="c.models && c.models.length" class="case-models">
+      <span class="models-label">🧠 核心思维模型：</span>
+      <a v-for="model in c.models" :key="model" :href="'/cases/?model=' + encodeURIComponent(model)" class="model-chip" title="在案例库中查看该模型的全部案例">{{ model }}</a>
+    </div>
+
     <h2>案例摘要</h2>
     <p class="case-summary">{{ c.summary }}</p>
     <p><strong>教学要点：</strong>{{ c.teaching }}</p>
@@ -182,6 +187,37 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
   padding: 14px 18px;
   border-radius: 0 10px 10px 0;
   margin: 1.25rem 0;
+}
+.case-models {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--vp-c-brand-soft);
+  border: 1px solid var(--vp-c-brand-soft);
+}
+.models-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+.model-chip {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-brand-1);
+  padding: 3px 12px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--vp-c-brand-soft);
+  transition: all 0.2s ease;
+}
+.model-chip:hover {
+  background: var(--vp-c-brand-1);
+  color: #fff;
 }
 .case-intro h3 {
   margin: 0 0 8px 0;
