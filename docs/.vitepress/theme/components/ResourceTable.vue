@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress'
+
 interface ResourceItem {
   name: string
   type: string
@@ -30,7 +32,7 @@ defineProps<{
         <td v-if="items.some(i => i.description)">{{ item.description || '—' }}</td>
         <td>{{ item.size || '—' }}</td>
         <td>
-          <a class="download-link" :href="item.link" :download="item.name">
+          <a class="download-link" :href="withBase(item.link)" :download="item.name">
             📥 下载
           </a>
         </td>

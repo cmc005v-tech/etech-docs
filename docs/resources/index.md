@@ -32,6 +32,12 @@ description: 跨境电商课程配套资源，按模块分类整理
 
 以下文件可直接下载：
 
+<ResourceCategory title="📂 思维模型工具手册">
+  <ResourceTable :items="[
+    { name: '跨境电商实用思维模型工具手册（2026年9月版）', type: 'PDF', size: '2.2MB', description: '65 个模型 × 跨境电商全场景实操：每模型含概念解析/跨境机制/实操案例/工具模板/检查清单/芒格原话/关联模型，P0/P1/P2 分层阅读，8 章覆盖认知方法论到风险合规', link: '/resources/mental-models/跨境电商实用思维模型工具手册&202609.pdf' },
+  ]" />
+</ResourceCategory>
+
 <ResourceCategory title="📂 供应链管理模块">
   <ResourceTable :items="[
     { name: '供应链管理教案（样章）', type: 'PDF', size: '373KB', description: '第1课完整教案', link: '/resources/supply-chain/lesson-plan-sample.pdf' },
