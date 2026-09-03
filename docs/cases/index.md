@@ -1,12 +1,13 @@
 ---
 title: 跨境电商课程案例库
-description: 54个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约、商业本质六大领域，每个案例标注核心思维模型标签
+description: 55个真实商业案例，覆盖供应链、平台运营、品牌管理、合规风控、物流履约、商业本质六大领域，每个案例标注核心思维模型标签
 keywords: [跨境电商案例, 供应链案例, 平台运营案例, 品牌出海案例, 合规案例, 物流案例, 商业案例, 思维模型, 芒格]
 outline: deep
 ---
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 import { cases } from './caseData.js'
 
 const STORAGE_KEY = 'case-favorites'
@@ -222,7 +223,7 @@ onMounted(() => {
 **教学要点：** {{ c.teaching }}
 
 <div style="margin-top:10px; display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
-  <a :href="'/cases/' + c.id.toLowerCase()" style="color:#3b82f6; font-size:13px; font-weight:600; text-decoration:none;">📖 案例详情与深度教学手册 →</a>
+  <a :href="withBase('/cases/' + c.id.toLowerCase())" style="color:#3b82f6; font-size:13px; font-weight:600; text-decoration:none;">📖 案例详情与深度教学手册 →</a>
   <a v-if="c.sourceUrl" :href="c.sourceUrl" target="_blank" style="color:#3b82f6; font-size:13px; text-decoration:none;">🔗 查看原始来源 →</a>
 </div>
 
@@ -232,7 +233,7 @@ onMounted(() => {
 
 ## 模型 ↔ 案例双链
 
-每个案例已标注**核心思维模型**标签（取自课程《跨境电商课程 × 芒格思维模型映射表》的 65 个高价值模型，当前覆盖其中 42 个；另有 1 个案例特用标签「复利」）。双链用法：
+每个案例已标注**核心思维模型**标签（取自课程《跨境电商课程 × 芒格思维模型映射表》的 65 个高价值模型，当前覆盖其中 43 个；另有 1 个案例特用标签「复利」）。双链用法：
 
 - **案例 → 模型**：点击案例卡片上的 🧠 标签，可筛选出应用了同一思维模型的全部案例；
 - **模型 → 案例**：在「🧠 核心思维模型」下拉中选择模型，或在案例详情页点击模型标签直达筛选结果；
@@ -274,19 +275,19 @@ onMounted(() => {
 ### 📊 快速进入正反配对专题
 
 <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; margin-top:16px;">
-  <a href="/cases/comparison/sc-01-sc-03" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a :href="withBase('/cases/comparison/sc-01-sc-03')" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">📦 供应链对决</div>
     <div style="font-size:13px; color:#374151;">SC-01 vs SC-03<br/>数据驱动 vs 经验决策</div>
   </a>
-  <a href="/cases/comparison/bm-01-bm-05" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a :href="withBase('/cases/comparison/bm-01-bm-05')" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🏷️ 品牌保卫战</div>
     <div style="font-size:13px; color:#374151;">BM-01 vs BM-05<br/>保护先行 vs 保护缺失</div>
   </a>
-  <a href="/cases/comparison/po-01-po-04" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a :href="withBase('/cases/comparison/po-01-po-04')" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🛒 平台生存法则</div>
     <div style="font-size:13px; color:#374151;">PO-01 vs PO-04<br/>合规运营 vs 灰色玩法</div>
   </a>
-  <a href="/cases/comparison/be-02-be-01" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a :href="withBase('/cases/comparison/be-02-be-01')" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🧭 创业生死线</div>
     <div style="font-size:13px; color:#374151;">BE-02 vs BE-01<br/>分阶验证 vs 重资直投</div>
   </a>

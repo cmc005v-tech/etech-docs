@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 
 const STORAGE_KEY = 'course-study-progress'
 
@@ -150,7 +151,7 @@ onMounted(load)
         <a
           v-for="c in g.courses"
           :key="c.id"
-          :href="c.link"
+          :href="withBase(c.link)"
           class="progress-course"
           :class="{ 'progress-course--done': isDone(c.id) }"
         >

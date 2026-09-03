@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 import { cases } from '../../../cases/caseData.js'
 
 const props = defineProps({
@@ -22,7 +23,7 @@ const relatedCases = computed(() => {
 })
 
 const typeLabel = (t) => ({ success: '✅', failure: '❌', trend: '📊' }[t] || '')
-const caseLink = (id) => `/cases/${id.toLowerCase()}`
+const caseLink = (id) => withBase(`/cases/${id.toLowerCase()}`)
 </script>
 
 <template>

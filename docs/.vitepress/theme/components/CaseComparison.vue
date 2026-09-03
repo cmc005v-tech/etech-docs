@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 import { cases } from '../../../cases/caseData.js'
 import { deep } from '../../../cases/caseDeep.js'
 
@@ -113,13 +114,13 @@ const moduleLabel = (m) => ({ supply: '供应链管理', platform: '平台运营
     </div>
 
     <div class="nav-links">
-      <a :href="'/cases/' + c1.id.toLowerCase()">← 返回 {{ c1.id }} 详情页</a>
-      <a href="/cases/">返回案例库首页</a>
-      <a :href="'/cases/' + c2.id.toLowerCase()">{{ c2.id }} 详情页 →</a>
+      <a :href="withBase('/cases/' + c1.id.toLowerCase())">← 返回 {{ c1.id }} 详情页</a>
+      <a :href="withBase('/cases/')">返回案例库首页</a>
+      <a :href="withBase('/cases/' + c2.id.toLowerCase())">{{ c2.id }} 详情页 →</a>
     </div>
   </div>
   <div v-else>
-    <p>未找到对比案例，请 <a href="/cases/">返回案例库</a>。</p>
+    <p>未找到对比案例，请 <a :href="withBase('/cases/')">返回案例库</a>。</p>
   </div>
 </template>
 

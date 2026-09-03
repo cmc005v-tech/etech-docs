@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 import { cases } from '../../../cases/caseData.js'
 import { deep } from '../../../cases/caseDeep.js'
 
@@ -10,7 +11,7 @@ const c = computed(() => cases[idx.value])
 const d = computed(() => deep[props.id])
 const prev = computed(() => (idx.value > 0 ? cases[idx.value - 1] : null))
 const next = computed(() => (idx.value < cases.length - 1 ? cases[idx.value + 1] : null))
-const page = (id) => '/cases/' + id.toLowerCase()
+const page = (id) => withBase('/cases/' + id.toLowerCase())
 
 const typeLabel = (t) => ({ success: '✅ 正面成功', failure: '❌ 反面失败', trend: '📊 趋势/综合' }[t] || t)
 const moduleLabel = (m) => ({ supply: '供应链管理', platform: '平台运营', brand: '海外品牌管理', compliance: '合规管理', logistics: '物流履约', strategy: '商业本质' }[m] || m)
@@ -72,7 +73,7 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
 
     <div v-if="c.models && c.models.length" class="case-models">
       <span class="models-label">🧠 核心思维模型：</span>
-      <a v-for="model in c.models" :key="model" :href="'/cases/?model=' + encodeURIComponent(model)" class="model-chip" title="在案例库中查看该模型的全部案例">{{ model }}</a>
+      <a v-for="model in c.models" :key="model" :href="withBase('/cases/?model=' + encodeURIComponent(model))" class="model-chip" title="在案例库中查看该模型的全部案例">{{ model }}</a>
     </div>
 
     <h2>案例摘要</h2>
@@ -141,11 +142,11 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
 
     <h2>相关课程</h2>
     <div class="related">
-      <a v-for="r in relatedCourses" :key="r.code" :href="r.link || '/l1/'" :class="{ plain: !r.link }" class="related-item">
+      <a v-for="r in relatedCourses" :key="r.code" :href="withBase(r.link || '/l1/')" :class="{ plain: !r.link }" class="related-item">
         <span class="related-code">{{ r.code }}</span>
         <span class="related-name">{{ r.name || '课程大纲详见课程体系' }}</span>
       </a>
-      <a v-if="moduleLink" :href="moduleLink[0]" class="related-item module">
+      <a v-if="moduleLink" :href="withBase(moduleLink[0])" class="related-item module">
         <span class="related-code">🎯 深度专题</span>
         <span class="related-name">知识库专业课 · {{ moduleLink[1] }}</span>
       </a>
@@ -156,13 +157,13 @@ const moduleLink = computed(() => (c.value ? moduleCourse[c.value.module] : null
     <div class="case-nav">
       <a v-if="prev" :href="page(prev.id)">← {{ prev.id }} {{ prev.title.slice(0, 18) }}…</a>
       <span v-else></span>
-      <a href="/cases/">返回案例库</a>
+      <a :href="withBase('/cases/')">返回案例库</a>
       <a v-if="next" :href="page(next.id)">{{ next.id }} {{ next.title.slice(0, 18) }}… →</a>
       <span v-else></span>
     </div>
   </div>
   <div v-else>
-    <p>未找到该案例，请 <a href="/cases/">返回案例库</a>。</p>
+    <p>未找到该案例，请 <a :href="withBase('/cases/')">返回案例库</a>。</p>
   </div>
 </template>
 

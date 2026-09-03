@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { withBase } from 'vitepress'
 
 const step = ref(0)
 const answers = ref({})
@@ -206,7 +207,7 @@ function reset() {
         <a
           v-for="c in result.courses"
           :key="c.link"
-          :href="c.link"
+          :href="withBase(c.link)"
           class="course-link"
         >
           <span class="course-name">{{ c.name }}</span>

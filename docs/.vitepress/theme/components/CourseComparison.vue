@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 
 const props = defineProps({
   course1: { type: String, required: true },
@@ -37,7 +38,7 @@ const courseData = {
   'L2C-03': {
     code: 'L2C-03',
     name: '财务管控与经营分析',
-    path: '/l2/c03-finance-control',
+    path: '/l2/c03-finance-digital',
     hours: '6学时',
     level: 'L2-C',
     difficulty: '高级',
@@ -65,7 +66,7 @@ const courseData = {
 const c1 = computed(() => courseData[props.course1])
 const c2 = computed(() => courseData[props.course2])
 
-const getCaseLink = (caseId) => `/cases/${caseId.toLowerCase()}`
+const getCaseLink = (caseId) => withBase(`/cases/${caseId.toLowerCase()}`)
 </script>
 
 <template>
@@ -160,14 +161,14 @@ const getCaseLink = (caseId) => `/cases/${caseId.toLowerCase()}`
     <div class="recommendation">
       <h3>💡 选课建议</h3>
       <div class="rec-content">
-        <p><strong>如果你关注平台运营能力提升：</strong>建议选择 <a :href="c1.path">{{ c1.code }} {{ c1.name }}</a>，适合在亚马逊/TikTok等平台深耕的运营人员。</p>
-        <p><strong>如果你计划创业或负责品牌建设：</strong>建议选择 <a :href="c2.path">{{ c2.code }} {{ c2.name }}</a>，适合从0到1搭建品牌的创业者。</p>
+        <p><strong>如果你关注平台运营能力提升：</strong>建议选择 <a :href="withBase(c1.path)">{{ c1.code }} {{ c1.name }}</a>，适合在亚马逊/TikTok等平台深耕的运营人员。</p>
+        <p><strong>如果你计划创业或负责品牌建设：</strong>建议选择 <a :href="withBase(c2.path)">{{ c2.code }} {{ c2.name }}</a>，适合从0到1搭建品牌的创业者。</p>
         <p><strong>两门课可以互补学习：</strong>先学 {{ c1.code }} 掌握平台运营技巧，再学 {{ c2.code }} 理解品牌战略思维，形成完整能力闭环。</p>
       </div>
     </div>
 
     <div class="back-link">
-      <a href="/courses/course-selection">← 返回课程选型指南</a>
+      <a :href="withBase('/courses/course-selection')">← 返回课程选型指南</a>
     </div>
   </div>
 

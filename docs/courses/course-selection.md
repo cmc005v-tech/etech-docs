@@ -47,12 +47,12 @@ description: "十门知识库课程怎么选：按角色选课、课程关系、
 如果两门课看起来都很适合你，但拿不定主意先学哪门，可以使用**课程对比工具**快速决策：
 
 <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; margin-top:16px;">
-  <a href="/courses/comparison/l2a03-l2b07" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a href="./comparison/l2a03-l2b07" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#1d4ed8; margin-bottom:6px;">🎯 平台运营 vs 品牌创业</div>
     <div style="font-size:13px; color:#374151;">L2A-03 广告投放与 ROI<br/>vs<br/>L2B-07 品牌发布与冷启动</div>
     <div style="font-size:12px; color:#6b7280; margin-top:8px;">适合纠结于“深耕平台还是自建品牌”的学员</div>
   </a>
-  <a href="/courses/comparison/l2c03-l2c05" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
+  <a href="./comparison/l2c03-l2c05" style="padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; transition:all 0.2s; display:block; background:#fafbfc;">
     <div style="font-weight:600; color:#7c3aed; margin-bottom:6px;">💰 财务管控 vs 供应链战略</div>
     <div style="font-size:13px; color:#374151;">L2C-03 财务管控与经营分析<br/>vs<br/>L2C-05 供应链战略设计</div>
     <div style="font-size:12px; color:#6b7280; margin-top:8px;">适合管理层在“管钱还是管货”之间权衡</div>

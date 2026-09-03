@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 
 // 跨境电商能力地图 - 完整学习路径可视化
 const STORAGE_KEY = 'course-study-progress'
@@ -120,7 +121,7 @@ const caseModuleMap = {
   'BE': '商业本质',
 }
 
-const getCaseLink = (caseId) => `/cases/${caseId.toLowerCase()}`
+const getCaseLink = (caseId) => withBase(`/cases/${caseId.toLowerCase()}`)
 const getCourseLink = (code) => {
   const map = {
     'L1-01': '/l1/01-business-logic',
@@ -132,12 +133,12 @@ const getCourseLink = (code) => {
     'L1-07': '/l1/07-finance-cost',
     'L1-08': '/l1/08-data-driven',
     'L2A-01': '/l2/a01-algorithm-traffic',
-    'L2A-02': '/l2/a02-listing-optimization',
+    'L2A-02': '/l2/a02-listing-cro',
     'L2A-03': '/l2/a03-ads-roi',
     'L2A-04': '/l2/a04-ai-ops',
     'L2A-05': '/l2/a05-data-driven',
-    'L2A-06': '/l2/a06-offsite-traffic',
-    'L2A-07': '/l2/a07-competitor-analysis',
+    'L2A-06': '/l2/a06-social-kol',
+    'L2A-07': '/l2/a07-inventory-scm',
     'L2A-08': '/l2/a08-compliance-ops',
     'L2A-09': '/l2/a09-logistics-ops',
     'L2B-01': '/l2/b01-product-research',
@@ -145,11 +146,11 @@ const getCourseLink = (code) => {
     'L2B-03': '/l2/b03-tax-compliance',
     'L2B-04': '/l2/b04-overseas-compliance',
     'L2B-05': '/l2/b05-finance-fx',
-    'L2B-06': '/l2/b06-site-conversion',
+    'L2B-06': '/l2/b06-team-building',
     'L2B-07': '/l2/b07-brand-launch',
     'L2C-01': '/l2/c01-strategy',
     'L2C-02': '/l2/c02-organization',
-    'L2C-03': '/l2/c03-finance-control',
+    'L2C-03': '/l2/c03-finance-digital',
     'L2C-04': '/l2/c04-compliance-strategy',
     'L2C-05': '/l2/c05-supply-chain-strategy',
     'L2C-06': '/l2/c06-brand-strategy',
@@ -157,7 +158,7 @@ const getCourseLink = (code) => {
     'L3-B': '/l3/b-startup-sandbox',
     'L3-C': '/l3/c-strategy-report',
   }
-  return map[code] || '/l1/'
+  return withBase(map[code] || '/l1/')
 }
 
 onMounted(() => {
