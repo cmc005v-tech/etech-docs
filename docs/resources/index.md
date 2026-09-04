@@ -76,6 +76,13 @@ description: 跨境电商课程配套资源，按模块分类整理
   ]" />
 </ResourceCategory>
 
+<ResourceCategory title="📂 平台合规专题">
+  <ResourceTable :items="[
+    { name: '跨境电商平台合规对比矩阵（2026年9月版）', type: 'XLSX', size: '74KB', description: 'Amazon/TikTokShop/Temu/Shopee/AliExpress/MercadoLibre/eMAG/Allegro/OTTO 九大平台入驻资质/产品合规/税务/知识产权/物流/违规红线与处罚速查', link: '/resources/compliance-reports/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E5%90%88%E8%A7%84%E5%AF%B9%E6%AF%94%E7%9F%A9%E9%98%B5.xlsx' },
+    { name: '跨境电商平台合规综合研究报告（2026年9月版）', type: 'PDF', size: '1.7MB', description: '九大平台逐平台深度合规手册：11 个合规维度全覆盖，含 2024-2026 重大政策变化时间轴与真实处罚案例（127 页）', link: '/resources/compliance-reports/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E5%90%88%E8%A7%84%E7%BB%BC%E5%90%88%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A2026%E5%B9%B49%E6%9C%88.pdf' },
+  ]" />
+</ResourceCategory>
+
 ---
 
 ::: info 内容说明
