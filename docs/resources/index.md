@@ -49,6 +49,7 @@ description: 跨境电商课程配套资源，按模块分类整理
 <ResourceCategory title="📂 平台运营模块">
   <ResourceTable :items="[
     { name: '平台运营教案（样章）', type: 'PDF', size: '382KB', description: '第1课完整教案', link: '/resources/platform-operations/lesson-plan-sample.pdf' },
+    { name: '跨境电商运营数据分析实战培训手册（2026年9月版）', type: 'PDF', size: '2.1MB', description: '5人以内团队零基础→进阶实战手册：四篇十九章+六附录，覆盖指标体系/Excel透视表/选品/广告/库存/评价/竞品分析，含退货逆向物流、数据字典与合规红线、AI Agent 自动化，P0/P1 分层学习', link: '/resources/platform-operations/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E8%BF%90%E8%90%A5%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E5%9F%B9%E8%AE%AD%E6%89%8B%E5%86%8C2026%E5%B9%B49%E6%9C%88.pdf' },
   ]" />
 </ResourceCategory>
 
