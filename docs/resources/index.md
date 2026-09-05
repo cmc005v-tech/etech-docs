@@ -43,6 +43,8 @@ description: 跨境电商课程配套资源，按模块分类整理
     { name: '供应链管理教案（样章）', type: 'PDF', size: '373KB', description: '第1课完整教案', link: '/resources/supply-chain/lesson-plan-sample.pdf' },
     { name: '供应商评估模板', type: 'XLSX', size: '8KB', description: '供应商筛选与评估工具（含加权评分公式）', link: '/resources/supply-chain/supplier-evaluation.xlsx' },
     { name: '物流成本计算表', type: 'XLSX', size: '8KB', description: '全链路物流成本拆解（直邮vs海外仓自动汇总）', link: '/resources/supply-chain/logistics-cost.xlsx' },
+    { name: '跨境电商供应链与产品开发管理实战手册（2026年9月版）', type: 'PDF', size: '2.1MB', description: '九篇十五章+六附录完整手册：L1-L4 四级岗位体系 × 32 个 SOP 全流程覆盖，含异常应急（港口罢工/海关查验扣货/供应商断供/平台政策突变）、业财融合（CCC 现金流监控/退货成本归集）、数字化治理（ERP/WMS/BI/AI）、跨部门协同（S&OP）与知识沉淀，P0/P1 分层落地', link: '/resources/supply-chain/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E4%BE%9B%E5%BA%94%E9%93%BE%E4%B8%8E%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E7%AE%A1%E7%90%86%E5%AE%9E%E6%88%98%E6%89%8B%E5%86%8C2026%E5%B9%B49%E6%9C%88.pdf' },
+    { name: '跨境电商供应链岗位职责矩阵（2026年9月版）', type: 'XLSX', size: '116KB', description: '9 大表格矩阵：业务流程×L1-L4 岗位职责分工/流程对比/能力矩阵/KPI 考核体系 + V2.0 五大新增矩阵（异常应急职责/业财融合 KPI/数字化工具/跨部门协同/知识管理）', link: '/resources/supply-chain/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E4%BE%9B%E5%BA%94%E9%93%BE%E5%B2%97%E4%BD%8D%E8%81%8C%E8%B4%A3%E7%9F%A9%E9%98%B5-202609%E7%89%88.xlsx' },
   ]" />
 </ResourceCategory>
 
