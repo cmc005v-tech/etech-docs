@@ -33,7 +33,7 @@ course:
 | 市场 | 核心要求 | 关键文件 |
 |------|---------|---------|
 | 美国 | HTSUS（Harmonized Tariff Schedule of the US，美国海关关税分类编码）归类+进口商信息 | C88单据、IOR（Importer of Record，登记进口商） |
-| 欧盟 | CE（Conformité Européenne，欧盟产品安全合格标志）标志+PID产品标识 | 合规五件套、IOSS（Import One-Stop Shop，欧盟一站式进口税务申报系统） |
+| 欧盟 | CE（Conformité Européenne，欧盟产品安全合格标志）标志+PID产品标识 | 合规五件套、IOSS（Import One-Stop Shop，欧盟一站式进口税务申报系统）；2026.11 起新增统一小包处理费；平台/卖家被视为进口方，无欧盟实体可委托欧盟海关代表 |
 | 英国 | UKCA（UK Conformity Assessed，英国脱欧后替代CE的产品认证标志）+VAT注册 | 进口申报文件 |
 | 日本 | PSE（Product Safety Electrical Appliances，日本电气用品安全认证）认证+通关申报 | 进口许可证 |
 
